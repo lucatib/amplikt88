@@ -24,4 +24,5 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 ## Notes on the schematic
 
 - ECC83, KT88 and both transformers are single-unit symbols in `amplikt88.kicad_sym`, with the real pin numbers (KiCad's own ECC83 is split into three units). KT88 pins 1 and 6 are not connected.
-- Nets are joined by labels, not drawn wires. Resistor and capacitor footprints are not assigned yet.
+- Short nets within a stage are drawn as wires (21 nets, routed with `route_nets`, `max_length` 110 mm). The ones that cross the sheet, such as B+, the heater lines and the negative bias rail, stay as net labels.
+- Resistor and capacitor footprints are not assigned yet.
