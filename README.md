@@ -10,18 +10,19 @@ The nets that cross between the sheets are global labels: `B_PLUS`, `B_DRV`, `B_
 - **Output stage:** 2x KT88, push-pull, class AB, ultralinear (screens on the output transformer taps), adjustable fixed bias.
 - **Driver:** ECC83 long-tailed pair, tail returned to the negative bias rail. The second grid is grounded through 470k, so the pair works as a phase splitter.
 - **Input stage:** ECC83 section (the second section is grounded). Its cathode is not bypassed and takes the global feedback.
-- **Feedback:** 120k with 18 pF in parallel, from the speaker terminal to the input stage cathode (1k to ground). It encloses all three stages, about 14.5 dB of loop gain.
+- **Feedback:** 120k with 18 pF in parallel, from the speaker terminal to the input stage cathode (1k to ground). It encloses all three stages, about 16 dB of loop gain.
 - **Supply:** 330 V winding, bridge, C-L-C filter to about 450 V B+, separate decoupled rail for the driver, 6.3 V heaters with an artificial centre tap, about -65 V bias supply.
 
 ## Assumptions to confirm before building
 
 The values were checked in simulation (below) but nothing has been measured on hardware.
 
-- Output transformer 4 kohm plate-to-plate with ultralinear taps and an 8 ohm secondary. The real transformer sets the operating point.
+- Output transformer 4 kohm plate-to-plate with 40 % ultralinear taps and an 8 ohm secondary, 70 W. The full specification, with what happens with other transformers, is in [docs/output-transformer.md](docs/output-transformer.md).
 - Power transformer 230 V, 330 V / 300 mA HV, 6.3 V / 4.5 A, 50 V bias winding.
 - The secondary must be phased so the speaker terminal is in phase with the input. If the gain rises or it oscillates, swap the secondary leads.
 - Sensitivity is high: 0.24 V peak (0.17 V rms) gives 38 W. Put a volume control or an input divider in front of C3.
-- Bias trimmers: the wiper goes from -65 V to about -39 V. Set both fully to the most negative end before first power-up, then raise the bias to about 60 mA per valve, measured across the 1 ohm cathode resistors (60 mV). In simulation 60 mA is at about 77 % of the travel.
+- Bias trimmers: the wiper goes from -65 V to about -39 V. Set both fully to the most negative end before first power-up, then raise the bias to about 60 mA per valve, measured across the 1 ohm cathode resistors (60 mV). In simulation 60 mA is at -45 V, about 77 % of the travel. The data sheet gives about -59 V for 50 mA at 460 V, so real valves will sit nearer the negative end, with only a few volts to spare: check that 60 mA can be reached and exceeded on both valves, and lower the bias winding load (R15, R16) if not.
+- Capacitor voltages: with the valves cold the rectifier is unloaded and B+ rises to about 470 V, over 500 V with high mains. The reservoir capacitors are drawn as 550 V parts (or two 350 V in series with balancing resistors), the driver rail ones as 500 V with a 550 V surge rating, the coupling capacitors as 630 V.
 
 ## Safety
 
@@ -29,7 +30,8 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## Notes on the schematic
 
-- ECC83, KT88 and both transformers are single-unit symbols in `amplikt88.kicad_sym`, with the real pin numbers (KiCad's own ECC83 is split into three units). KT88 pins 1 and 6 are not connected.
+- The valves are drawn as round symbols, as in period schematics. The ECC83s are KiCad's `Valve:ECC83`, in three units: two triodes and the heater. The KT88 (two units: beam tetrode and heater) and the two transformers (coils and core, polarity dots) are in `amplikt88.kicad_sym`, with the real pin numbers. KT88 pin 1 (shell) is grounded; the valve has no pin 6.
+- The spare triode of V1 has grid and cathode grounded and the anode left open. ERC warns about its cathode on the ground net (a bidirectional pin next to the power flag); that warning and the one for the single `CHASSIS` label are expected.
 - Short nets within a stage are drawn as wires (routed with `route_nets`, `max_length` 110 mm). The ones that cross the sheet, such as B+, the heater lines and the negative bias rail, stay as net labels.
 - Resistor and capacitor footprints are not assigned yet.
 
@@ -45,16 +47,25 @@ Results for the schematic as drawn, 8 ohm load:
 
 | | |
 |---|---|
-| Idle | 60 mA per KT88, grid -45 V |
-| Loop gain at 1 kHz / phase margin / gain margin | 14.5 dB / 98 deg / 29 dB |
-| 37.8 W at 1 kHz | 0.19 % THD, grid swing -70 V to -20 V |
-| 10 kHz square, 8 ohm / + 0.1 uF / + 1 uF | 0.1 % / 2 % / 35 % overshoot |
+| Idle | 60 mA per KT88, grid -45 V; 1.5 mA per triode in the pair, anodes at 259 V |
+| Loop gain at 1 kHz | 15.9 dB |
+| Phase margin / gain margin, top of the band | 113 deg / 30 dB (unity at 29 kHz) |
+| Phase margin / gain margin, bottom of the band | 60 deg / 22 dB (unity at 1.6 Hz) |
+| Closed-loop response, -3 dB | 3 Hz to 23 kHz (-1 dB: 6 Hz to 11 kHz) |
+| Output impedance at 1 kHz | 0.6 ohm (8.9 ohm without feedback) |
+| 37.9 W at 1 kHz | 0.31 % THD |
+| Power at 1 % THD | 77 W in the model; 70 W expected from the data sheet |
+| 10 kHz square, 8 ohm / + 0.1 uF / + 1 uF | 2.3 % / 2.2 % / 2.0 % overshoot |
 
 What the simulation changed:
 
 - The first drawing returned the feedback to the second grid of the pair. That encloses only the pair and the output stage, and the loop gain was -2 dB, so it did nothing. It now returns to the input stage cathode.
-- With 47k / 47 pF the loop gain is 22.6 dB and the amplifier rings with a capacitive load (64 % overshoot with 0.1 uF, 107 % with 1 uF). 120k / 18 pF trades about 8 dB of feedback for stability.
-- The ECC83 pair gives the swing needed: at 37 W each grid moves about 25 V, so the ECC82 is not needed for that. An ECC82 pair lowers the loop gain to 9 dB, which is why it rings less, but gives 0.7 % THD at the same power.
+- With 47k / 47 pF the loop gain is 24 dB and the amplifier rings with a capacitive load (85 % overshoot with 0.1 uF and 125 % with 1 uF before the compensation below, 12 % and 25 % with it) and has 33 degrees of phase margin at the bottom. 120k / 18 pF trades 8 dB of feedback for stability.
+- The first values were only checked at the top of the band. At the bottom the two coupling networks and the transformer's inductance left 13 to 30 degrees of phase margin, with a peak of 7 to 13 dB at 2 to 5 Hz. C5 is now 1 uF into 1M (R5), C7 and C8 1 uF into 100k (R11, R12, the data sheet's limit for fixed bias at full dissipation), C3 100 nF: one corner far below the other two. `simulate.py` reports the margins at both ends.
+- Compensation: the transformer's leakage inductance was the only thing rolling the loop off, so the margin depended on the transformer and on the load. With a low-leakage transformer and 0.1 uF across the speaker the square wave overshot 70 %, and a larger C6 made it worse. C15 (470 pF) in series with R26 (10k) between the two anodes of the pair now rolls the loop off before the transformer does: about 2 % overshoot with any of the three loads, and with transformers from 5 to 24 mH of leakage. The price is bandwidth, 23 kHz at -3 dB; with a transformer known to be good, 220 to 330 pF gives about 30 kHz.
+- Drive: the data sheet asks 57 V peak on each grid for 70 W. With 1 mA per triode (33k tail) the pair ran out at about 45 V. With R8 22k and R21 15k it runs at 1.5 mA and gives 50 V at 2 % and 63 V at 4 % distortion before feedback. An ECC82 pair has more current but, with the lower loop gain (9.6 dB), 0.7 % THD at 38 W.
 - With 22k from the trimmer to ground the bias range was only -65 V to -44.7 V, so -45 V sat at the end of the travel. R15 and R16 are 15k now (-65 V to -39 V).
 
-Limits: the KT88 model is fitted to one operating point (450 V, 60 mA, 11 mA/V), not to the datasheet curves. The output transformer is a coupled-inductor model with assumed leakage (about 24 mH on the primary side) and 4 kohm plate-to-plate. Heaters, mains and the real supply are not modelled. Treat the numbers as a comparison between variants.
+`python3 spice/ot_study.py` repeats the bench with other output transformers (primary impedance, leakage, capacitance, inductance); its tables are in [docs/output-transformer.md](docs/output-transformer.md).
+
+Limits: the KT88 model is fitted to one operating point (450 V, 60 mA, 11 mA/V), not to the datasheet curves; it needs less bias and gives more power than the real valve. The output transformer is a coupled-inductor model with assumed leakage (about 24 mH on the primary side) and 4 kohm plate-to-plate. Heaters, mains and the real supply are not modelled. Treat the numbers as a comparison between variants.

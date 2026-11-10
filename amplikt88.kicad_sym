@@ -1,10 +1,11 @@
 (kicad_symbol_lib
 	(version 20251024)
-	(generator "kicad-mcp")
+	(generator "kicad_symbol_editor")
 	(generator_version "10.0")
-	(symbol "ECC83"
+	(symbol "KT88"
 		(pin_names
-			(offset 1.016)
+			(offset 0)
+			(hide yes)
 		)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12,7 +13,9 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "V"
-			(at -7.62 6.35 0)
+			(at 8.89 8.89 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20,8 +23,10 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ECC83"
-			(at -7.62 -8.89 0)
+		(property "Value" "KT88"
+			(at 8.89 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29,51 +34,291 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_G"
+		(property "Footprint" "Valve:Valve_Octal"
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.r-type.org/pdfs/ecc83.pdf"
+		(property "Datasheet" ""
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Description" "Double triode 12AX7, single-unit: triode 1 pins 1-3, triode 2 pins 6-8, heater 4/5 and centre tap 9"
+		(property "Description" "Beam tetrode, octal. Unit 1 is the valve, unit 2 the heater. Beam plates are tied to the cathode (pin 8) inside, pin 1 is the metal base shell, pin 6 is not connected"
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(symbol "ECC83_0_1"
-			(rectangle
-				(start -7.62 5.08)
-				(end 7.62 -5.08)
+		(property "ki_locked" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "beam tetrode valve tube KT88 6550"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "KT88_1_1"
+			(polyline
+				(pts
+					(xy -8.89 -1.27) (xy -3.175 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -5.08 3.81) (xy -3.429 3.81)
+				)
+				(stroke
+					(width 0.381)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -5.08 3.81) (xy -5.08 -5.08) (xy -2.54 -5.08)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.81 6.35) (xy 3.81 6.35)
+				)
+				(stroke
+					(width 0.381)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.175 1.27) (xy -1.905 1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.175 -1.27) (xy -1.905 -1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.54 -8.89) (xy -2.54 -5.08)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.635 1.27) (xy 0.635 1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.635 -1.27) (xy 0.635 -1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 6.35) (xy 0 8.89)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 0 0)
+				(radius 8.89)
 				(stroke
 					(width 0.254)
 					(type default)
 				)
 				(fill
-					(type background)
+					(type none)
 				)
 			)
-		)
-		(symbol "ECC83_1_1"
+			(arc
+				(start -2.54 -5.08)
+				(mid 0 -3.0968)
+				(end 2.54 -5.08)
+				(stroke
+					(width 0.381)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.905 1.27) (xy 3.175 1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 1.905 -1.27) (xy 3.175 -1.27)
+				)
+				(stroke
+					(width 0.2032)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.54 -8.5194)
+				(radius 0.254)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.54 -8.89) (xy 2.54 -8.5194)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.175 1.27) (xy 8.89 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 3.429 3.81) (xy 5.08 3.81)
+				)
+				(stroke
+					(width 0.381)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 5.08 3.81) (xy 5.08 -5.08) (xy 2.54 -5.08)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
 			(pin passive line
-				(at -10.16 2.54 0)
+				(at 2.54 -11.43 90)
 				(length 2.54)
-				(name "A1"
+				(name "S"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -88,223 +333,8 @@
 					)
 				)
 			)
-			(pin input line
-				(at -10.16 0 0)
-				(length 2.54)
-				(name "G1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin passive line
-				(at -10.16 -2.54 0)
-				(length 2.54)
-				(name "K1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 10.16 2.54 180)
-				(length 2.54)
-				(name "A2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at 10.16 0 180)
-				(length 2.54)
-				(name "G2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 10.16 -2.54 180)
-				(length 2.54)
-				(name "K2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at -2.54 -7.62 90)
-				(length 2.54)
-				(name "H4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -7.62 90)
-				(length 2.54)
-				(name "H5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 2.54 -7.62 90)
-				(length 2.54)
-				(name "HCT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "KT88"
-		(pin_names
-			(offset 1.016)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "V"
-			(at -7.62 11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "KT88"
-			(at -7.62 -8.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Valve:Valve_Octal"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Beam power tetrode, octal. Pin 1 and 6 unused, beam plates internal to cathode pin 8"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(symbol "KT88_0_1"
-			(rectangle
-				(start -7.62 7.62)
-				(end 7.62 -5.08)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-		)
-		(symbol "KT88_1_1"
-			(pin passive line
-				(at 10.16 2.54 180)
+				(at 0 11.43 270)
 				(length 2.54)
 				(name "A"
 					(effects
@@ -322,7 +352,7 @@
 				)
 			)
 			(pin passive line
-				(at 10.16 0 180)
+				(at 11.43 1.27 180)
 				(length 2.54)
 				(name "G2"
 					(effects
@@ -339,8 +369,8 @@
 					)
 				)
 			)
-			(pin input line
-				(at -10.16 2.54 0)
+			(pin passive line
+				(at -11.43 -1.27 0)
 				(length 2.54)
 				(name "G1"
 					(effects
@@ -358,7 +388,7 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 0 0)
+				(at -2.54 -11.43 90)
 				(length 2.54)
 				(name "K"
 					(effects
@@ -375,10 +405,36 @@
 					)
 				)
 			)
+		)
+		(symbol "KT88_2_1"
+			(arc
+				(start -2.54 0)
+				(mid -1.27 0.7849)
+				(end 0 0)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 0 0)
+				(mid 1.27 0.7849)
+				(end 2.54 0)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
 			(pin passive line
-				(at 0 -7.62 90)
-				(length 2.54)
-				(name "H2"
+				(at -2.54 -5.08 90)
+				(length 5.08)
+				(name "H"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -394,9 +450,9 @@
 				)
 			)
 			(pin passive line
-				(at 2.54 -7.62 90)
-				(length 2.54)
-				(name "H7"
+				(at 2.54 -5.08 90)
+				(length 5.08)
+				(name "H"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -411,48 +467,13 @@
 					)
 				)
 			)
-			(pin no_connect line
-				(at 0 10.16 270)
-				(length 2.54)
-				(name "NC1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin no_connect line
-				(at 2.54 10.16 270)
-				(length 2.54)
-				(name "NC6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 		)
 		(embedded_fonts no)
 	)
 	(symbol "OT_PP_UL"
 		(pin_names
-			(offset 1.016)
+			(offset 0)
+			(hide yes)
 		)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -460,67 +481,263 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "TR"
-			(at -7.62 8.89 0)
+			(at 0 13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "OT 4k a-a UL"
-			(at -7.62 -8.89 0)
+			(at 0 -13.97 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Description" "Push-pull output transformer, ultralinear taps, one secondary"
+		(property "Description" "Push-pull output transformer with ultralinear taps. Primary A1-UL1-CT-UL2-A2 on pins 1-5, secondary on 6 (in phase with A1, dotted) and 7"
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(symbol "OT_PP_UL_0_1"
-			(rectangle
-				(start -7.62 7.62)
-				(end 7.62 -7.62)
+		(property "ki_keywords" "output transformer push-pull ultralinear valve tube"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "OT_PP_UL_1_1"
+			(arc
+				(start -3.81 10.16)
+				(mid -2.54 8.89)
+				(end -3.81 7.62)
 				(stroke
 					(width 0.254)
 					(type default)
 				)
 				(fill
-					(type background)
+					(type none)
 				)
 			)
-		)
-		(symbol "OT_PP_UL_1_1"
+			(arc
+				(start -3.81 7.62)
+				(mid -2.54 6.35)
+				(end -3.81 5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 5.08)
+				(mid -2.54 3.81)
+				(end -3.81 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 2.54)
+				(mid -2.54 1.27)
+				(end -3.81 0)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 0)
+				(mid -2.54 -1.27)
+				(end -3.81 -2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 -2.54)
+				(mid -2.54 -3.81)
+				(end -3.81 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 -5.08)
+				(mid -2.54 -6.35)
+				(end -3.81 -7.62)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 -7.62)
+				(mid -2.54 -8.89)
+				(end -3.81 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center -2.54 11.43)
+				(radius 0.381)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.635 11.43) (xy -0.635 -11.43)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.635 11.43) (xy 0.635 -11.43)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.54 6.35)
+				(radius 0.381)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(arc
+				(start 3.81 2.54)
+				(mid 2.54 3.81)
+				(end 3.81 5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 0)
+				(mid 2.54 1.27)
+				(end 3.81 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 -2.54)
+				(mid 2.54 -1.27)
+				(end 3.81 0)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 -5.08)
+				(mid 2.54 -3.81)
+				(end 3.81 -2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
 			(pin passive line
-				(at -10.16 5.08 0)
-				(length 2.54)
+				(at -7.62 10.16 0)
+				(length 3.81)
 				(name "A1"
 					(effects
 						(font
@@ -537,8 +754,8 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 2.54 0)
-				(length 2.54)
+				(at -7.62 5.08 0)
+				(length 3.81)
 				(name "UL1"
 					(effects
 						(font
@@ -555,8 +772,8 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 0 0)
-				(length 2.54)
+				(at -7.62 0 0)
+				(length 3.81)
 				(name "CT"
 					(effects
 						(font
@@ -573,8 +790,8 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 -2.54 0)
-				(length 2.54)
+				(at -7.62 -5.08 0)
+				(length 3.81)
 				(name "UL2"
 					(effects
 						(font
@@ -591,8 +808,8 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 -5.08 0)
-				(length 2.54)
+				(at -7.62 -10.16 0)
+				(length 3.81)
 				(name "A2"
 					(effects
 						(font
@@ -609,8 +826,8 @@
 				)
 			)
 			(pin passive line
-				(at 10.16 5.08 180)
-				(length 2.54)
+				(at 7.62 5.08 180)
+				(length 3.81)
 				(name "S_HI"
 					(effects
 						(font
@@ -627,8 +844,8 @@
 				)
 			)
 			(pin passive line
-				(at 10.16 2.54 180)
-				(length 2.54)
+				(at 7.62 -5.08 180)
+				(length 3.81)
 				(name "S_LO"
 					(effects
 						(font
@@ -649,7 +866,8 @@
 	)
 	(symbol "PT_AMP"
 		(pin_names
-			(offset 1.016)
+			(offset 0)
+			(hide yes)
 		)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -657,67 +875,256 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "TR"
-			(at -10.16 11.43 0)
+			(at 0 19.05 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "PT 330V 300mA"
-			(at -10.16 -8.89 0)
+		(property "Value" "PT 330V/6.3V/50V"
+			(at 0 -16.51 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Description" "Mains transformer: 230V primary, 330V HV, 6.3V heater, 50V bias"
+		(property "Description" "Mains transformer: primary on pins 1-2, HV secondary 3-4, heater secondary 5-6, bias secondary 7-8"
 			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(symbol "PT_AMP_0_1"
-			(rectangle
-				(start -10.16 10.16)
-				(end 10.16 -7.62)
+		(property "ki_keywords" "mains power transformer valve tube"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PT_AMP_1_1"
+			(arc
+				(start -3.81 5.08)
+				(mid -2.54 3.81)
+				(end -3.81 2.54)
 				(stroke
 					(width 0.254)
 					(type default)
 				)
 				(fill
-					(type background)
+					(type none)
 				)
 			)
-		)
-		(symbol "PT_AMP_1_1"
+			(arc
+				(start -3.81 2.54)
+				(mid -2.54 1.27)
+				(end -3.81 0)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 0)
+				(mid -2.54 -1.27)
+				(end -3.81 -2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start -3.81 -2.54)
+				(mid -2.54 -3.81)
+				(end -3.81 -5.08)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.635 16.51) (xy -0.635 -13.97)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.635 16.51) (xy 0.635 -13.97)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 12.7)
+				(mid 2.54 13.97)
+				(end 3.81 15.24)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 10.16)
+				(mid 2.54 11.43)
+				(end 3.81 12.7)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 7.62)
+				(mid 2.54 8.89)
+				(end 3.81 10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 0)
+				(mid 2.54 1.27)
+				(end 3.81 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 -2.54)
+				(mid 2.54 -1.27)
+				(end 3.81 0)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 -10.16)
+				(mid 2.54 -8.89)
+				(end 3.81 -7.62)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(arc
+				(start 3.81 -12.7)
+				(mid 2.54 -11.43)
+				(end 3.81 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(text "HV"
+				(at 5.08 11.43 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
+			(text "6.3V"
+				(at 5.08 0.9 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
+			(text "bias"
+				(at 5.08 -9.3 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
 			(pin passive line
-				(at -12.7 7.62 0)
-				(length 2.54)
+				(at -7.62 5.08 0)
+				(length 3.81)
 				(name "PRI_L"
 					(effects
 						(font
@@ -734,8 +1141,8 @@
 				)
 			)
 			(pin passive line
-				(at -12.7 5.08 0)
-				(length 2.54)
+				(at -7.62 -5.08 0)
+				(length 3.81)
 				(name "PRI_N"
 					(effects
 						(font
@@ -752,8 +1159,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 7.62 180)
-				(length 2.54)
+				(at 7.62 15.24 180)
+				(length 3.81)
 				(name "HV_A"
 					(effects
 						(font
@@ -770,8 +1177,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 5.08 180)
-				(length 2.54)
+				(at 7.62 7.62 180)
+				(length 3.81)
 				(name "HV_B"
 					(effects
 						(font
@@ -788,8 +1195,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 2.54 180)
-				(length 2.54)
+				(at 7.62 2.54 180)
+				(length 3.81)
 				(name "H_A"
 					(effects
 						(font
@@ -806,8 +1213,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 0 180)
-				(length 2.54)
+				(at 7.62 -2.54 180)
+				(length 3.81)
 				(name "H_B"
 					(effects
 						(font
@@ -824,8 +1231,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 -2.54 180)
-				(length 2.54)
+				(at 7.62 -7.62 180)
+				(length 3.81)
 				(name "B_A"
 					(effects
 						(font
@@ -842,8 +1249,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 -5.08 180)
-				(length 2.54)
+				(at 7.62 -12.7 180)
+				(length 3.81)
 				(name "B_B"
 					(effects
 						(font

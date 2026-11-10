@@ -21,6 +21,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SCH = os.path.join(ROOT, "amplikt88.kicad_sch")
 WORK = tempfile.mkdtemp(prefix="amplikt88-sim-")
+# R9 and C6 between the speaker terminal and the input cathode, drawn either way round
+FEEDBACK = r"(%s (?:OT_S_HI V1_K|V1_K OT_S_HI) )(\S+)"
 
 
 def export_netlist():
@@ -34,17 +36,15 @@ def export_netlist():
 def bench(net, ltp, pos, rf, cf, open_loop=False):
     n = net.replace(".end\n", "")
     n = re.sub(r"(XRV[12] .*POS=)[0-9.]+", rf"\g<1>{pos}", n)
-    n = re.sub(r"(R9 OT_S_HI V1_K )\S+", rf"\g<1>{rf}", n)
-    n = re.sub(r"(C6 OT_S_HI V1_K )\S+", rf"\g<1>{cf}", n)
-    if ltp == "ecc82":
+    n = re.sub(FEEDBACK % "R9", rf"\g<1>{rf}", n)
+    n = re.sub(FEEDBACK % "C6", rf"\g<1>{cf}", n)
+    if ltp == "ecc82":   # lower mu and anode resistance: more current, smaller loads
         n = re.sub(r"(XV2 .*) ECC83", r"\1 ECC82", n)
-        for old, new in (("R6 B_DRV LTP_A1 82k", "R6 B_DRV LTP_A1 22k"), ("R7 B_DRV LTP_A2 82k", "R7 B_DRV LTP_A2 22k"),
-                         ("R8 LTP_K VBIAS_NEG 33k", "R8 LTP_K VBIAS_NEG 12k"), ("R21 B_PLUS B_DRV 33k", "R21 B_PLUS B_DRV 18k")):
-            assert old in n, old
-            n = n.replace(old, new)
+        for ref, value in (("R6", "22k"), ("R7", "22k"), ("R8", "12k"), ("R21", "18k")):
+            n, found = re.subn(rf"^({ref} \S+ \S+ )\S+", rf"\g<1>{value}", n, flags=re.M)
+            assert found == 1, ref
     if open_loop:   # feedback network kept as a load, its output end grounded
-        n = re.sub(r"(R9 )OT_S_HI", r"\1GND", n)
-        n = re.sub(r"(C6 )OT_S_HI", r"\1GND", n)
+        n = re.sub(r"^((?:R9|C6) .*?)OT_S_HI", r"\1GND", n, flags=re.M)
     for i, node in enumerate(sorted(set(re.findall(r"unconnected-\S+", n)))):
         n += f"RFLOAT{i} {node} GND 1e9\n"
     return n + ("V_BPLUS B_PLUS GND DC 450\nV_NEG VBIAS_NEG GND DC -65\n"
@@ -82,24 +82,41 @@ def find_bias(net, ltp, rf, cf, target_ma=60.0):
     return round((lo + hi) / 2, 3)
 
 
-def loop_margins(net, ltp, pos, rf, cf):
+def loop_response(net, ltp, pos, rf, cf):
+    """Loop gain T = A * beta from 0.05 Hz to 5 MHz: frequency, dB, phase unwrapped from 0 at mid-band."""
     rows, _ = ngspice(bench(net, ltp, pos, rf, cf, open_loop=True),
-                      "ac dec 60 10 5meg\nlet A = v(OT_S_HI)/v(V1_G)\nwrdata @DAT@ real(A) imag(A)", "loop")
+                      "ac dec 60 0.05 5meg\nlet A = v(OT_S_HI)/v(V1_G)\nwrdata @DAT@ real(A) imag(A)", "loop")
     R = float(re.sub("k", "e3", rf)); C = float(re.sub("p", "e-12", cf))
     f, mag, ph = [], [], []
     for x in rows:
         zf = 1 / (1 / R + 1j * 2 * math.pi * x[0] * C)          # Rf in parallel with Cf
         t = complex(x[1], x[3]) * 1000 / (1000 + zf)             # beta = Rk / (Rk + Zf), Rk = 1k
         f.append(x[0]); mag.append(20 * math.log10(abs(t))); ph.append(math.degrees(cmath.phase(t)))
-    for i in range(1, len(ph)):
-        while ph[i] - ph[i - 1] > 180: ph[i] -= 360
-        while ph[i] - ph[i - 1] < -180: ph[i] += 360
-    out = {"loop_gain_1k_dB": round(mag[min(range(len(f)), key=lambda i: abs(f[i] - 1000))], 1)}
-    for i in range(1, len(f)):
+    mid = min(range(len(f)), key=lambda i: abs(f[i] - 1000))
+    for order in (range(mid + 1, len(ph)), range(mid - 1, -1, -1)):
+        for i in order:
+            prev = ph[i - 1] if i > mid else ph[i + 1]
+            while ph[i] - prev > 180: ph[i] -= 360
+            while ph[i] - prev < -180: ph[i] += 360
+    return f, mag, ph
+
+
+def loop_margins(net, ltp, pos, rf, cf):
+    """Margins at both ends: the transformer's leakage sets the top one, its
+    inductance and the coupling capacitors the bottom one."""
+    f, mag, ph = loop_response(net, ltp, pos, rf, cf)
+    mid = min(range(len(f)), key=lambda i: abs(f[i] - 1000))
+    out = {"loop_gain_1k_dB": round(mag[mid], 1)}
+    for i in range(mid + 1, len(f)):
         if "unity_f_kHz" not in out and mag[i - 1] > 0 >= mag[i]:
             out.update(unity_f_kHz=round(f[i] / 1e3, 1), phase_margin_deg=round(180 + ph[i], 1))
         if "f_180_kHz" not in out and ph[i - 1] > -180 >= ph[i]:
             out.update(f_180_kHz=round(f[i] / 1e3, 1), gain_margin_dB=round(-mag[i], 1))
+    for i in range(mid - 1, -1, -1):
+        if "lf_unity_Hz" not in out and mag[i + 1] > 0 >= mag[i]:
+            out.update(lf_unity_Hz=round(f[i], 2), lf_phase_margin_deg=round(180 - ph[i], 1))
+        if "lf_f_180_Hz" not in out and ph[i + 1] < 180 <= ph[i]:
+            out.update(lf_f_180_Hz=round(f[i], 2), lf_gain_margin_dB=round(-mag[i], 1))
     return out
 
 
@@ -144,8 +161,8 @@ def main():
     ap.add_argument("--cf", help="lead capacitor C6 across it (default: from the schematic)")
     a = ap.parse_args()
     net = export_netlist()
-    rf = a.rf or re.search(r"R9 OT_S_HI V1_K (\S+)", net).group(1)
-    cf = a.cf or re.search(r"C6 OT_S_HI V1_K (\S+)", net).group(1)
+    rf = a.rf or re.search(FEEDBACK % "R9", net).group(2)
+    cf = a.cf or re.search(FEEDBACK % "C6", net).group(2)
     pos = find_bias(net, a.ltp, rf, cf)
     ia, vg = idle_current(net, a.ltp, pos, rf, cf)
     print(f"LTP {a.ltp.upper()}, Rf {rf}, Cf {cf}")

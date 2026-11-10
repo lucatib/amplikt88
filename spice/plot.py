@@ -7,7 +7,7 @@ requirements.
 
     python3 spice/plot.py
 """
-import cmath, math, os, re, sys
+import os, re, sys
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -25,29 +25,10 @@ VARIANTS = [
 ]
 
 
-def num(s):
-    return float(s.replace("k", "e3").replace("p", "e-12").replace("u", "e-6"))
-
-
 def closed_loop(net, ltp, pos, rf, cf):
-    rows, _ = sim.ngspice(sim.bench(net, ltp, pos, rf, cf), "ac dec 40 10 1meg\nwrdata @DAT@ vdb(OT_S_HI)", "cl")
+    rows, _ = sim.ngspice(sim.bench(net, ltp, pos, rf, cf), "ac dec 40 1 1meg\nwrdata @DAT@ vdb(OT_S_HI)", "cl")
     ref = min(rows, key=lambda x: abs(x[0] - 1000))[1]
     return [x[0] for x in rows], [x[1] - ref for x in rows]
-
-
-def loop_gain(net, ltp, pos, rf, cf):
-    rows, _ = sim.ngspice(sim.bench(net, ltp, pos, rf, cf, open_loop=True),
-                          "ac dec 60 10 5meg\nlet A = v(OT_S_HI)/v(V1_G)\nwrdata @DAT@ real(A) imag(A)", "loop")
-    R, C = num(rf), num(cf)
-    f, mag, ph = [], [], []
-    for x in rows:
-        zf = 1 / (1 / R + 1j * 2 * math.pi * x[0] * C)
-        t = complex(x[1], x[3]) * 1000 / (1000 + zf)
-        f.append(x[0]); mag.append(20 * math.log10(abs(t))); ph.append(math.degrees(cmath.phase(t)))
-    for i in range(1, len(ph)):
-        while ph[i] - ph[i - 1] > 180: ph[i] -= 360
-        while ph[i] - ph[i - 1] < -180: ph[i] += 360
-    return f, mag, ph
 
 
 def square(net, ltp, pos, rf, cf, cload):
@@ -86,11 +67,12 @@ def main():
     data, table = [], []
     for label, ltp, rf, cf, color in VARIANTS:
         pos = sim.find_bias(net, ltp, rf, cf)
-        data.append((label, color, closed_loop(net, ltp, pos, rf, cf), loop_gain(net, ltp, pos, rf, cf),
+        data.append((label, color, closed_loop(net, ltp, pos, rf, cf), sim.loop_response(net, ltp, pos, rf, cf),
                      square(net, ltp, pos, rf, cf, "1u")))
         m = sim.loop_margins(net, ltp, pos, rf, cf)
         p = sim.power_test(net, ltp, pos, rf, cf)
-        table.append((label, m["loop_gain_1k_dB"], m.get("phase_margin_deg"), m.get("gain_margin_dB"),
+        table.append((label, m["loop_gain_1k_dB"], f'{m.get("lf_phase_margin_deg")} / {m.get("phase_margin_deg")}',
+                      f'{m.get("lf_gain_margin_dB")} / {m.get("gain_margin_dB")}',
                       f'{p["P_8ohm_W"]} W: {p["THD_pct"]} %', f'{sim.overshoot(net, ltp, pos, rf, cf, "0.1u")} / {sim.overshoot(net, ltp, pos, rf, cf, "1u")} %'))
 
     fig, axs = plt.subplots(2, 2, figsize=(11.5, 8.6), facecolor=SURFACE)
@@ -99,19 +81,21 @@ def main():
     for label, c, cl, lg, sq in data:
         ax.plot(*cl, color=c, linewidth=1.6, solid_capstyle="round", label=label)
     ax.axhline(-3, color=INK2, linewidth=0.8, linestyle=(0, (1, 3)))
-    ax.set_xlim(10, 1e6); ax.set_ylim(-40, 3)
-    ax.text(12, -2.4, "-3 dB", fontsize=8, color=INK2, va="bottom")
+    ax.set_xlim(1, 1e6); ax.set_ylim(-40, 6)
+    ax.text(1.3, -2.4, "-3 dB", fontsize=8, color=INK2, va="bottom")
     ax = axs[0, 1]; style(ax, "Loop gain", "Frequency (Hz)", "Loop gain (dB)"); hz(ax)
     for label, c, cl, lg, sq in data:
         ax.plot(lg[0], lg[1], color=c, linewidth=1.6, solid_capstyle="round")
-    ax.axhline(0, color=INK2, linewidth=0.8); ax.set_xlim(1e3, 2e6); ax.set_ylim(-60, 30)
-    ax.text(1.2e3, 0.8, "0 dB", fontsize=8, color=INK2)
-    ax = axs[1, 0]; style(ax, "Loop phase (stable while above -180)", "Frequency (Hz)", "Phase (degrees)"); hz(ax)
+    ax.axhline(0, color=INK2, linewidth=0.8); ax.set_xlim(0.1, 2e6); ax.set_ylim(-60, 30)
+    ax.text(0.13, 0.8, "0 dB", fontsize=8, color=INK2)
+    ax = axs[1, 0]; style(ax, "Loop phase (stable while within +/-180 where the gain is above 0 dB)", "Frequency (Hz)", "Phase (degrees)"); hz(ax)
     for label, c, cl, lg, sq in data:
-        k = [i for i, f in enumerate(lg[0]) if f >= 1e3]
-        ax.plot([lg[0][i] for i in k], [lg[2][i] for i in k], color=c, linewidth=1.6, solid_capstyle="round")
-    ax.axhline(-180, color=INK2, linewidth=0.8); ax.set_xlim(1e3, 2e6); ax.set_ylim(-320, 20)
-    ax.text(1.2e3, -176, "-180 deg", fontsize=8, color=INK2, va="bottom")
+        ax.plot(lg[0], lg[2], color=c, linewidth=1.6, solid_capstyle="round")
+    for y in (-180, 180):
+        ax.axhline(y, color=INK2, linewidth=0.8)
+    ax.set_xlim(0.1, 2e6); ax.set_ylim(-320, 320); ax.set_yticks(range(-270, 271, 90))
+    ax.text(0.13, -176, "-180 deg", fontsize=8, color=INK2, va="bottom")
+    ax.text(1.3e6, 184, "+180 deg", fontsize=8, color=INK2, va="bottom", ha="right")
     ax = axs[1, 1]; style(ax, "10 kHz square wave into 8 ohm + 1 uF", "Time (us)", "Output, normalised to the flat top")
     for label, c, cl, lg, sq in data:
         ax.plot(sq[0], sq[1], color=c, linewidth=1.6, solid_capstyle="round")
@@ -119,10 +103,10 @@ def main():
     handles = [plt.Line2D([0], [0], color=c, linewidth=2.2) for _, c, *_ in data]
     fig.legend(handles, [d[0] for d in data], loc="upper center", ncol=3, frameon=False, fontsize=9.5,
                bbox_to_anchor=(0.5, 0.995), labelcolor=INK)
-    cols = ["Variant", "Loop gain\nat 1 kHz", "Phase\nmargin", "Gain\nmargin", "Power and THD\nat 1 kHz", "Overshoot, 0.1 / 1 uF\n(10 kHz square)"]
+    cols = ["Variant", "Loop gain\nat 1 kHz", "Phase margin\nlow / high", "Gain margin\nlow / high", "Power and THD\nat 1 kHz", "Overshoot, 0.1 / 1 uF\n(10 kHz square)"]
     cell = [[t[0], f"{t[1]} dB", f"{t[2]} deg", f"{t[3]} dB", t[4], t[5]] for t in table]
     tab = fig.add_axes([0.07, 0.03, 0.90, 0.16]); tab.axis("off")
-    tb = tab.table(cellText=cell, colLabels=cols, loc="center", cellLoc="left", colWidths=[0.30, 0.10, 0.10, 0.10, 0.17, 0.23])
+    tb = tab.table(cellText=cell, colLabels=cols, loc="center", cellLoc="left", colWidths=[0.29, 0.09, 0.12, 0.12, 0.16, 0.22])
     tb.auto_set_font_size(False); tb.set_fontsize(8.8); tb.scale(1, 1.75)
     for (r, c_), cl in tb.get_celld().items():
         cl.set_edgecolor(GRID); cl.set_facecolor(SURFACE)

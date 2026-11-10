@@ -55,8 +55,10 @@ R23 2 3 {R*(1-POS)+1m}
 
 * Push-pull ultralinear output transformer.
 * Pins: A1 UL1 CT UL2 A2 SHI SLO. Taps at 40% of each half from CT.
-* LH = inductance of one primary half, RATIO = total primary : secondary turns.
-.subckt OT_PP_UL A1 UL1 CT UL2 A2 SHI SLO LH=10 RATIO=22.4 KC=0.9997 RP=60 RS=0.3
+* LH = inductance of one primary half, RATIO = total primary : secondary turns,
+* KC = coupling (leakage = 4*LH*(1-KC^2) seen from the whole primary), RP = resistance of one half,
+* CW = shunt capacitance anode to anode.
+.subckt OT_PP_UL A1 UL1 CT UL2 A2 SHI SLO LH=10 RATIO=22.4 KC=0.9997 RP=60 RS=0.3 CW=300p
 RPA A1 NA {RP*0.6}
 LA NA UL1 {LH*0.36}
 RPB UL1 NB {RP*0.4}
@@ -67,7 +69,7 @@ RPD UL2 ND {RP*0.6}
 LD ND A2 {LH*0.36}
 LS SHI NS {4*LH/(RATIO*RATIO)}
 RSS NS SLO {RS}
-CW A1 A2 300p
+CWP A1 A2 {CW}
 KAB LA LB {KC}
 KAC LA LC {KC}
 KAD LA LD {KC}
