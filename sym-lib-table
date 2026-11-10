@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "amplikt88") (type "KiCad") (uri "${KIPRJMOD}/amplikt88.kicad_sym") (options "") (descr ""))
+)
