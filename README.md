@@ -1,6 +1,11 @@
 # amplikt88
 
-Mono power amplifier, schematic in KiCad 10 (`amplikt88.kicad_sch`, PDF in `amplikt88.pdf`).
+Mono power amplifier, schematic in KiCad 10, two sheets (PDF of both in `amplikt88.pdf`):
+
+- `amplikt88.kicad_sch`: the amplifier (input, driver, output stage, bias trimmers).
+- `power.kicad_sch`: the power supply (mains, rectifier and filter, driver rail, negative bias supply, heater centre tap).
+
+The nets that cross between the sheets are global labels: `B_PLUS`, `B_DRV`, `B_V1`, `VBIAS_NEG`, `HEATER_A`, `HEATER_B`.
 
 - **Output stage:** 2x KT88, push-pull, class AB, ultralinear (screens on the output transformer taps), adjustable fixed bias.
 - **Driver:** ECC83 long-tailed pair, tail returned to the negative bias rail. One grid takes the signal, the other takes the global feedback from the speaker terminal.
@@ -24,5 +29,5 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 ## Notes on the schematic
 
 - ECC83, KT88 and both transformers are single-unit symbols in `amplikt88.kicad_sym`, with the real pin numbers (KiCad's own ECC83 is split into three units). KT88 pins 1 and 6 are not connected.
-- Short nets within a stage are drawn as wires (21 nets, routed with `route_nets`, `max_length` 110 mm). The ones that cross the sheet, such as B+, the heater lines and the negative bias rail, stay as net labels.
+- Short nets within a stage are drawn as wires (routed with `route_nets`, `max_length` 110 mm). The ones that cross the sheet, such as B+, the heater lines and the negative bias rail, stay as net labels.
 - Resistor and capacitor footprints are not assigned yet.
