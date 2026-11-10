@@ -1,0 +1,81 @@
+* amplikt88 SPICE models for ngspice (KiCad 10)
+* Valves: Koren models. Triode parameters from Koren's published fits;
+* KT88 is fitted to one typical operating point (Va=Vg2=450 V, Vg1=-45 V: 62 mA, 11 mA/V),
+* not to the full datasheet curves. Use results to compare, not to certify.
+
+.model DGRID D(IS=1n RS=1 CJO=0.5p TT=1n)
+
+* Koren triode. Pins: A G K
+.subckt TRIODE A G K MU=100 EX=1.4 KG1=1060 KP=600 KVB=300 RGI=2k CGK=2.3p CGP=1.7p CPK=0.9p
+RG G GI {RGI}
+DG GI K DGRID
+BE1 E1 0 V = V(A,K)/KP*ln(1+exp(KP*(1/MU+V(GI,K)/sqrt(KVB+V(A,K)*V(A,K)))))
+BIP A K I = u(V(E1))*2*pwr(abs(V(E1)),EX)/KG1
+CGK GI K {CGK}
+CGP GI A {CGP}
+CPK A K {CPK}
+RE1 E1 0 1e9
+.ends TRIODE
+
+* Dual triode 12AX7 / ECC83. Pins follow the noval socket: A1 G1 K1 A2 G2 K2
+.subckt ECC83 A1 G1 K1 A2 G2 K2
+X1 A1 G1 K1 TRIODE MU=100 EX=1.4 KG1=1060 KP=600 KVB=300 CGK=1.6p CGP=1.7p CPK=0.46p
+X2 A2 G2 K2 TRIODE MU=100 EX=1.4 KG1=1060 KP=600 KVB=300 CGK=1.6p CGP=1.7p CPK=0.46p
+.ends ECC83
+
+* Dual triode 12AU7 / ECC82
+.subckt ECC82 A1 G1 K1 A2 G2 K2
+X1 A1 G1 K1 TRIODE MU=21.5 EX=1.3 KG1=1180 KP=84 KVB=300 CGK=1.6p CGP=1.5p CPK=0.5p
+X2 A2 G2 K2 TRIODE MU=21.5 EX=1.3 KG1=1180 KP=84 KVB=300 CGK=1.6p CGP=1.5p CPK=0.5p
+.ends ECC82
+
+* Koren pentode / beam tetrode. Pins: A G2 G1 K
+.subckt PENTODE A G2 G1 K MU=8 EX=1.35 KG1=1000 KG2=8000 KP=32 KVB=16 RGI=1k CGK=14p CGP=0.8p CPK=8p
+RG G1 GI {RGI}
+DG GI K DGRID
+BE1 E1 0 V = max(V(G2,K),1)/KP*ln(1+exp(KP*(1/MU+V(GI,K)/max(V(G2,K),1))))
+BIA A K I = u(V(E1))*2*pwr(abs(V(E1)),EX)/KG1*atan(V(A,K)/KVB)
+BIG G2 K I = u(V(E1))*2*pwr(abs(V(E1)),EX)/KG2
+CGK GI K {CGK}
+CGP GI A {CGP}
+CPK A K {CPK}
+RE1 E1 0 1e9
+.ends PENTODE
+
+* KT88 (beam tetrode). Pins follow the symbol: A G2 G1 K
+.subckt KT88 A G2 G1 K
+X1 A G2 G1 K PENTODE MU=10.1 EX=1.35 KG1=288 KG2=3100 KP=80 KVB=16
+.ends KT88
+
+* Trimmer: pins 1 2(wiper) 3, POS is the wiper position from pin 1 (0..1)
+.subckt POT_TRIM 1 2 3 R=10k POS=0.5
+R12 1 2 {R*POS+1m}
+R23 2 3 {R*(1-POS)+1m}
+.ends POT_TRIM
+
+* Push-pull ultralinear output transformer.
+* Pins: A1 UL1 CT UL2 A2 SHI SLO. Taps at 40% of each half from CT.
+* LH = inductance of one primary half, RATIO = total primary : secondary turns.
+.subckt OT_PP_UL A1 UL1 CT UL2 A2 SHI SLO LH=10 RATIO=22.4 KC=0.9997 RP=60 RS=0.3
+RPA A1 NA {RP*0.6}
+LA NA UL1 {LH*0.36}
+RPB UL1 NB {RP*0.4}
+LB NB CT {LH*0.16}
+RPC CT NC {RP*0.4}
+LC NC UL2 {LH*0.16}
+RPD UL2 ND {RP*0.6}
+LD ND A2 {LH*0.36}
+LS SHI NS {4*LH/(RATIO*RATIO)}
+RSS NS SLO {RS}
+CW A1 A2 300p
+KAB LA LB {KC}
+KAC LA LC {KC}
+KAD LA LD {KC}
+KAS LA LS {KC}
+KBC LB LC {KC}
+KBD LB LD {KC}
+KBS LB LS {KC}
+KCD LC LD {KC}
+KCS LC LS {KC}
+KDS LD LS {KC}
+.ends OT_PP_UL

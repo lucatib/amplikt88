@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "kicad-mcp")
 	(generator_version "10.0")
-	(uuid "d74c900b-2301-4076-a4f1-980738a900a4")
+	(uuid "e75b7295-4e56-496f-b218-5408a00147bd")
 	(paper "A2")
 	(title_block
 		(title "amplikt88 - KT88 push-pull, ECC83 LTP driver")
@@ -816,185 +816,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C_Polarized"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C_Polarized"
-				(at 0.635 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Polarized capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "CP_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_Polarized_0_1"
-				(rectangle
-					(start -2.286 0.508)
-					(end 2.286 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 2.286)
-						(xy -0.762 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 2.794)
-						(xy -1.27 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 2.286 -0.508)
-					(end -2.286 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "C_Polarized_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R_Potentiometer_Trim"
 			(pin_names
 				(offset 1.016)
@@ -1638,7 +1459,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "95c5af9e-9624-435b-8aa8-96e1b1d4a844")
+		(uuid "0fa5c20a-917d-4f36-8940-0d80c924f803")
 		(property "Sheetname" "Power supply"
 			(at 455 39.3 0)
 			(effects
@@ -1659,7 +1480,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(page "2")
 				)
 			)
@@ -1674,17 +1495,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b8e0e897-9fc9-4d89-9b8c-772eb2129956")
+		(uuid "a16752e5-9344-4bd9-afe0-cccbdfc240da")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 27.94 139.7 0)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8053e632-85e2-49ae-82ff-3c7bb4b27ded")
+		(uuid "77d84462-5a55-4b78-a1bc-3a318a10115e")
 		(property "Reference" "J2"
 			(at 27.94 132.08 0)
 			(effects
@@ -1730,7 +1551,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "J2")
 					(unit 1)
 				)
@@ -1745,7 +1566,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f99af09f-6679-4890-8649-377442c1ccf3")
+		(uuid "090755e7-3150-47e7-b6a4-b0bc37051e31")
 		(property "Reference" "#PWR011"
 			(at 17.78 137.16 0)
 			(effects
@@ -1792,7 +1613,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -1807,7 +1628,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c14772eb-e4d5-476f-8e84-64707461df5b")
+		(uuid "9e1bac2b-c8e2-41dd-be78-7eba3f71e284")
 		(property "Reference" "C3"
 			(at 44.45 130.81 0)
 			(effects
@@ -1851,9 +1672,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 44.45 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=220n"
+			(at 44.45 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C3")
 					(unit 1)
 				)
@@ -1868,7 +1707,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cf9ac993-f95e-4ee3-9ee6-e1185dedf836")
+		(uuid "f09c477d-970c-4008-88e1-3a66f4fa0f4b")
 		(property "Reference" "R1"
 			(at 62.23 130.81 0)
 			(effects
@@ -1912,9 +1751,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 62.23 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=1k"
+			(at 62.23 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R1")
 					(unit 1)
 				)
@@ -1930,7 +1787,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dde993ec-4479-4d79-aac7-95be212f60e5")
+		(uuid "16bd03cd-c77d-47ea-ab1c-13a8ad9b9585")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -1940,7 +1797,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8f7f4f35-b10e-438e-8975-8244c6c6bd3e")
+		(uuid "e3c61b7c-9c39-46d8-92cd-4b0d07e4f1f8")
 		(property "Reference" "R2"
 			(at 78.74 130.81 0)
 			(effects
@@ -1984,9 +1841,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 78.74 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=470k"
+			(at 78.74 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R2")
 					(unit 1)
 				)
@@ -2001,7 +1876,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26fbe971-3ad1-4cc9-98a0-0bab93948673")
+		(uuid "e83becf3-ac57-4416-b1b9-4ddc9fbfdeb5")
 		(property "Reference" "#PWR012"
 			(at 78.74 143.51 0)
 			(effects
@@ -2048,7 +1923,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -2064,7 +1939,18 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ba4a2b7f-cf2a-4569-98c2-ca20e7026500")
+		(uuid "b9f92020-2463-4813-a1f3-42843c454106")
+	)
+	(wire
+		(pts
+			(xy 107.95 142.24)
+			(xy 102.87 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa707212-1a7a-4b24-98a4-befc7a60fd78")
 	)
 	(wire
 		(pts
@@ -2075,7 +1961,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "73b38a40-1e3b-419b-9df3-e893f89fb440")
+		(uuid "81090ca8-4cac-46d1-99b5-acf8ce457866")
 	)
 	(wire
 		(pts
@@ -2086,7 +1972,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1928ef64-3a98-4036-9a1e-2773b31c72be")
+		(uuid "471e829f-16e3-4b07-8139-42d2cbe44de3")
 	)
 	(wire
 		(pts
@@ -2097,7 +1983,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ead75c9e-f04d-455a-9dbb-2831b1d2ea24")
+		(uuid "b0b5f41c-374a-47fa-bead-ef826ac01287")
 	)
 	(wire
 		(pts
@@ -2108,7 +1994,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0ba98da6-a9e3-4368-b585-fe8957a1eec0")
+		(uuid "30baf929-9ebe-4191-85b2-03e57dd779d8")
 	)
 	(wire
 		(pts
@@ -2119,7 +2005,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a1a8c40d-9e91-4a57-9cf4-50d69ed1922e")
+		(uuid "c54ffa92-6c0b-4ffa-bd90-ec0dc3f31050")
 	)
 	(label "V1_A"
 		(at 102.87 137.16 180)
@@ -2130,7 +2016,18 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3ccfa469-f4da-42f7-98f4-0ca5b22e5701")
+		(uuid "b4fe9087-4253-429d-836b-35fb08f99d44")
+	)
+	(label "V1_K"
+		(at 102.87 142.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fbf2003c-c1ca-4074-a8c1-ca1edd40f3bc")
 	)
 	(global_label "HEATER_A"
 		(shape passive)
@@ -2142,7 +2039,7 @@
 			)
 			(justify right)
 		)
-		(uuid "61341672-18b2-48c5-82e5-56992259148d")
+		(uuid "f2507ead-d45e-4553-a2cc-c7d2ff53ce71")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 115.57 152.4 270)
 			(effects
@@ -2164,7 +2061,7 @@
 			)
 			(justify right)
 		)
-		(uuid "1b537176-0314-4a2f-a460-27ffd2a3e5ee")
+		(uuid "8c9fba91-f352-4104-b73e-b64a770536b9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 118.11 152.4 270)
 			(effects
@@ -2186,7 +2083,7 @@
 			)
 			(justify right)
 		)
-		(uuid "a9c91bc6-22a3-472f-ba78-4bac1ae3bd6d")
+		(uuid "4cc5d74e-1cf6-4554-b851-6e0ab8c186bc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 120.65 152.4 270)
 			(effects
@@ -2206,7 +2103,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ffd45c25-9a27-4b1a-a534-2ef04afbb866")
+		(uuid "b82e75c0-ea30-4bb6-b62e-cd5457d6b9f9")
 		(property "Reference" "V1"
 			(at 118.11 127 0)
 			(effects
@@ -2250,9 +2147,45 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 118.11 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 118.11 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "ECC83"
+			(at 118.11 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=A1 2=G1 3=K1 6=A2 7=G2 8=K2"
+			(at 118.11 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "V1")
 					(unit 1)
 				)
@@ -2267,7 +2200,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ea24ff0d-70b1-429a-9c19-46eed600d2b5")
+		(uuid "11fd2e87-2592-48c4-93a3-b90430179dfd")
 		(property "Reference" "#PWR013"
 			(at 133.35 134.62 0)
 			(effects
@@ -2314,7 +2247,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -2329,7 +2262,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8a566b38-51b7-4ab5-9ef0-ba9466da33b0")
+		(uuid "f20c4b04-a48a-476c-a302-4258f176d7f9")
 		(property "Reference" "#PWR014"
 			(at 133.35 137.16 0)
 			(effects
@@ -2376,7 +2309,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "#PWR014")
 					(unit 1)
 				)
@@ -2392,7 +2325,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8d0ee308-4183-4a67-bbb4-dd6a375b39ef")
+		(uuid "3f3ae1bb-3f7e-4459-ab1d-302690cd18a5")
 	)
 	(wire
 		(pts
@@ -2403,7 +2336,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "38e3fe5b-af13-45b4-94f1-1a96a6a3d851")
+		(uuid "c89c8f34-0237-4cef-bb6a-2840597696c3")
 	)
 	(global_label "B_V1"
 		(shape passive)
@@ -2415,7 +2348,7 @@
 			)
 			(justify left)
 		)
-		(uuid "56adc53d-a48c-43f7-8485-e66cdf73fc65")
+		(uuid "37491d33-403e-4c22-9cbd-69ad85d040c7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 157.48 130.81 90)
 			(effects
@@ -2436,7 +2369,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "75139dd4-53f8-40a5-a4e0-0ec1c059c97b")
+		(uuid "e5890fae-081e-40e9-8c1c-ecb9b5a1348d")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2446,7 +2379,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fbfcbed8-a52a-4410-a08e-f521d488650b")
+		(uuid "46e3fc35-f0e5-4a16-b551-3bedb323321e")
 		(property "Reference" "R3"
 			(at 157.48 130.81 0)
 			(effects
@@ -2490,14 +2423,43 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 157.48 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=100k"
+			(at 157.48 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R3")
 					(unit 1)
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 175.26 135.89)
+			(xy 175.26 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c32ab34-fb96-4149-a693-3cd770a56eb4")
 	)
 	(wire
 		(pts
@@ -2508,7 +2470,18 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d8879fb2-e3ce-4591-afe0-328723e723ff")
+		(uuid "e1830d95-b06e-4fdf-b042-05e92d252e99")
+	)
+	(label "V1_K"
+		(at 175.26 130.81 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd15a4f1-db8d-4209-bfb5-b6220b279b86")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2518,7 +2491,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2518c8c2-8108-4ce4-9946-8b0f895feb17")
+		(uuid "3baa6857-989a-4e59-9cc0-3bbfeaab7451")
 		(property "Reference" "R4"
 			(at 175.26 130.81 0)
 			(effects
@@ -2527,7 +2500,7 @@
 				)
 			)
 		)
-		(property "Value" "1.5k"
+		(property "Value" "1k"
 			(at 175.26 148.59 0)
 			(effects
 				(font
@@ -2562,9 +2535,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 175.26 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=1k"
+			(at 175.26 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R4")
 					(unit 1)
 				)
@@ -2579,7 +2570,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f77b4318-b838-4498-ad68-f368c95a4e47")
+		(uuid "c1252a06-0f93-4b08-9165-96b6e01b64cc")
 		(property "Reference" "#PWR015"
 			(at 175.26 143.51 0)
 			(effects
@@ -2626,142 +2617,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 191.77 143.51)
-			(xy 191.77 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40eba341-57a6-4fc6-a1f9-06604f218119")
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 191.77 139.7 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "358920bd-500e-44b5-aea5-6e2729eed0ba")
-		(property "Reference" "C4"
-			(at 191.77 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "22u 50V"
-			(at 191.77 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 191.77 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 191.77 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 191.77 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 191.77 148.59 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "676cf2bb-ef04-466e-affb-f0db0e89094e")
-		(property "Reference" "#PWR016"
-			(at 191.77 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 191.77 153.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 191.77 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 191.77 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 191.77 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -2776,7 +2633,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "37877fd0-b64a-49ea-8a53-1ac0e46ee80a")
+		(uuid "e389d81e-70a3-47ec-917b-83e5734ebf63")
 	)
 	(label "V1_A"
 		(at 218.44 130.81 90)
@@ -2787,7 +2644,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "86d2439c-bceb-4179-b7ab-8056a234e864")
+		(uuid "28d112e8-861d-4741-a672-e7efc09f2f66")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -2797,7 +2654,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f0a425b9-15ce-4f49-b089-b65fdea4d330")
+		(uuid "5cc28acd-f703-4083-ba53-c4e3029a0354")
 		(property "Reference" "C5"
 			(at 218.44 130.81 0)
 			(effects
@@ -2841,9 +2698,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 218.44 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=100n"
+			(at 218.44 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C5")
 					(unit 1)
 				)
@@ -2859,7 +2734,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9af1b885-d001-47ae-b9f1-5dc75c58b5d9")
+		(uuid "70990b71-d03e-4bc3-b66b-2d7266c693ac")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2869,7 +2744,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7d7e3668-dadc-499b-8c4d-ee3dd978f2ad")
+		(uuid "e0a5f4d0-dec3-43da-8141-ed070dcd66bc")
 		(property "Reference" "R5"
 			(at 234.95 130.81 0)
 			(effects
@@ -2913,9 +2788,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 234.95 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=470k"
+			(at 234.95 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R5")
 					(unit 1)
 				)
@@ -2930,8 +2823,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "09cc8ef5-f1cb-4896-97af-7b35ab12c626")
-		(property "Reference" "#PWR017"
+		(uuid "591ae0ab-7441-4232-a4ad-e4f728b140e9")
+		(property "Reference" "#PWR016"
 			(at 234.95 143.51 0)
 			(effects
 				(font
@@ -2977,8 +2870,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR017")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -2993,7 +2886,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2cc4181e-8ecf-49d0-9828-4f7b6402dd9a")
+		(uuid "33d143b3-b86d-4b56-80ce-2c9c73c7366f")
 	)
 	(wire
 		(pts
@@ -3004,7 +2897,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a569573a-82d9-44d6-8ed5-196be564fe6b")
+		(uuid "4d815c6f-2034-418c-8b27-11e2b3830e0c")
 	)
 	(wire
 		(pts
@@ -3015,7 +2908,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9f57b665-ed24-4e59-a2ad-ed744d2b78b7")
+		(uuid "9987740f-683d-4672-a42c-c428c7bcaac1")
 	)
 	(wire
 		(pts
@@ -3026,7 +2919,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ec25f0f7-6f6a-412e-8a75-6749a27f8f13")
+		(uuid "7cfd9cb9-0108-402c-b6e9-4b08f01da699")
 	)
 	(wire
 		(pts
@@ -3037,7 +2930,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "47694bfe-2148-4216-806f-f378e8112d22")
+		(uuid "4bc74c5f-3a9b-44dc-8557-1ac13a4e3197")
 	)
 	(wire
 		(pts
@@ -3048,7 +2941,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e9f52f5d-5b78-44b0-aba2-452ec153e1d4")
+		(uuid "95c34e67-b0ee-4416-90d7-440ac57c6584")
 	)
 	(wire
 		(pts
@@ -3059,7 +2952,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "88171401-ba7a-4b9d-8065-a5ffb77767a0")
+		(uuid "151c4c3f-4122-41cf-adef-14498cce2789")
 	)
 	(wire
 		(pts
@@ -3070,7 +2963,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7265eb7b-7e98-4279-a1a1-eb5cac007e0d")
+		(uuid "8bcf3e85-f25f-489c-8148-c7ace3225acf")
 	)
 	(label "LTP_A1"
 		(at 267.97 137.16 180)
@@ -3081,7 +2974,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "26cb5594-d5b2-40f1-a2f9-aa2eb5e78e08")
+		(uuid "e4210030-6d83-4a6f-96de-971fcaf35ca2")
 	)
 	(label "LTP_K"
 		(at 267.97 142.24 180)
@@ -3092,7 +2985,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "cdd0b0d2-e602-4b08-b26d-6c9b7ca05ab8")
+		(uuid "f1ecd18d-eb0e-4f30-bbd8-99eb5aaddb2b")
 	)
 	(label "LTP_A2"
 		(at 298.45 137.16 0)
@@ -3103,9 +2996,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8095f2de-fe5f-4cd4-835f-10d061d50447")
+		(uuid "360695b0-e192-4648-8115-df05847fc726")
 	)
-	(label "NFB"
+	(label "V2_G2"
 		(at 298.45 139.7 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3114,7 +3007,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1112f15e-ff9c-40f0-a1fe-3f9410ef9a89")
+		(uuid "68de3289-3d2d-4b26-8929-d8a6dd20f18e")
 	)
 	(label "LTP_K"
 		(at 298.45 142.24 0)
@@ -3125,7 +3018,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7a3660bd-97dd-481c-9ea9-0a9853163238")
+		(uuid "18316636-0168-47f2-8199-c6ee3caf7326")
 	)
 	(global_label "HEATER_A"
 		(shape passive)
@@ -3137,7 +3030,7 @@
 			)
 			(justify right)
 		)
-		(uuid "e73d4430-664b-4f2e-929f-cf17a37871f3")
+		(uuid "004bf4c1-94dd-4740-b4d3-16189d0cf5e4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 280.67 152.4 270)
 			(effects
@@ -3159,7 +3052,7 @@
 			)
 			(justify right)
 		)
-		(uuid "9a0a719a-5fdb-4f54-86fc-d8a4ceaaee68")
+		(uuid "639c3016-eb97-4510-b0c4-a28eeeca006d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 283.21 152.4 270)
 			(effects
@@ -3181,7 +3074,7 @@
 			)
 			(justify right)
 		)
-		(uuid "54ee7dc9-7ec8-47fe-b28b-47cc254ce9cd")
+		(uuid "4e62b644-5781-4142-ab1b-a8a073601609")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 285.75 152.4 270)
 			(effects
@@ -3201,7 +3094,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "152a8db7-9653-4b61-80c9-778e194fb07f")
+		(uuid "62632ed5-fb50-4a1f-b288-396482ca666d")
 		(property "Reference" "V2"
 			(at 283.21 127 0)
 			(effects
@@ -3245,9 +3138,45 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 283.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 283.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "ECC83"
+			(at 283.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=A1 2=G1 3=K1 6=A2 7=G2 8=K2"
+			(at 283.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "V2")
 					(unit 1)
 				)
@@ -3263,7 +3192,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7d50efd5-6679-470f-9368-341d621e7ff5")
+		(uuid "89e07c0d-ebda-4d06-afd3-c4d1bc430431")
 	)
 	(wire
 		(pts
@@ -3274,7 +3203,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "040f8f40-5513-4961-a755-61d03279ebca")
+		(uuid "797f9be0-c507-4768-91dc-a7d74ec2c2fe")
 	)
 	(global_label "B_DRV"
 		(shape passive)
@@ -3286,7 +3215,7 @@
 			)
 			(justify left)
 		)
-		(uuid "0cba6cb4-85a6-4f54-927e-cf507ff89752")
+		(uuid "6b00fa29-d773-43ad-97d2-f29e9631d2c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 327.66 130.81 90)
 			(effects
@@ -3307,7 +3236,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "b4f9dd2d-19b2-4839-b8f0-659372ec6298")
+		(uuid "d278e925-674f-41a0-8ebc-98901344626d")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -3317,7 +3246,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4ec92abe-3ab9-4e5e-90bf-afbb7e4aa9cc")
+		(uuid "f50cfeca-cdaa-4c42-9ae6-47c6c1b928b7")
 		(property "Reference" "R6"
 			(at 327.66 130.81 0)
 			(effects
@@ -3361,9 +3290,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 327.66 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=82k"
+			(at 327.66 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R6")
 					(unit 1)
 				)
@@ -3379,7 +3326,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9aa7dc11-d6c9-4747-b22e-47ee91f707d8")
+		(uuid "be8ce36e-05d8-4291-8199-e4d4f9312aaf")
 	)
 	(wire
 		(pts
@@ -3390,7 +3337,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "833b841c-16a2-4319-965e-0de31a783d02")
+		(uuid "4da8e19c-0419-427c-97d4-2b42c277ee57")
 	)
 	(global_label "B_DRV"
 		(shape passive)
@@ -3402,7 +3349,7 @@
 			)
 			(justify left)
 		)
-		(uuid "a25bc62c-d546-42a3-8a63-06feae80da1a")
+		(uuid "6a6fcb86-1d94-4642-a9bc-be69ea463144")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 345.44 130.81 90)
 			(effects
@@ -3423,7 +3370,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "051e1b81-e67e-4cbc-b697-04274ed066ab")
+		(uuid "de391b6b-4269-4e85-8057-7f4fbe4f8acf")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -3433,7 +3380,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b89baac6-fcb0-4edb-956e-f433d62568c0")
+		(uuid "407bd199-37cc-4dae-a1c9-f0d079d84078")
 		(property "Reference" "R7"
 			(at 345.44 130.81 0)
 			(effects
@@ -3477,9 +3424,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 345.44 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=82k"
+			(at 345.44 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R7")
 					(unit 1)
 				)
@@ -3495,7 +3460,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4020f28d-f864-4a32-a478-fd5f13c8f6e6")
+		(uuid "09044587-aa31-42b9-ae9a-fbafe0b2b015")
 	)
 	(wire
 		(pts
@@ -3506,7 +3471,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8a9db266-3f37-427a-a82a-249832cdfe49")
+		(uuid "6511c2a4-80a2-4c63-8938-09d69ff3a25c")
 	)
 	(label "LTP_K"
 		(at 361.95 130.81 90)
@@ -3517,7 +3482,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d04ec50e-8c8d-49c9-89d6-0ac72dfa0f24")
+		(uuid "e57ca99f-16a6-4974-a28d-53d00270cd5c")
 	)
 	(global_label "VBIAS_NEG"
 		(shape passive)
@@ -3529,7 +3494,7 @@
 			)
 			(justify right)
 		)
-		(uuid "baa621b5-5689-4a6c-ae9f-43a557426bae")
+		(uuid "e9f5f470-42a1-46ec-9e20-02500e016a2f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 361.95 148.59 270)
 			(effects
@@ -3549,7 +3514,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "530bf6f9-8957-485c-8dd5-1a7ed4601228")
+		(uuid "aec50464-0a14-4249-9987-cfb91536237d")
 		(property "Reference" "R8"
 			(at 361.95 130.81 0)
 			(effects
@@ -3593,9 +3558,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 361.95 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=33k"
+			(at 361.95 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R8")
 					(unit 1)
 				)
@@ -3611,7 +3594,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4e77ada9-d241-492d-96c2-a0bbb590bdf0")
+		(uuid "6a45e2f6-a679-4146-96fc-00a4c5f61ccc")
 	)
 	(wire
 		(pts
@@ -3622,7 +3605,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aa9951ed-4222-460c-bc04-5367e17aed5b")
+		(uuid "826f1466-47fa-4b24-9fd3-77013da1cf96")
 	)
 	(label "OT_S_HI"
 		(at 392.43 130.81 90)
@@ -3633,9 +3616,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e81c7cb7-c1ab-4fda-9a11-c6914b049eff")
+		(uuid "7089230a-d111-491e-bdc9-6347de9aec32")
 	)
-	(label "NFB"
+	(label "V1_K"
 		(at 392.43 148.59 270)
 		(fields_autoplaced yes)
 		(effects
@@ -3644,7 +3627,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "5cf3e8d2-e1c4-4d67-b751-d9abb902385f")
+		(uuid "2c81876f-8f8c-4e87-af37-afb5a3b2a4b2")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -3654,7 +3637,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4a51e9e2-6c9e-42ce-a6ac-6928211bff94")
+		(uuid "39f926cf-8bee-485a-a5b6-af9dd72aca61")
 		(property "Reference" "R9"
 			(at 392.43 130.81 0)
 			(effects
@@ -3663,7 +3646,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "120k"
 			(at 392.43 148.59 0)
 			(effects
 				(font
@@ -3698,9 +3681,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 392.43 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=120k"
+			(at 392.43 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R9")
 					(unit 1)
 				)
@@ -3716,7 +3717,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "31c52ba9-6532-4ba2-8db3-cb97d3cc6bc4")
+		(uuid "29c6e3d2-6c96-4071-99b3-cd2f71e0c719")
 	)
 	(wire
 		(pts
@@ -3727,7 +3728,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8aaad2f3-3c5f-4326-a125-916478844aee")
+		(uuid "8b788a45-ee97-490c-8496-75c3c9d5fa02")
 	)
 	(label "OT_S_HI"
 		(at 410.21 130.81 90)
@@ -3738,9 +3739,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c1f588d7-4ad0-46db-8434-e267ac902af7")
+		(uuid "820aed0f-5190-4421-80c6-56a217817608")
 	)
-	(label "NFB"
+	(label "V1_K"
 		(at 410.21 148.59 270)
 		(fields_autoplaced yes)
 		(effects
@@ -3749,7 +3750,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ab22ed13-4154-40e3-b33c-5927f382b48e")
+		(uuid "03fa0d91-cdeb-4278-b99d-2eba187fe577")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -3759,7 +3760,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5347665b-4598-4dda-9b19-5fdc64197f26")
+		(uuid "9a217e00-7ea3-4ed7-81bf-f4dc379138f6")
 		(property "Reference" "C6"
 			(at 410.21 130.81 0)
 			(effects
@@ -3768,7 +3769,7 @@
 				)
 			)
 		)
-		(property "Value" "47p"
+		(property "Value" "18p"
 			(at 410.21 148.59 0)
 			(effects
 				(font
@@ -3803,9 +3804,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 410.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=18p"
+			(at 410.21 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C6")
 					(unit 1)
 				)
@@ -3821,7 +3840,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f8b191dd-0f95-4edc-9e75-e5c2eb428a8f")
+		(uuid "e12ed17d-2432-450c-bb31-0e1f666d7d23")
 	)
 	(wire
 		(pts
@@ -3832,9 +3851,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d9c3046b-7683-455d-8f4d-42f1d746cce8")
+		(uuid "d3aa7d6e-f346-4119-9371-fb02dbe15e0b")
 	)
-	(label "NFB"
+	(label "V2_G2"
 		(at 426.72 130.81 90)
 		(fields_autoplaced yes)
 		(effects
@@ -3843,7 +3862,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c8fcf955-5961-4a26-9f48-cbdd6a8d8079")
+		(uuid "53cb6262-a144-4c36-9bdf-76b413bb4a36")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -3853,7 +3872,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3e3d9e39-147b-4067-b8c9-f7cb0f6cc225")
+		(uuid "8549e39a-824b-4caa-ba4c-bc35b9496b2c")
 		(property "Reference" "R10"
 			(at 426.72 130.81 0)
 			(effects
@@ -3862,7 +3881,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470k"
 			(at 426.72 148.59 0)
 			(effects
 				(font
@@ -3897,9 +3916,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 426.72 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=470k"
+			(at 426.72 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R10")
 					(unit 1)
 				)
@@ -3914,8 +3951,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8b10fabd-005b-42bc-af64-54a108e3869f")
-		(property "Reference" "#PWR018"
+		(uuid "9b2ad4c5-6536-42d8-bbed-abe1623b58b6")
+		(property "Reference" "#PWR017"
 			(at 426.72 143.51 0)
 			(effects
 				(font
@@ -3961,8 +3998,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR018")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -3977,9 +4014,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cd24e7a1-0797-4e63-91aa-2ed6a622274a")
+		(uuid "c309cf3d-8f0c-4bc5-ad92-be82f45f6808")
 	)
-	(label "LTP_A1"
+	(label "LTP_A2"
 		(at 30.48 231.14 90)
 		(fields_autoplaced yes)
 		(effects
@@ -3988,7 +4025,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "150af064-4e69-45b4-876b-343bb87f7ccc")
+		(uuid "249154ad-c113-469d-8851-b3d5145c1710")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -3998,7 +4035,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b2f44c32-9d13-485d-be02-1ec694b677c7")
+		(uuid "d854d85e-59a1-47b2-bb85-907eff7e8628")
 		(property "Reference" "C7"
 			(at 30.48 231.14 0)
 			(effects
@@ -4042,9 +4079,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 30.48 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=220n"
+			(at 30.48 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C7")
 					(unit 1)
 				)
@@ -4060,7 +4115,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bd2fe5ac-d144-4d92-9a93-8e2de3adf411")
+		(uuid "9b28b4ae-fd1c-4d41-a2eb-7e156134392a")
 	)
 	(wire
 		(pts
@@ -4071,9 +4126,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "66f0b61e-8f7f-43ef-a892-e6cb4e81fbb6")
+		(uuid "c6db5701-8bd1-4776-8542-48771bac2c4b")
 	)
-	(label "LTP_A2"
+	(label "LTP_A1"
 		(at 46.99 231.14 90)
 		(fields_autoplaced yes)
 		(effects
@@ -4082,7 +4137,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1b592fe3-50ca-499e-9196-b51a17f03a5d")
+		(uuid "78be90d5-839f-4872-a72f-f462f925909c")
 	)
 	(label "G4_IN"
 		(at 46.99 248.92 270)
@@ -4093,7 +4148,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "58782e3a-5bc2-4460-b32a-064dc2de9dff")
+		(uuid "af76c57f-cc6f-490c-b448-49f0d3e71bc5")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4103,7 +4158,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "abd28d70-34b3-48db-98f8-366927d10440")
+		(uuid "e79703a0-52ad-44fe-9288-3808beff37ac")
 		(property "Reference" "C8"
 			(at 46.99 231.14 0)
 			(effects
@@ -4147,9 +4202,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 46.99 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=220n"
+			(at 46.99 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C8")
 					(unit 1)
 				)
@@ -4165,7 +4238,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "df153fb3-9545-4faf-a831-e41db4ec7116")
+		(uuid "5fcef235-c48f-4f7f-bfcc-b266afbb5372")
 	)
 	(label "BIAS_A"
 		(at 69.85 248.92 270)
@@ -4176,7 +4249,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a642da83-1547-476e-9db9-30b19fe6aaa8")
+		(uuid "8d3c2af8-497e-4ce4-8603-370b886e848f")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4186,7 +4259,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "17a2d33d-5452-481e-b1a8-f66b483c2cf3")
+		(uuid "d2185ecc-0ca1-4626-8cf6-bd66af4c5c6c")
 		(property "Reference" "R11"
 			(at 69.85 231.14 0)
 			(effects
@@ -4230,9 +4303,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 69.85 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=100k"
+			(at 69.85 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R11")
 					(unit 1)
 				)
@@ -4248,7 +4339,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1f9dc569-224d-4028-9a6e-81ac72a33efa")
+		(uuid "ac53115a-c862-4584-a2d1-66e2bbb577ce")
 	)
 	(wire
 		(pts
@@ -4259,7 +4350,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "10af0274-3a34-4b9c-8325-ede6f011a2ef")
+		(uuid "57f6e880-b6f8-435c-9d47-722d272d03ef")
 	)
 	(label "G4_IN"
 		(at 87.63 231.14 90)
@@ -4270,7 +4361,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a76e8e5e-1028-430d-8137-da3fa0e52611")
+		(uuid "1cd6a5ac-03a5-40d1-8e5f-893dc8ff51b8")
 	)
 	(label "BIAS_B"
 		(at 87.63 248.92 270)
@@ -4281,7 +4372,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1b13f88c-c6c5-4b9e-bc85-50f73679a102")
+		(uuid "40c96827-7603-4b14-b50a-3c51d6471110")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4291,7 +4382,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b3f52942-b517-4acd-b44e-a07c7b0d58c8")
+		(uuid "e2344a1e-a39a-4038-947e-711388741020")
 		(property "Reference" "R12"
 			(at 87.63 231.14 0)
 			(effects
@@ -4335,9 +4426,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 87.63 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=100k"
+			(at 87.63 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R12")
 					(unit 1)
 				)
@@ -4352,7 +4461,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d868064b-788f-4246-9b40-ce8ab2656609")
+		(uuid "ae80d189-0201-4d9c-9bd7-b3866278e80e")
 		(property "Reference" "R13"
 			(at 110.49 231.14 0)
 			(effects
@@ -4396,9 +4505,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 110.49 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=5k"
+			(at 110.49 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R13")
 					(unit 1)
 				)
@@ -4414,7 +4541,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9ebf9cf7-9ae8-478c-a3ae-48df27a73212")
+		(uuid "931eee4b-cccb-4792-afe4-1a667894e204")
 	)
 	(wire
 		(pts
@@ -4425,7 +4552,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e98a3b53-3725-4d6a-855c-a0b47ffcd7f1")
+		(uuid "698de394-91bc-4593-bd05-1262ac4fe3a3")
 	)
 	(label "G4_IN"
 		(at 127 231.14 90)
@@ -4436,7 +4563,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "15940afe-90fd-4e92-8f47-f047a021827b")
+		(uuid "a97bd9d1-9c56-48dd-b610-394c674fc4e3")
 	)
 	(label "V4_G1"
 		(at 127 248.92 270)
@@ -4447,7 +4574,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e276f047-fdf8-451d-9929-1eab161a2224")
+		(uuid "7a920ca6-22b5-45e3-bbdb-3376e4d66ee2")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4457,7 +4584,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "34f705f8-8665-4cab-9fd0-07d34861fa1f")
+		(uuid "5e4b3d74-93e2-4355-80d3-dd0d2e4409be")
 		(property "Reference" "R14"
 			(at 127 231.14 0)
 			(effects
@@ -4501,9 +4628,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 127 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=5k"
+			(at 127 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R14")
 					(unit 1)
 				)
@@ -4519,7 +4664,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "11bd1e16-e459-4b13-8dd1-29e0a068dee4")
+		(uuid "6a52d9f0-1e42-4fc6-96f8-f19a8a35d9eb")
 	)
 	(wire
 		(pts
@@ -4530,7 +4675,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3b1b87ac-148f-401b-9335-d5d57c435ed3")
+		(uuid "6450c88b-67a0-4f0f-9a97-a6ca3b57056d")
 	)
 	(global_label "VBIAS_NEG"
 		(shape passive)
@@ -4542,7 +4687,7 @@
 			)
 			(justify left)
 		)
-		(uuid "a6ad041e-7d80-469a-8a81-ca95db399835")
+		(uuid "0ab11c08-c714-46e3-b0de-4811e2145da7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 44.45 50.8 90)
 			(effects
@@ -4563,7 +4708,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "499f3551-4b81-4108-ad66-5de19b41fe05")
+		(uuid "83d2bef5-8b62-4f3b-96ae-4c862c8d2605")
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer_Trim")
@@ -4573,7 +4718,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "54f710ea-459c-4c20-a79e-d756faec5914")
+		(uuid "4ad31342-ad14-44a2-a54f-428012c958a3")
 		(property "Reference" "RV1"
 			(at 44.45 50.8 0)
 			(effects
@@ -4617,9 +4762,54 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "POT_TRIM"
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=1 2=2 3=3"
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "R=10k POS=0.5"
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "RV1")
 					(unit 1)
 				)
@@ -4635,7 +4825,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f670a158-3d11-449a-98a3-12f6bd475a53")
+		(uuid "7801cb53-fd2f-47b0-85cb-2e55a5b8c28d")
 	)
 	(wire
 		(pts
@@ -4646,7 +4836,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "68ae4a5e-c55c-415a-8ae5-8f0e7b6d73a1")
+		(uuid "a2d36e98-227b-4319-b7de-8395eed118ad")
 	)
 	(global_label "VBIAS_NEG"
 		(shape passive)
@@ -4658,7 +4848,7 @@
 			)
 			(justify left)
 		)
-		(uuid "5e8ac0a6-2343-45b6-8ef5-93b85a041556")
+		(uuid "2bbb93da-e16d-4018-8b7a-6103839a8c9e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 124.46 50.8 90)
 			(effects
@@ -4679,7 +4869,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "74b370f4-784c-4f1d-80fb-ebe44c3097b8")
+		(uuid "e9a557f2-793a-418d-a1e7-f5b1b4c128f6")
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer_Trim")
@@ -4689,7 +4879,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ee039678-8e77-49c7-bb3f-190e3c0f26e3")
+		(uuid "78708930-22c5-4129-a6c3-acacafaf1f08")
 		(property "Reference" "RV2"
 			(at 124.46 50.8 0)
 			(effects
@@ -4733,9 +4923,54 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 124.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 124.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "POT_TRIM"
+			(at 124.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=1 2=2 3=3"
+			(at 124.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "R=10k POS=0.5"
+			(at 124.46 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "RV2")
 					(unit 1)
 				)
@@ -4751,7 +4986,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4d3c441d-c3dd-4bad-a537-e854caf307fa")
+		(uuid "f8a4a379-9f9f-4efe-9fe5-24d6fe5bf1fd")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4761,7 +4996,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ec423eb6-3ca1-44da-9c06-441d67080e0a")
+		(uuid "e895a0d1-b9b5-4d86-91fc-478c3ab471b5")
 		(property "Reference" "R15"
 			(at 69.85 50.8 0)
 			(effects
@@ -4770,7 +5005,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "15k"
 			(at 69.85 68.58 0)
 			(effects
 				(font
@@ -4805,9 +5040,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 69.85 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=15k"
+			(at 69.85 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R15")
 					(unit 1)
 				)
@@ -4822,8 +5075,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7241f65f-c59f-4384-8aa4-00df291ab7fa")
-		(property "Reference" "#PWR019"
+		(uuid "009c076a-6786-46cd-962e-7ed1c76aeda5")
+		(property "Reference" "#PWR018"
 			(at 69.85 63.5 0)
 			(effects
 				(font
@@ -4869,8 +5122,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR019")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -4885,7 +5138,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e5d7b2f3-cbab-42ed-93e5-e42466a4e1a8")
+		(uuid "f79e1f5e-a776-4c7f-aa9c-f4a54613c691")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4895,7 +5148,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b2580c3b-a55a-41a8-9136-8a5d999baa51")
+		(uuid "0261cef5-70be-4f33-833c-4cdefcbeca25")
 		(property "Reference" "R16"
 			(at 149.86 50.8 0)
 			(effects
@@ -4904,7 +5157,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "15k"
 			(at 149.86 68.58 0)
 			(effects
 				(font
@@ -4939,9 +5192,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 149.86 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=15k"
+			(at 149.86 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R16")
 					(unit 1)
 				)
@@ -4956,8 +5227,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "00226fc5-4e3f-4c8f-9bd1-6c0142545df9")
-		(property "Reference" "#PWR020"
+		(uuid "79626750-615d-4297-8384-6548db941def")
+		(property "Reference" "#PWR019"
 			(at 149.86 63.5 0)
 			(effects
 				(font
@@ -5003,8 +5274,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR020")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -5019,7 +5290,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "57600d6f-f6de-4954-8887-b7fcf3c01b6c")
+		(uuid "9f86f1f2-cc8a-4ef9-89be-7953a8d50f6b")
 	)
 	(wire
 		(pts
@@ -5030,7 +5301,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "827dbef3-8e88-4d77-89b1-9332bab408ec")
+		(uuid "97591528-f3dc-4485-adf4-d734e847c201")
 	)
 	(label "BIAS_A"
 		(at 91.44 50.8 90)
@@ -5041,7 +5312,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "00cd2487-d2d3-4a54-8890-bd8ff5094fe2")
+		(uuid "cda35168-b70f-4d69-bbf7-c14cf9bdc043")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -5051,7 +5322,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8499cdc0-4c38-41b3-a8cd-f9f1c1eea98e")
+		(uuid "06d38e7b-bcc3-4843-9c6a-50235a948c75")
 		(property "Reference" "C9"
 			(at 91.44 50.8 0)
 			(effects
@@ -5095,9 +5366,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 91.44 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=1u"
+			(at 91.44 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C9")
 					(unit 1)
 				)
@@ -5112,8 +5401,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "098d5136-a4ec-40ce-b2ca-a95b3389637f")
-		(property "Reference" "#PWR021"
+		(uuid "3ddff077-f80a-4e31-ac32-784dac4b9a32")
+		(property "Reference" "#PWR020"
 			(at 91.44 63.5 0)
 			(effects
 				(font
@@ -5159,8 +5448,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR021")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -5175,7 +5464,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2dad6129-2ec3-4e18-8b4b-ed02717365be")
+		(uuid "f9455dd0-6459-4112-b0a2-10ecac6fd13a")
 	)
 	(wire
 		(pts
@@ -5186,7 +5475,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8fbf4d7b-4e50-42c8-8131-6b87b1d6bcc4")
+		(uuid "d9627c08-af10-44c2-9f0b-bd03c33f831f")
 	)
 	(label "BIAS_B"
 		(at 171.45 50.8 90)
@@ -5197,7 +5486,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "20a0d0b5-4a98-444a-9c98-a6f717563abe")
+		(uuid "49fde22d-04b4-4a67-9dc8-1b4d0c7458d1")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -5207,7 +5496,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3e14fafc-0682-4b48-85b7-3899a981360c")
+		(uuid "0e1df226-712c-4e20-89be-ba4c23b750dd")
 		(property "Reference" "C10"
 			(at 171.45 50.8 0)
 			(effects
@@ -5251,9 +5540,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "C"
+			(at 171.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "c=1u"
+			(at 171.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "C10")
 					(unit 1)
 				)
@@ -5268,8 +5575,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7342c48a-80ed-4751-9885-5f90d51fe9e8")
-		(property "Reference" "#PWR022"
+		(uuid "0cd02c10-3184-445e-9a59-bde26fc0c869")
+		(property "Reference" "#PWR021"
 			(at 171.45 63.5 0)
 			(effects
 				(font
@@ -5315,8 +5622,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR022")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -5331,7 +5638,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "90a4122e-830a-421c-a194-adf0286d06be")
+		(uuid "52d21b64-e2c1-4384-8dd8-fac7ecf660dc")
 	)
 	(wire
 		(pts
@@ -5342,7 +5649,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b220164-1d65-4fc8-bb20-3e0ac5b17a2a")
+		(uuid "5c73d5e1-c759-4f55-93a9-af15066b6a69")
 	)
 	(wire
 		(pts
@@ -5353,7 +5660,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c7df21a0-f2b8-4cfa-a6ca-4198bb54b84e")
+		(uuid "11b67cfe-5450-4fc7-baae-f2f803d6a9bc")
 	)
 	(wire
 		(pts
@@ -5364,7 +5671,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "18f57e05-2933-4835-8513-03db994cbefc")
+		(uuid "799d06f6-8c31-4b80-86f7-317ef89abb83")
 	)
 	(label "OT_A1"
 		(at 190.5 237.49 0)
@@ -5375,7 +5682,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "628a6763-2c79-4763-b972-f8f0b19be055")
+		(uuid "2ce470ad-0c06-4f57-b54a-66d6462220b7")
 	)
 	(label "V3_K"
 		(at 160.02 240.03 180)
@@ -5386,7 +5693,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a10d8a32-f617-495c-9f04-840dc9a66a25")
+		(uuid "820d5b4a-5a7e-4d5e-8d59-3de42308d1c6")
 	)
 	(global_label "HEATER_A"
 		(shape passive)
@@ -5398,7 +5705,7 @@
 			)
 			(justify right)
 		)
-		(uuid "58d874a2-0602-4871-a78d-fa76bcca5183")
+		(uuid "fb58e01b-1fae-4727-98dc-67f93bab4fa0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 175.26 252.73 270)
 			(effects
@@ -5420,7 +5727,7 @@
 			)
 			(justify right)
 		)
-		(uuid "a162d4d8-ebf2-4b80-ab41-f1bc5f1c668e")
+		(uuid "c6bd5a7b-36cc-43ae-a1bb-2bff167149c9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 177.8 252.73 270)
 			(effects
@@ -5440,7 +5747,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f1ed4a94-7a6f-4660-a751-d01a38dd5f8a")
+		(uuid "16e80822-ab57-42dc-9e4b-811cb73cd5bc")
 		(property "Reference" "V3"
 			(at 175.26 224.79 0)
 			(effects
@@ -5484,9 +5791,45 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 175.26 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 175.26 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "KT88"
+			(at 175.26 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "3=A 4=G2 5=G1 8=K"
+			(at 175.26 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "V3")
 					(unit 1)
 				)
@@ -5502,7 +5845,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c02787a8-91a6-4eb8-ae1f-75410b897f33")
+		(uuid "3a41178d-b4d7-479a-8897-50d369a7ebf2")
 	)
 	(wire
 		(pts
@@ -5513,7 +5856,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b254c8a5-8881-4004-9a61-9000de283f56")
+		(uuid "d6699efd-27a8-45f7-ae29-04c0ae74a3f3")
 	)
 	(wire
 		(pts
@@ -5524,7 +5867,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8a0cb3cb-fa20-42b3-9959-5b3abc31404b")
+		(uuid "ab53739a-4995-4fda-ada4-53c764de8b72")
 	)
 	(wire
 		(pts
@@ -5535,7 +5878,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0509c1c7-e69b-4581-9e71-b74c8121d17d")
+		(uuid "b59ade7c-fb3e-41bf-aa57-0160f0322358")
 	)
 	(wire
 		(pts
@@ -5546,7 +5889,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ad8772e0-5830-4b67-91e1-8755f161f0c5")
+		(uuid "29001d4a-b22b-4f2c-a043-4c31b31dc612")
 	)
 	(label "OT_A2"
 		(at 240.03 237.49 0)
@@ -5557,7 +5900,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ec4f0ae9-39f7-4fa2-a9cc-70e5c2647843")
+		(uuid "cfb5945f-a208-4f47-9c2b-2e2705d78c53")
 	)
 	(label "V4_G1"
 		(at 209.55 237.49 180)
@@ -5568,7 +5911,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a81030e9-a04d-4f61-916d-48dc137b2026")
+		(uuid "dd755e04-ab93-4a19-84d2-896e05842034")
 	)
 	(label "V4_K"
 		(at 209.55 240.03 180)
@@ -5579,7 +5922,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "078dde91-fb48-4f26-a808-e545674617e5")
+		(uuid "cfbdb151-42bb-4e0d-8976-b05bcd08689b")
 	)
 	(global_label "HEATER_A"
 		(shape passive)
@@ -5591,7 +5934,7 @@
 			)
 			(justify right)
 		)
-		(uuid "c0d71241-6899-410c-940a-c907eddedc10")
+		(uuid "08b09a18-7a4c-4ace-90a0-8b26658e485b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 224.79 252.73 270)
 			(effects
@@ -5613,7 +5956,7 @@
 			)
 			(justify right)
 		)
-		(uuid "8aa87e36-9d1e-40f1-be49-6aa29f57d186")
+		(uuid "bd6971af-4aa2-48e6-bc55-61dd051d9291")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 227.33 252.73 270)
 			(effects
@@ -5633,7 +5976,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "30de88c5-3a1f-4978-a27b-8c8acc9a68a7")
+		(uuid "edf718ea-ee4c-4da7-a373-66fd9a8d20fc")
 		(property "Reference" "V4"
 			(at 224.79 224.79 0)
 			(effects
@@ -5677,9 +6020,45 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 224.79 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 224.79 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "KT88"
+			(at 224.79 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "3=A 4=G2 5=G1 8=K"
+			(at 224.79 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "V4")
 					(unit 1)
 				)
@@ -5694,7 +6073,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ad7a6e2-69e7-46db-9c06-108a72bb3992")
+		(uuid "36e4db4f-f2c1-4a97-9e97-84200d287e1b")
 		(property "Reference" "R17"
 			(at 270.51 231.14 0)
 			(effects
@@ -5738,9 +6117,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 270.51 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=470"
+			(at 270.51 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R17")
 					(unit 1)
 				)
@@ -5755,7 +6152,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a88f2695-6875-496e-a12e-3c61366562d3")
+		(uuid "964f57cb-ef58-4fcf-a612-b8c7b92f811c")
 		(property "Reference" "R18"
 			(at 287.02 231.14 0)
 			(effects
@@ -5799,9 +6196,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 287.02 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=470"
+			(at 287.02 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R18")
 					(unit 1)
 				)
@@ -5817,7 +6232,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "400629b1-7e73-48ed-8f40-3b5245f5042d")
+		(uuid "d46fc84d-10d8-4209-a530-7fa249dec794")
 	)
 	(wire
 		(pts
@@ -5828,7 +6243,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e537ce42-083e-4171-990e-04a9c9738b10")
+		(uuid "99afd2d5-18d0-4306-9051-aaefa01a773e")
 	)
 	(label "V3_K"
 		(at 303.53 231.14 90)
@@ -5839,7 +6254,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "998ce0d1-61fd-4973-873c-ffb8b7cb6f8f")
+		(uuid "60258020-3c1d-41ca-bd78-865e8d7646b6")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5849,7 +6264,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b5ca5c18-8f8a-4b40-92ec-eff19951e35e")
+		(uuid "8f856d34-8722-4ee2-9484-32970105a55a")
 		(property "Reference" "R19"
 			(at 303.53 231.14 0)
 			(effects
@@ -5893,9 +6308,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 303.53 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=1"
+			(at 303.53 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R19")
 					(unit 1)
 				)
@@ -5910,8 +6343,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ba753408-41f4-433b-b5f9-06b5a8d96ca5")
-		(property "Reference" "#PWR023"
+		(uuid "ce73795e-7228-43e5-b0f4-c44bbc281360")
+		(property "Reference" "#PWR022"
 			(at 303.53 243.84 0)
 			(effects
 				(font
@@ -5957,8 +6390,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR023")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -5973,7 +6406,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "23725b3c-1517-4c8a-9eb5-ef493b371a53")
+		(uuid "6bf666cc-e392-4631-9d44-dd17b42aeeb2")
 	)
 	(wire
 		(pts
@@ -5984,7 +6417,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9664c424-4865-4de1-9a79-833c82837e8d")
+		(uuid "bf53e5e1-77b1-41bb-a45f-6fa7b4a82278")
 	)
 	(label "V4_K"
 		(at 321.31 231.14 90)
@@ -5995,7 +6428,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c56c1367-fd9d-44d1-850f-90976f3c26b6")
+		(uuid "2b72cd7b-0d4c-4853-a566-56349ed0eef9")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6005,7 +6438,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "55c8f216-15ad-434f-bb51-b1194be366f6")
+		(uuid "cfbda6fd-09bd-4b34-8d7b-531dd50bf11c")
 		(property "Reference" "R20"
 			(at 321.31 231.14 0)
 			(effects
@@ -6049,9 +6482,27 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "R"
+			(at 321.31 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=1"
+			(at 321.31 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "R20")
 					(unit 1)
 				)
@@ -6066,8 +6517,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "38a04422-9e6a-46c4-a6ef-7a01c1483c1b")
-		(property "Reference" "#PWR024"
+		(uuid "4e603e36-7271-4b2c-aebe-b168eae1f6c3")
+		(property "Reference" "#PWR023"
 			(at 321.31 243.84 0)
 			(effects
 				(font
@@ -6113,8 +6564,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR024")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -6129,7 +6580,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9c488a70-5b2a-4d22-968f-0cf5762fab33")
+		(uuid "d0974d0c-fe3a-4ac3-8418-4d8cbde9e428")
 	)
 	(wire
 		(pts
@@ -6140,7 +6591,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4e0aca4a-fd20-4b97-8c5a-4e77e89c0ef3")
+		(uuid "94136113-0de0-49a9-a376-ed9fc3de8706")
 	)
 	(wire
 		(pts
@@ -6151,7 +6602,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ed7c79c0-ab51-49ca-9d07-342137ac15a4")
+		(uuid "4be9edad-bd39-46ec-9330-fd3e6c07e1a7")
 	)
 	(wire
 		(pts
@@ -6162,7 +6613,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a7d99a75-4e55-40d5-80f9-d3e227202190")
+		(uuid "2841436a-88c7-4f56-ba06-db3fb0f52e56")
 	)
 	(wire
 		(pts
@@ -6173,7 +6624,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "056e9162-8fc9-4b62-9f5d-fcfc33f6de29")
+		(uuid "c3be3402-5fd7-4624-89ad-513c76a694b3")
 	)
 	(label "OT_A1"
 		(at 354.33 234.95 180)
@@ -6184,7 +6635,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "551c031d-c96a-4fc0-9add-5392927fe4b5")
+		(uuid "70af4082-6196-4300-8c0f-00a7ced7a531")
 	)
 	(global_label "B_PLUS"
 		(shape passive)
@@ -6196,7 +6647,7 @@
 			)
 			(justify right)
 		)
-		(uuid "a2966388-1238-44cc-ad86-137261e5aff3")
+		(uuid "1204c3ca-7e5f-4352-9156-5e161137fcc7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 354.33 240.03 180)
 			(effects
@@ -6217,7 +6668,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f3ba0eec-b784-40ca-bd1a-80c3b7801c61")
+		(uuid "ba180fb3-a72c-4d12-96b8-77005f08a129")
 	)
 	(label "OT_S_HI"
 		(at 384.81 234.95 0)
@@ -6228,7 +6679,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "45f19006-1ea1-4e42-90a3-683b91a1a4c0")
+		(uuid "bc365c8e-34a7-4698-8286-20f737d3983c")
 	)
 	(symbol
 		(lib_id "amplikt88:OT_PP_UL")
@@ -6238,7 +6689,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cd1e65cc-fd8e-4425-9f4b-a1750b4d552d")
+		(uuid "9e2ff7d5-d11c-46d0-8bc3-d3ccc68d17ca")
 		(property "Reference" "TR2"
 			(at 369.57 229.87 0)
 			(effects
@@ -6282,9 +6733,54 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" "SUBCKT"
+			(at 369.57 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Library" "${KIPRJMOD}/spice/amplikt88.lib"
+			(at 369.57 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Name" "OT_PP_UL"
+			(at 369.57 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=A1 2=UL1 3=CT 4=UL2 5=A2 6=SHI 7=SLO"
+			(at 369.57 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "LH=10 RATIO=22.4"
+			(at 369.57 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "TR2")
 					(unit 1)
 				)
@@ -6299,8 +6795,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "580c10a4-b2cb-496c-81cc-c06438a574de")
-		(property "Reference" "#PWR025"
+		(uuid "910a914c-2091-42d2-8ac6-26db500e7d6a")
+		(property "Reference" "#PWR024"
 			(at 384.81 232.41 0)
 			(effects
 				(font
@@ -6346,8 +6842,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR025")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -6362,7 +6858,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "68d0520a-3c0f-45bc-8223-ba86e5cff586")
+		(uuid "18b55899-b85a-4f1e-b9b1-da820fde4e38")
 	)
 	(wire
 		(pts
@@ -6373,7 +6869,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9bdd5896-08e9-496c-9f21-7c111462c869")
+		(uuid "f91d0595-8e04-4808-9e38-33b3ef749857")
 	)
 	(label "OT_S_HI"
 		(at 410.21 240.03 180)
@@ -6384,17 +6880,17 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "83583ddb-3478-41ad-87b7-f1d1a9319c5b")
+		(uuid "fcb8777b-787f-4d9f-93ae-e5e095d95fbc")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 420.37 240.03 0)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ed99e198-fb8b-4965-bc52-169a4ea9af5b")
+		(uuid "21492d70-14cd-4c91-8dc1-2a3f52b2248b")
 		(property "Reference" "J3"
 			(at 420.37 232.41 0)
 			(effects
@@ -6440,7 +6936,7 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
 					(reference "J3")
 					(unit 1)
 				)
@@ -6455,8 +6951,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "870ad233-0ca4-45f2-b7ff-5cea7075c323")
-		(property "Reference" "#PWR026"
+		(uuid "5e9e2367-d49f-468f-b99f-1ade22fc9fea")
+		(property "Reference" "#PWR025"
 			(at 410.21 237.49 0)
 			(effects
 				(font
@@ -6502,8 +6998,8 @@
 		)
 		(instances
 			(project "amplikt88"
-				(path "/d74c900b-2301-4076-a4f1-980738a900a4"
-					(reference "#PWR026")
+				(path "/e75b7295-4e56-496f-b218-5408a00147bd"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -6511,7 +7007,7 @@
 	)
 	(no_connect
 		(at 128.27 137.16)
-		(uuid "0c72678b-bfa6-4412-a8d6-1f23f7d4ba16")
+		(uuid "68209d04-ff89-4618-af9f-ae037a8cad44")
 	)
 	(wire
 		(pts
@@ -6522,7 +7018,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bfc4ff53-7acb-4d93-a14d-7f8bdb804b8a")
+		(uuid "9f0cee7f-63c6-40e9-8d4b-9943fcbed8e8")
 	)
 	(wire
 		(pts
@@ -6533,7 +7029,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b1054b4e-f617-4554-b740-5594df944c26")
+		(uuid "a5877311-6edc-485a-a4da-87dcbbfe5579")
 	)
 	(wire
 		(pts
@@ -6544,7 +7040,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b96bcfa8-29d9-48c6-8943-e9c5fa4ec5f5")
+		(uuid "4425a384-08fd-4ac2-bdeb-a63203d72b40")
 	)
 	(wire
 		(pts
@@ -6555,7 +7051,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7cfd466d-a254-4916-a4fe-524fb2426422")
+		(uuid "b98871b0-e5f6-4333-9268-aa26691f1b6a")
 	)
 	(wire
 		(pts
@@ -6566,7 +7062,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b334f9ed-9f56-4ba3-a07f-544b86269292")
+		(uuid "fca2e2e1-4126-403b-932c-ebf7a0d047d2")
 	)
 	(label "BIAS_A_LO"
 		(at 45.72 64.77 0)
@@ -6577,7 +7073,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4177e804-d913-42d7-961e-97377bbf636d")
+		(uuid "8703f8ff-eb26-49c5-a968-6655809c9a90")
 	)
 	(wire
 		(pts
@@ -6588,7 +7084,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2b4e0efa-626c-4c01-87cc-1ed25a585957")
+		(uuid "5192a8d9-4213-4f16-8d70-a9da2a7aeb2b")
 	)
 	(wire
 		(pts
@@ -6599,7 +7095,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e4330249-9b22-4c7f-a4c2-abed12b26c63")
+		(uuid "60267569-2eca-4f42-b69c-e4869b1430b8")
 	)
 	(wire
 		(pts
@@ -6610,7 +7106,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d75cce70-1f59-4e9c-8459-46d8dd43dea5")
+		(uuid "9839fd17-c644-4f33-a434-8d5bd2450d88")
 	)
 	(wire
 		(pts
@@ -6621,7 +7117,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "20c880e0-27e7-49d9-bc4e-0b99020366fa")
+		(uuid "6168f4e1-e3e4-4a64-b6f7-9fb0d4a55fbd")
 	)
 	(wire
 		(pts
@@ -6632,7 +7128,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b81eaf67-8167-4f0c-8091-ac9505b8c796")
+		(uuid "907923d6-78f8-4bf2-8c20-357004ec42a1")
 	)
 	(label "BIAS_B_LO"
 		(at 125.73 64.77 0)
@@ -6643,7 +7139,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "223c6609-94d3-4e80-9ee5-2403095755df")
+		(uuid "8b5c7f38-bf14-47be-b2c5-8cbad9d108ea")
 	)
 	(wire
 		(pts
@@ -6654,7 +7150,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "923c3fcd-52f0-4fe0-9d96-3184cc574610")
+		(uuid "96c9d3cf-19d2-4f00-8d11-ebd6ce5f78d3")
 	)
 	(wire
 		(pts
@@ -6665,7 +7161,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "42c55215-8de6-4ee8-bc5f-0570a175a06d")
+		(uuid "f5130c83-8603-4c0b-ad44-7ff53fb05737")
 	)
 	(wire
 		(pts
@@ -6676,7 +7172,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fb9c9f7d-5d29-4ff5-97e6-eb2f5d1f7881")
+		(uuid "f97018da-3b93-4730-8953-8f2f65d23cb0")
 	)
 	(wire
 		(pts
@@ -6687,7 +7183,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1ea48b0e-67dc-477c-8d41-f21e62049b6a")
+		(uuid "cc3f2ace-ab97-4d85-aa51-3d79180700a6")
 	)
 	(wire
 		(pts
@@ -6698,7 +7194,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8521a1b7-4092-4378-b2df-75d5ce976b3f")
+		(uuid "aa0e8eb6-2b9a-4145-b8a5-1b1969ceb3bb")
 	)
 	(wire
 		(pts
@@ -6709,7 +7205,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fe7eae1a-0166-447e-97ce-268ab43265b4")
+		(uuid "bcc2ad71-564d-42d0-8a6b-c081af4db244")
 	)
 	(label "G2_V3"
 		(at 201.93 248.92 0)
@@ -6720,7 +7216,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "01e4c776-0b80-45cd-94c3-18425464e89a")
+		(uuid "3b1eab02-a3ce-44c7-906f-aba2d0661916")
 	)
 	(wire
 		(pts
@@ -6731,7 +7227,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bf401479-76a5-44c2-869d-4dd594ec569a")
+		(uuid "d0378902-ef28-44f7-a5bd-399471ebccc7")
 	)
 	(wire
 		(pts
@@ -6742,7 +7238,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7ce33d37-bd5d-479d-b368-ef228873627e")
+		(uuid "111bc9ff-b9d7-4e11-90ca-6e7e1b373852")
 	)
 	(wire
 		(pts
@@ -6753,7 +7249,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b25cbf1e-6c74-4e0e-a492-648d2eb7176e")
+		(uuid "f2ca65a6-64c8-4c2c-be7e-18555c3f21be")
 	)
 	(wire
 		(pts
@@ -6764,7 +7260,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1b8a28eb-4848-46db-be14-8e70a0b98a56")
+		(uuid "5d092d6b-c166-4641-af08-78ac1f167c39")
 	)
 	(label "G2_V4"
 		(at 236.22 240.03 0)
@@ -6775,7 +7271,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8182121d-39ae-4601-bf51-940bfb7499d1")
+		(uuid "494a762b-aa02-47e5-ac0b-d6c8c3b97f6e")
 	)
 	(wire
 		(pts
@@ -6786,7 +7282,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a1904b3a-4921-45a7-a120-bdf96c9332b2")
+		(uuid "0521ca5e-d652-4087-9ce0-b2f711c82b82")
 	)
 	(wire
 		(pts
@@ -6797,7 +7293,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5c6eed17-5108-4097-97f2-0b871e719106")
+		(uuid "189b10ac-0c23-4ca0-a6bb-e15a90edea36")
 	)
 	(wire
 		(pts
@@ -6808,7 +7304,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "098f8d3b-6cde-459e-9c7f-698b249c5169")
+		(uuid "2537637b-9e1c-45c1-bea8-8d5f21706169")
 	)
 	(wire
 		(pts
@@ -6819,7 +7315,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7efd6818-773a-4bcc-a2b8-e3c16272b6ef")
+		(uuid "4669b66b-82d5-4334-a423-4baca4bf4641")
 	)
 	(label "IN_RAW"
 		(at 22.86 134.62 0)
@@ -6830,7 +7326,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b8320787-0c88-41cd-9b26-e123582cb245")
+		(uuid "6f9b0009-5373-46f6-8928-7210642c1da1")
 	)
 	(wire
 		(pts
@@ -6841,7 +7337,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "09633846-312a-4978-96a6-da2a061a4234")
+		(uuid "e69e31c5-1b09-4b61-8e35-969b32ce6058")
 	)
 	(wire
 		(pts
@@ -6852,7 +7348,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0325e021-6d66-4a34-9058-86a242d1c677")
+		(uuid "b13d35ff-3533-4ccf-9aa7-ece1a6ee3604")
 	)
 	(wire
 		(pts
@@ -6863,7 +7359,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f8b6d24c-8166-4233-9573-058fcd02ae8e")
+		(uuid "aace6a07-a8fb-464e-bad8-509b55c2edab")
 	)
 	(wire
 		(pts
@@ -6874,7 +7370,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "780c445f-2423-4afa-be86-57af15bdd02d")
+		(uuid "f7d507be-faa6-4242-a98f-58b0d2910efd")
 	)
 	(label "OT_UL1"
 		(at 271.78 234.95 0)
@@ -6885,7 +7381,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eae436a0-0437-4ebf-a4b6-9646c69d2e66")
+		(uuid "eec6a663-8925-46f1-9149-9c5231471ca3")
 	)
 	(wire
 		(pts
@@ -6896,7 +7392,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "813e56d0-8fce-406c-9e44-186aa0d83030")
+		(uuid "68e4decd-51a3-47a5-8c8d-48059d3fe1b3")
 	)
 	(wire
 		(pts
@@ -6907,7 +7403,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "375aa7d3-483c-4269-866f-1295830cdd4c")
+		(uuid "a0c52552-b1e5-4224-898b-c1613171cb7f")
 	)
 	(wire
 		(pts
@@ -6918,7 +7414,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5b056240-af8b-4268-b8ce-5d4967e965ef")
+		(uuid "b92c5add-0716-4370-b9aa-0a4a3dbcc09c")
 	)
 	(wire
 		(pts
@@ -6929,7 +7425,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "30cc83c0-92d8-4190-b353-13cfb93ca473")
+		(uuid "a545512e-e58d-40a1-a303-f5e4e2a54aa5")
 	)
 	(wire
 		(pts
@@ -6940,7 +7436,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e56dc09a-5223-4029-909a-9e955ddc9a9e")
+		(uuid "89bb739d-b0aa-4481-9024-de101cb8828f")
 	)
 	(wire
 		(pts
@@ -6951,7 +7447,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f746efb7-fd63-4c44-94d1-c49beded3ff0")
+		(uuid "cde5b8b8-b04c-41ca-a638-4781d420767b")
 	)
 	(label "OT_UL2"
 		(at 325.12 242.57 0)
@@ -6962,7 +7458,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "786dc727-7968-4521-bd84-43a7a176c072")
+		(uuid "3ba0e323-75d7-4504-82ac-64878bcec32d")
 	)
 	(wire
 		(pts
@@ -6973,7 +7469,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1ab80a8a-f6dd-4f9b-900e-41909bc91ad5")
+		(uuid "482720a6-a40f-4448-8329-e32f10fd0281")
 	)
 	(wire
 		(pts
@@ -6984,7 +7480,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6f28f3ca-c14f-491f-9328-1eb8b4a89bcd")
+		(uuid "0fad32d5-4c1f-4b37-9d78-62b21771b324")
 	)
 	(wire
 		(pts
@@ -6995,7 +7491,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "39e2eb3e-e343-4427-a085-4c3491ceda12")
+		(uuid "4485a9c5-0aa9-4dcd-b4e0-83df636ee80a")
 	)
 	(wire
 		(pts
@@ -7006,7 +7502,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d42b89ff-0b67-4dfe-b4e4-a2bb5a445aa3")
+		(uuid "e3f8ac61-205e-445b-abc0-fb34db137adc")
 	)
 	(label "V1_G"
 		(at 82.55 139.7 0)
@@ -7017,7 +7513,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "790ea472-fe30-43cc-8acd-856d444cfa86")
+		(uuid "21c4e473-d392-4932-a99d-8f1d33409cd5")
 	)
 	(wire
 		(pts
@@ -7028,7 +7524,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2900f8a7-1a51-490f-b264-c673192ab565")
+		(uuid "d5b3cfe7-b886-4e0d-853e-275435b9d129")
 	)
 	(wire
 		(pts
@@ -7039,7 +7535,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b7f6b0e5-f497-4eff-a2d2-041892983c82")
+		(uuid "bcb6f4df-01a1-420b-a510-d02b28e9c686")
 	)
 	(wire
 		(pts
@@ -7050,7 +7546,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a9d3b5b-b676-4b81-ad52-604886a2703d")
+		(uuid "4745f060-5443-4430-a551-e5734642a39a")
 	)
 	(wire
 		(pts
@@ -7061,7 +7557,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f2bef074-705b-412c-b8a4-09f654c6a267")
+		(uuid "e9787ab7-c75b-4238-a97e-1f2ef1df918e")
 	)
 	(label "V3_G1"
 		(at 130.81 237.49 0)
@@ -7072,13 +7568,13 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "728ea2cf-140c-4870-97cb-0721b9ff3250")
+		(uuid "b20a602e-020a-4b1f-8f54-4d03161136f2")
 	)
 	(junction
 		(at 69.85 234.95)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ea8edf5c-5cdb-4f68-a6e1-d455fa03b995")
+		(uuid "452fd429-763d-4beb-8b3c-ec2a00d1f107")
 	)
 	(wire
 		(pts
@@ -7089,7 +7585,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "34a0b075-ceb1-4fd8-ab51-a05e21253bf1")
+		(uuid "7488d9fa-9f29-43c0-838c-b6a471387a7c")
 	)
 	(wire
 		(pts
@@ -7100,7 +7596,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "55047c6c-ef4d-4970-9395-e58505508f70")
+		(uuid "38c1cb08-6ed7-4ad6-bf1a-81e58bc56c93")
 	)
 	(wire
 		(pts
@@ -7111,7 +7607,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bbc5736e-8200-4833-a196-3157aa63ea48")
+		(uuid "febf094c-c188-4d90-af0c-c38aff2d0290")
 	)
 	(wire
 		(pts
@@ -7122,7 +7618,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b509b98f-1ffa-4841-9073-2ef73d401bd0")
+		(uuid "089a5e33-a2cc-4133-9c67-bc119b59847b")
 	)
 	(wire
 		(pts
@@ -7133,7 +7629,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "494d275f-8ad3-40e0-b386-8f0bb9b690f7")
+		(uuid "e62b0483-79ba-466f-a11d-6a36003a1934")
 	)
 	(wire
 		(pts
@@ -7144,7 +7640,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7654bfdc-cb8e-44c8-92ad-e470aa88d4b6")
+		(uuid "51c84f54-10a7-4d52-a952-bba344607de1")
 	)
 	(wire
 		(pts
@@ -7155,7 +7651,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f49753e9-33c2-4d98-b505-716cc373d08e")
+		(uuid "fe062b5a-1e02-4508-940d-bc17b28fb901")
 	)
 	(label "G3_IN"
 		(at 71.12 234.95 0)
@@ -7166,13 +7662,13 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9e3354b9-8c9a-4408-ab2b-39d8729bd190")
+		(uuid "e8d468b3-4edd-455e-a672-a3e31b3331df")
 	)
 	(junction
 		(at 62.23 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "72ba3496-a951-4eea-803f-c1a60d3a17ec")
+		(uuid "d8a4310b-dced-433e-9782-cb94aad7c521")
 	)
 	(wire
 		(pts
@@ -7183,7 +7679,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c85b6195-d69c-410f-ae18-25810326ea68")
+		(uuid "58781e79-f07f-4e2e-a0bb-453933bc9902")
 	)
 	(wire
 		(pts
@@ -7194,7 +7690,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b10ba0a3-3954-423d-98f7-91c8e79c8a10")
+		(uuid "c47015d7-7492-4fc1-94c1-5e3ccff08875")
 	)
 	(wire
 		(pts
@@ -7205,7 +7701,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "84fd676d-236b-4750-a7c4-159aa35a02e7")
+		(uuid "2727c9ad-9ebf-4217-a7a2-4413ccafba0d")
 	)
 	(wire
 		(pts
@@ -7216,7 +7712,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "241899ea-f163-4386-8116-0d67d71967ff")
+		(uuid "46f8082c-b2a4-4c80-b42e-3482dcd3105e")
 	)
 	(wire
 		(pts
@@ -7227,7 +7723,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "14bcbbe2-51f1-442e-94e2-85baed75df0e")
+		(uuid "5e9bbf5a-49ff-499b-9450-de7e8f97db93")
 	)
 	(wire
 		(pts
@@ -7238,7 +7734,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c428a21e-4e45-4d1b-8f40-7dcfa28928ab")
+		(uuid "6fbc6b34-2962-4355-9988-40e7e1dd33e7")
 	)
 	(wire
 		(pts
@@ -7249,7 +7745,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5c8b844d-f415-41d8-87a3-f2496b3df24a")
+		(uuid "46fa628d-d682-4f2a-abf7-173da904cd6d")
 	)
 	(label "IN_C"
 		(at 63.5 134.62 0)
@@ -7260,13 +7756,13 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "99c4a3f7-5fd1-4e98-ae34-e7ed76481192")
+		(uuid "65ebced4-d58e-4185-aad1-020732c800f9")
 	)
 	(junction
 		(at 234.95 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "87a8d5e1-9748-497f-9e56-14f2d901a2b6")
+		(uuid "92139529-0941-4bc7-8b93-023c7a2c78f6")
 	)
 	(wire
 		(pts
@@ -7277,7 +7773,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b19a770-7fc1-4cf3-b08d-d4d5fcf9cead")
+		(uuid "45aa46aa-334b-4b68-aab1-f31a95384b52")
 	)
 	(wire
 		(pts
@@ -7288,7 +7784,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e86f87a9-65db-454c-b609-71ed3c6093d2")
+		(uuid "9c21f97b-1eb9-4a09-8ad7-191dc7798701")
 	)
 	(wire
 		(pts
@@ -7299,7 +7795,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6d539067-0c7f-4cb9-a66d-942de3b17d1c")
+		(uuid "07e26a4e-3e7f-4eb9-9bb5-efca065fcb6d")
 	)
 	(wire
 		(pts
@@ -7310,7 +7806,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6957915f-bb15-46ab-bed8-5501c21ed669")
+		(uuid "dcd0b892-9643-40db-92d1-bd1507612a34")
 	)
 	(wire
 		(pts
@@ -7321,7 +7817,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ed058cce-fcaf-407e-9b47-b79036a94ba2")
+		(uuid "bb2206b0-bf31-4391-8f2f-b5d2b66d4ba8")
 	)
 	(wire
 		(pts
@@ -7332,7 +7828,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "168f68eb-067f-4f5a-a752-81dca700489e")
+		(uuid "295d32a3-9835-408b-9eaa-b715db93cd3e")
 	)
 	(wire
 		(pts
@@ -7343,7 +7839,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9082b054-93a4-4f43-a764-4d7faa9ae3a6")
+		(uuid "95c60b63-6eeb-4391-b8ea-69634f92996e")
 	)
 	(wire
 		(pts
@@ -7354,7 +7850,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "031c57bf-8941-4faa-9306-bf08ba519af9")
+		(uuid "71d3e3b3-09a5-4eba-af0e-8d23490b6718")
 	)
 	(label "LTP_G1"
 		(at 238.76 139.7 0)
@@ -7365,112 +7861,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "58262d10-f636-4840-b0af-4ee6ae98c543")
-	)
-	(junction
-		(at 175.26 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "59befd60-92cf-4079-b4ed-4110ed9ce798")
-	)
-	(wire
-		(pts
-			(xy 106.68 132.08)
-			(xy 106.68 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f745f47-bb06-459f-8b45-a955422f7ae0")
-	)
-	(wire
-		(pts
-			(xy 106.68 132.08)
-			(xy 153.67 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40e04349-6344-496c-9d8e-6234f9a8c0d3")
-	)
-	(wire
-		(pts
-			(xy 106.68 142.24)
-			(xy 107.95 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "326bc1c7-d8b4-4374-b48c-05df84bcd2c6")
-	)
-	(wire
-		(pts
-			(xy 153.67 132.08)
-			(xy 153.67 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c036393-c816-4614-bc52-a017c29dd365")
-	)
-	(wire
-		(pts
-			(xy 153.67 134.62)
-			(xy 175.26 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "48711ef6-aa28-42ca-9288-ca2b7be3fb88")
-	)
-	(wire
-		(pts
-			(xy 175.26 134.62)
-			(xy 175.26 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6a5f5b6-20b8-45b4-9f64-f3166d4f72cd")
-	)
-	(wire
-		(pts
-			(xy 175.26 134.62)
-			(xy 191.77 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44609622-603d-465a-864c-8a62aaa1f744")
-	)
-	(wire
-		(pts
-			(xy 191.77 134.62)
-			(xy 191.77 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3d3d98b-1f2b-469a-b983-64d3b311d61f")
-	)
-	(label "V1_K"
-		(at 107.95 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c37e9dd7-4840-4333-921c-b70208e75b57")
+		(uuid "07e7346e-7821-4ae1-90cf-2870886b37f6")
 	)
 	(sheet_instances
 		(path "/"
