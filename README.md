@@ -37,6 +37,10 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 `python3 spice/simulate.py` exports the SPICE netlist from the schematic with `kicad-cli` and runs ngspice on it (`--ltp ecc82`, `--rf`, `--cf` to try variants). The symbols carry `Sim.*` fields that point at `spice/amplikt88.lib`, so the same circuit also loads in KiCad's own simulator once B+, bias and a source are added. The power sheet is excluded; B+ (450 V) and the bias rail (-65 V) are ideal sources.
 
+![Simulation plots](spice/simulation.png)
+
+`python3 spice/plot.py` redraws the plots above (needs matplotlib).
+
 Results for the schematic as drawn, 8 ohm load:
 
 | | |
