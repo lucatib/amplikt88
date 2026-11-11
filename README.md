@@ -38,6 +38,8 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 `amplikt88.kicad_pcb`, 190 x 85 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
 
+![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
+
 ![Power routing on B.Cu](docs/pcb-routing.png)
 
 Only the high-current paths are routed so far, all on B.Cu with no vias:
@@ -52,7 +54,7 @@ Only the high-current paths are routed so far, all on B.Cu with no vias:
 
 F.Cu is a ground plane that joins the star only at J4 pin 7 (and at the transformer secondary return, which carries no return current). Every other pad is isolated from it.
 
-![3D view](docs/pcb-3d.png)
+![3D view from the top](docs/pcb-3d.png)
 
 Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dru`):
 
