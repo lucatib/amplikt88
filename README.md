@@ -66,6 +66,7 @@ Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dr
 - High-current and ground nets: minimum widths as above, no vias, no tracks on F.Cu.
 - `V1_A` and `B_V1` are in the HV class as a precaution.
 - Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
+- No other part within 4 mm of a KT88 socket courtyard.
 
 The signal nets and the heaters are not routed yet. The zone has to be refilled from the PCB editor or `pcbnew` Python: `kicad-cli pcb drc --refill-zones` does not apply the custom rules to the fill.
 
