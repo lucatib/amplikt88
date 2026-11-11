@@ -37,3 +37,9 @@
   (layer "F.Cu")
   (constraint disallow track)
   (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE') || A.hasNetclass('SPEAKER') || A.hasNetclass('GND')"))
+
+# I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
+# Le regole più in basso nel file vincono su quelle sopra.
+(rule "Piedini dello zoccolo"
+  (constraint clearance (min 1.2mm))
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('V?') && B.memberOfFootprint('V?')"))

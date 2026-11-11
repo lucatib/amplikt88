@@ -3035,7 +3035,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8628fcb7-6d4f-4031-abad-67ec279786a8")
-		(property "Reference" "V1"
+		(property "Reference" ""
 			(at 89.662 93.726 0)
 			(effects
 				(font
@@ -3051,7 +3051,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 86.36 101.6 0)
 			(effects
 				(font
@@ -3833,7 +3833,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "34c455ab-5c16-4ef9-bd61-f6d0e7f4d8cb")
-		(property "Reference" "V2"
+		(property "Reference" ""
 			(at 135.382 93.726 0)
 			(effects
 				(font
@@ -3849,7 +3849,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 132.08 101.6 0)
 			(effects
 				(font
@@ -3931,7 +3931,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0f234de5-8205-4adf-a027-3ab00c5ad861")
-		(property "Reference" "V2"
+		(property "Reference" ""
 			(at 159.258 93.726 0)
 			(effects
 				(font
@@ -3947,7 +3947,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 162.56 101.6 0)
 			(effects
 				(font
@@ -5120,7 +5120,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a07e1d53-1877-4efa-bff1-4c4c1734298c")
-		(property "Reference" "R19"
+		(property "Reference" ""
 			(at 235.712 102.87 90)
 			(effects
 				(font
@@ -5136,7 +5136,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal"
 			(at 233.68 102.87 0)
 			(effects
 				(font
@@ -5261,7 +5261,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "64c85e54-e214-4ecc-9e03-3becf908dd96")
-		(property "Reference" "R17"
+		(property "Reference" ""
 			(at 259.08 76.708 90)
 			(effects
 				(font
@@ -5277,7 +5277,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0617_L17.0mm_D6.0mm_P20.32mm_Horizontal"
 			(at 259.08 78.74 0)
 			(effects
 				(font
@@ -5784,7 +5784,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f82673b-6e5e-488a-8159-32d6039d020e")
-		(property "Reference" "R20"
+		(property "Reference" ""
 			(at 235.712 166.37 90)
 			(effects
 				(font
@@ -5800,7 +5800,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal"
 			(at 233.68 166.37 0)
 			(effects
 				(font
@@ -5925,7 +5925,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "be1cbb7e-4de4-43ed-94d5-d7474d619a27")
-		(property "Reference" "R18"
+		(property "Reference" ""
 			(at 259.08 140.208 90)
 			(effects
 				(font
@@ -5941,7 +5941,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0617_L17.0mm_D6.0mm_P20.32mm_Horizontal"
 			(at 259.08 142.24 0)
 			(effects
 				(font
@@ -7394,7 +7394,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7310c64-aae5-406d-b7ac-561852e393f6")
-		(property "Reference" "V1"
+		(property "Reference" ""
 			(at 140.462 185.166 0)
 			(effects
 				(font
@@ -7410,7 +7410,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 137.16 193.04 0)
 			(effects
 				(font
@@ -7714,7 +7714,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "511b780d-7178-4d04-bcd2-40432976e3bf")
-		(property "Reference" "V1"
+		(property "Reference" ""
 			(at 163.322 182.626 0)
 			(effects
 				(font
@@ -7730,7 +7730,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 160.02 190.5 0)
 			(effects
 				(font
@@ -7910,7 +7910,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "11338a75-de48-471a-98cc-34f054578d98")
-		(property "Reference" "V2"
+		(property "Reference" ""
 			(at 186.182 182.626 0)
 			(effects
 				(font
@@ -7926,7 +7926,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Noval_P"
+		(property "Footprint" "Valve:Valve_ECC-83-1"
 			(at 182.88 190.5 0)
 			(effects
 				(font

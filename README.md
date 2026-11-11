@@ -36,9 +36,13 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 190 x 85 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
+`amplikt88.kicad_pcb`, 230 x 70 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. The valves are on the front, every other part on the back, away from the valve heat; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
+
+![3D view of the back](docs/pcb-3d-bottom.png)
+
+Footprints: the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm).
 
 ![Power routing on B.Cu](docs/pcb-routing.png)
 
@@ -61,6 +65,7 @@ Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dr
 - Nodes above 200 V (classes `HV_POWER` and `HV`) keep 8 mm from ground copper, the plane included, from the mounting holes and from the board edge; 2.5 mm between themselves.
 - High-current and ground nets: minimum widths as above, no vias, no tracks on F.Cu.
 - `V1_A` and `B_V1` are in the HV class as a precaution.
+- Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
 
 The signal nets and the heaters are not routed yet. The zone has to be refilled from the PCB editor or `pcbnew` Python: `kicad-cli pcb drc --refill-zones` does not apply the custom rules to the fill.
 
