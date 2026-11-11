@@ -8,8 +8,10 @@ References:
 
 Both are visual approximations, not manufacturer-certified mechanical models. Base shape, electrodes and socket bodies are illustrative. Tube seating plane Z=0; socket/pins extend downward, glass upward.
 
+KT88_JJ.wrl and KT88_JJ.stpz are the JJ Electronic KT88 from a SketchUp model on 3D Warehouse ("JJ TESLA KT88 Vacuum tube"), exported as STL in 0.1 mm units and converted here: scaled to mm, base bottom at Z=0, 52.6 mm across and 113.4 mm tall (JJ data sheet: 52 mm and 110 mm max seated, 125 mm with pins; the pins are not in the model). The VRML keeps every triangle, with the base below 16 mm opaque and the glass above it transparent amber; the STEP is a faceted mesh reduced to 25 102 triangles by 0.5 mm vertex clustering, gzipped (KiCad reads .stpz). Check the 3D Warehouse licence before redistributing it.
+
 Board offsets, in KiCad model coordinates:
-- V3/V4 KT88: (-7.62, +7.62, +10) mm. Assumed socket seat 10 mm above PCB.
+- V3/V4 KT88 (KT88_JJ.wrl): (-7.62, +7.62, +10) mm. Assumed socket seat 10 mm above PCB; the socket body itself is not drawn.
 - V1/V2 ECC83: (-7.62, +5.08, +6.4) mm. Assumed socket seat 6.4 mm above PCB.
 
 Adjust socket height for the actual hardware. Tube pins and PCB socket terminals use different pitch circles.

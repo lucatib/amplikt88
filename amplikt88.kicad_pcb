@@ -1246,7 +1246,7 @@
 			(uuid "1877ad08-7765-42a1-8a76-6b11b4e531ca")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/KT88.wrl"
+		(model "${KIPRJMOD}/3dmodels/KT88_JJ.wrl"
 			(offset
 				(xyz -7.62 7.62 10)
 			)
@@ -6718,7 +6718,7 @@
 			(uuid "179dc50f-3e51-49f1-bec4-1c7353e0f774")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/KT88.wrl"
+		(model "${KIPRJMOD}/3dmodels/KT88_JJ.wrl"
 			(offset
 				(xyz -7.62 7.62 10)
 			)

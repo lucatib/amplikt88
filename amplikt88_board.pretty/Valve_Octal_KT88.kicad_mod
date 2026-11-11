@@ -194,9 +194,9 @@
 		(uuid "156fa16d-98c7-4035-bc5e-4cd1966c76a7")
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Valve.3dshapes/Valve_Octal.step"
+	(model "${KIPRJMOD}/3dmodels/KT88_JJ.wrl"
 		(offset
-			(xyz 0 0 0)
+			(xyz -7.62 7.62 10)
 		)
 		(scale
 			(xyz 1 1 1)
