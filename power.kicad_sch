@@ -4056,7 +4056,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+		(property "Footprint" ""
 			(at 27.94 129.54 0)
 			(effects
 				(font
