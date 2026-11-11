@@ -44,7 +44,7 @@ Only the high-current paths are routed so far, all on B.Cu with no vias:
 
 - KT88 anodes to the output transformer (A1, A2) and B+ from J4 to the transformer centre tap: 2.5 mm.
 - Cathodes to the 1 ohm sense resistors: 2.5 mm.
-- Secondary to the speaker terminal: 3 mm (4.2 A rms at 70 W into 4 ohm). J3 is a 5.08 mm screw terminal instead of the 2.54 mm header.
+- Secondary to the speaker terminal: 3 mm (3 A rms, 4.2 A peak, at 70 W into 8 ohm). J3 is a 5.08 mm screw terminal instead of the 2.54 mm header.
 - Ground as a star: one 2.5 mm wire from each output valve (1 ohm resistor and pin 1) to J4 pin 7.
 - Ultralinear taps through R17 and R18; R17 straddles the A1 track.
 
