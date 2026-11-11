@@ -33,7 +33,34 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 - The valves are drawn as round symbols, as in period schematics. The ECC83s are KiCad's `Valve:ECC83`, in three units: two triodes and the heater. The KT88 (two units: beam tetrode and heater) and the two transformers (coils and core, polarity dots) are in `amplikt88.kicad_sym`, with the real pin numbers. KT88 pin 1 (shell) is grounded; the valve has no pin 6.
 - The spare triode of V1 has grid and cathode grounded and the anode left open. ERC warns about its cathode on the ground net (a bidirectional pin next to the power flag); that warning and the one for the single `CHASSIS` label are expected.
 - Short nets within a stage are drawn as wires (routed with `route_nets`, `max_length` 110 mm). The ones that cross the sheet, such as B+, the heater lines and the negative bias rail, stay as net labels.
-- Resistor and capacitor footprints are not assigned yet.
+
+## PCB
+
+`amplikt88.kicad_pcb`, 190 x 85 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
+
+![Power routing on B.Cu](docs/pcb-routing.png)
+
+Only the high-current paths are routed so far, all on B.Cu with no vias:
+
+- KT88 anodes to the output transformer (A1, A2) and B+ from J4 to the transformer centre tap: 2.5 mm.
+- Cathodes to the 1 ohm sense resistors: 2.5 mm.
+- Secondary to the speaker terminal: 3 mm (4.2 A rms at 70 W into 4 ohm). J3 is a 5.08 mm screw terminal instead of the 2.54 mm header.
+- Ground as a star: one 2.5 mm wire from each output valve (1 ohm resistor and pin 1) to J4 pin 7.
+- Ultralinear taps through R17 and R18; R17 straddles the A1 track.
+
+![Ground plane on F.Cu](docs/pcb-ground-plane.png)
+
+F.Cu is a ground plane that joins the star only at J4 pin 7 (and at the transformer secondary return, which carries no return current). Every other pad is isolated from it.
+
+![3D view](docs/pcb-3d.png)
+
+Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dru`):
+
+- Nodes above 200 V (classes `HV_POWER` and `HV`) keep 8 mm from ground copper, the plane included, from the mounting holes and from the board edge; 2.5 mm between themselves.
+- High-current and ground nets: minimum widths as above, no vias, no tracks on F.Cu.
+- `V1_A` and `B_V1` are in the HV class as a precaution.
+
+The signal nets and the heaters are not routed yet. The zone has to be refilled from the PCB editor or `pcbnew` Python: `kicad-cli pcb drc --refill-zones` does not apply the custom rules to the fill.
 
 ## Simulation
 

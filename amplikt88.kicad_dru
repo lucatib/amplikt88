@@ -1,0 +1,39 @@
+(version 1)
+
+# Alta tensione (oltre 200 V) ad almeno 8 mm dalla massa: piste, pad e piano
+(rule "HV - GND 8 mm"
+  (constraint clearance (min 8mm))
+  (condition "((A.hasNetclass('HV') || A.hasNetclass('HV_POWER')) && B.NetName == 'GND') || ((B.hasNetclass('HV') || B.hasNetclass('HV_POWER')) && A.NetName == 'GND')"))
+
+# I fori di fissaggio vanno a telaio tramite viti e squadretta: contano come massa
+(rule "HV - fori di fissaggio 8 mm"
+  (constraint hole_clearance (min 8mm))
+  (condition "(A.hasNetclass('HV') || A.hasNetclass('HV_POWER')) && B.Pad_Type == 'NPTH, mechanical'"))
+
+# Bordo scheda a contatto con squadretta e telaio
+(rule "HV - bordo 8 mm"
+  (constraint edge_clearance (min 8mm))
+  (condition "A.hasNetclass('HV') || A.hasNetclass('HV_POWER')"))
+
+# Correnti grosse: larghezza minima
+(rule "Anodi, B+ e catodi almeno 2.5 mm"
+  (constraint track_width (min 2.5mm))
+  (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE')"))
+
+(rule "Secondario almeno 3 mm"
+  (constraint track_width (min 3mm))
+  (condition "A.hasNetclass('SPEAKER')"))
+
+(rule "Massa a stella almeno 2.5 mm"
+  (constraint track_width (min 2.5mm))
+  (condition "A.hasNetclass('GND')"))
+
+# Correnti grosse e massa: su una sola faccia (B.Cu), senza via
+(rule "Correnti grosse senza via"
+  (constraint disallow via)
+  (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE') || A.hasNetclass('SPEAKER') || A.hasNetclass('GND')"))
+
+(rule "Correnti grosse e massa solo su B.Cu"
+  (layer "F.Cu")
+  (constraint disallow track)
+  (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE') || A.hasNetclass('SPEAKER') || A.hasNetclass('GND')"))
