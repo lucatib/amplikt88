@@ -196,7 +196,7 @@
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/3dmodels/KT88_JJ.wrl"
 		(offset
-			(xyz -7.62 7.62 10)
+			(xyz -7.62 7.62 0)
 		)
 		(scale
 			(xyz 1 1 1)
