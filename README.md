@@ -36,13 +36,13 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 230 x 60 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side and the tracks on the back; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
+`amplikt88.kicad_pcb`, 259 x 60 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side and the tracks on the back; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
 
 ![3D view of the back](docs/pcb-3d-bottom.png)
 
-Footprints: the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The supply wire pads J4 are at 6 mm pitch so they fit down the centre line.
+Footprints: the KT88s are on `Valve_Octal_KT88` (project library), the KiCad octal socket with the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The supply wire pads J4 are at 6 mm pitch so they fit down the centre line.
 
 ![Power routing on B.Cu](docs/pcb-routing.png)
 
@@ -51,7 +51,7 @@ Only the high-current paths are routed so far, all on B.Cu with no vias:
 - KT88 anodes to the output transformer (A1, A2) and B+ from J4 to the transformer centre tap: 2.5 mm.
 - Cathodes to the 1 ohm sense resistors: 2.5 mm.
 - Secondary to the speaker terminal: 3 mm (3 A rms, 4.2 A peak, at 70 W into 8 ohm). J3 is a 5.08 mm screw terminal instead of the 2.54 mm header.
-- Ground as a star: one 2.5 mm wire from each output valve (1 ohm resistor and pin 1) to J4 pin 7.
+- Ground as a star: one 2.5 mm wire from each 1 ohm cathode resistor to J4 pin 7.
 - Ultralinear taps through R17 and R18; R17 straddles the A1 track.
 
 ![Ground plane on F.Cu](docs/pcb-ground-plane.png)
@@ -66,7 +66,7 @@ Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dr
 - High-current and ground nets: minimum widths as above, no vias, no tracks on F.Cu.
 - `V1_A` and `B_V1` are in the HV class as a precaution.
 - Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
-- No other part within 4 mm of a KT88 socket courtyard.
+- No other part within 4 mm of a KT88's glass, so each KT88 keeps a 60 mm circle to itself; that sets the board length. Pin 1 (shell) of each KT88 goes to the plane, not to the star.
 
 The signal nets and the heaters are not routed yet. The zone has to be refilled from the PCB editor or `pcbnew` Python: `kicad-cli pcb drc --refill-zones` does not apply the custom rules to the fill.
 

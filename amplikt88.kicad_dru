@@ -44,7 +44,8 @@
   (constraint clearance (min 1.2mm))
   (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('V?') && B.memberOfFootprint('V?')"))
 
-# Intorno alle KT88 almeno 4 mm liberi da altri componenti
-(rule "KT88: 4 mm liberi intorno"
+# KT88: il courtyard del footprint Valve_Octal_KT88 è il vetro, 52 mm di diametro.
+# Nessun altro componente a meno di 4 mm dal vetro.
+(rule "KT88: 4 mm dal vetro"
   (constraint courtyard_clearance (min 4mm))
   (condition "A.Reference == 'V3' || A.Reference == 'V4'"))

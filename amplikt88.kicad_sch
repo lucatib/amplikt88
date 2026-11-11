@@ -4948,7 +4948,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6fc90618-94db-4776-91f4-1f5fdf55cdc9")
-		(property "Reference" "V3"
+		(property "Reference" ""
 			(at 245.11 71.12 0)
 			(effects
 				(font
@@ -4966,7 +4966,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Octal"
+		(property "Footprint" "amplikt88_board:Valve_Octal_KT88"
 			(at 236.22 80.01 0)
 			(effects
 				(font
@@ -5612,7 +5612,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6294e5c2-29cc-4ad5-abd2-e3e3b7128eba")
-		(property "Reference" "V4"
+		(property "Reference" ""
 			(at 245.11 134.62 0)
 			(effects
 				(font
@@ -5630,7 +5630,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Octal"
+		(property "Footprint" "amplikt88_board:Valve_Octal_KT88"
 			(at 236.22 143.51 0)
 			(effects
 				(font
@@ -8073,7 +8073,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2c3acde-e95b-4362-a047-601aafb2d4d4")
-		(property "Reference" "V3"
+		(property "Reference" ""
 			(at 210.82 190.5 0)
 			(effects
 				(font
@@ -8091,7 +8091,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Octal"
+		(property "Footprint" "amplikt88_board:Valve_Octal_KT88"
 			(at 205.74 193.04 0)
 			(effects
 				(font
@@ -8238,7 +8238,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "332d12ee-eb78-4396-a9db-853ab7302433")
-		(property "Reference" "V4"
+		(property "Reference" ""
 			(at 231.14 190.5 0)
 			(effects
 				(font
@@ -8256,7 +8256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Valve:Valve_Octal"
+		(property "Footprint" "amplikt88_board:Valve_Octal_KT88"
 			(at 226.06 193.04 0)
 			(effects
 				(font
