@@ -1,0 +1,202 @@
+(footprint "Valve_Noval_ECC83"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Noval (B9A) PCB socket, tabs on a 17.4 mm circle, with an ECC83 RFT; courtyard = glass, 21.5 mm")
+	(tags "valve tube noval B9A ECC83 12AX7 socket")
+	(property "Reference" ""
+		(at 0 -13 0)
+		(layer "F.SilkS")
+		(uuid "5d6d9f29-6074-4b2a-b7d8-e8147d007c34")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "Valve_Noval_ECC83"
+		(at 0 13 0)
+		(layer "F.Fab")
+		(uuid "f6428781-b778-4469-b5a0-5bb8d826f063")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fc0226a7-16e8-4a18-a81b-9978c7b74da6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "36d98099-2b70-4591-a4b3-da8e5c6f8190")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_circle
+		(center 0 0)
+		(end 11.2 0)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "16a24d14-fcf9-481c-8168-2c6d77a85c68")
+	)
+	(fp_circle
+		(center 7.288537 10.03181)
+		(end 7.688537 10.03181)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "079460ed-e69f-499e-88d0-471e93cd34bf")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 11 0)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "879c361c-a58a-4ef9-b545-a4a48b98fd6a")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 9 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ea869d99-b036-43e8-ab35-45b193eb2386")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 10.75 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "7231346a-d2fe-46c1-a8b6-8dbd3ff14f96")
+	)
+	(pad "1" thru_hole circle
+		(at 5.113731 7.038447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b614205d-4c45-40c6-8127-09836c5c0511")
+	)
+	(pad "2" thru_hole circle
+		(at 8.274191 2.688447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "201d87f4-cb2c-40e6-892d-c9c212bb7a10")
+	)
+	(pad "3" thru_hole circle
+		(at 8.274191 -2.688447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "81845b70-25ee-4a14-9c6a-0e6ea1b5d56c")
+	)
+	(pad "4" thru_hole circle
+		(at 5.113731 -7.038447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dc399072-8746-4512-a958-cbe01bd8f3ce")
+	)
+	(pad "5" thru_hole circle
+		(at 0 -8.7)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "bae99313-6a82-47e2-b1de-01f977fe4b9e")
+	)
+	(pad "6" thru_hole circle
+		(at -5.113731 -7.038447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6e50b9ba-5dfb-4258-87b0-8c5932de8b47")
+	)
+	(pad "7" thru_hole circle
+		(at -8.274191 -2.688447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ce6717c8-aa68-4c2d-89b3-c34de30cff0f")
+	)
+	(pad "8" thru_hole circle
+		(at -8.274191 2.688447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d14a276e-7142-4573-ab9c-33b7faacddab")
+	)
+	(pad "9" thru_hole circle
+		(at -5.113731 7.038447)
+		(size 3 3)
+		(drill 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3062d095-fc33-4e12-866d-1beb88310f3c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/3dmodels/Noval_PCB_socket.step"
+		(offset
+			(xyz 0 0 -1.976)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(model "${KIPRJMOD}/3dmodels/ECC83_RFT.wrl"
+		(offset
+			(xyz 0 0 19.524)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

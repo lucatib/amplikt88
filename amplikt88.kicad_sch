@@ -3051,7 +3051,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 86.36 101.6 0)
 			(effects
 				(font
@@ -3849,7 +3849,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 132.08 101.6 0)
 			(effects
 				(font
@@ -3947,7 +3947,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 162.56 101.6 0)
 			(effects
 				(font
@@ -7410,7 +7410,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 137.16 193.04 0)
 			(effects
 				(font
@@ -7730,7 +7730,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 160.02 190.5 0)
 			(effects
 				(font
@@ -7926,7 +7926,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Valve:Valve_ECC-83-1"
+		(property "Footprint" "amplikt88_board:Valve_Noval_ECC83"
 			(at 182.88 190.5 0)
 			(effects
 				(font
