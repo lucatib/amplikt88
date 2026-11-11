@@ -3,9 +3,9 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Trial external supply wire pads")
+	(descr "External supply wire pads, 6 mm pitch")
 	(property "Reference" "REF**"
-		(at 22.5 -3.75 0)
+		(at 18 -3.75 0)
 		(layer "F.SilkS")
 		(uuid "800ae981-cde0-4d50-9b5e-d58d092ab4b0")
 		(effects
@@ -15,7 +15,7 @@
 		)
 	)
 	(property "Value" "Supply_7"
-		(at 22.5 3.75 0)
+		(at 18 3.75 0)
 		(layer "F.Fab")
 		(uuid "23768fdc-9293-4c39-85f0-e5251e0ab6e1")
 		(effects
@@ -50,7 +50,7 @@
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_rect
 		(start -2.25 -2.25)
-		(end 47.25 2.25)
+		(end 38.25 2.25)
 		(stroke
 			(width 0.12)
 			(type default)
@@ -61,7 +61,7 @@
 	)
 	(fp_rect
 		(start -2.5 -2.5)
-		(end 47.5 2.5)
+		(end 38.5 2.5)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -80,7 +80,7 @@
 		(uuid "d0507190-a404-493d-90f3-cfc19739807d")
 	)
 	(pad "2" thru_hole circle
-		(at 7.5 0)
+		(at 6 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")
@@ -88,7 +88,7 @@
 		(uuid "ff64ea6a-9493-4218-9f41-db39b2c03e89")
 	)
 	(pad "3" thru_hole circle
-		(at 15 0)
+		(at 12 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")
@@ -96,7 +96,7 @@
 		(uuid "fe499dfe-bbd9-4492-a90f-72b2e7ad5654")
 	)
 	(pad "4" thru_hole circle
-		(at 22.5 0)
+		(at 18 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")
@@ -104,7 +104,7 @@
 		(uuid "9c322520-51c8-4153-aa42-08c91f2ac409")
 	)
 	(pad "5" thru_hole circle
-		(at 30 0)
+		(at 24 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")
@@ -112,7 +112,7 @@
 		(uuid "d1710df1-f882-4cfe-888b-d9254ecf66f3")
 	)
 	(pad "6" thru_hole circle
-		(at 37.5 0)
+		(at 30 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")
@@ -120,7 +120,7 @@
 		(uuid "d35a9456-65e0-457c-baa8-e2e2af258ad6")
 	)
 	(pad "7" thru_hole circle
-		(at 45 0)
+		(at 36 0)
 		(size 3.5 3.5)
 		(drill 1.5)
 		(layers "*.Cu" "*.Mask")

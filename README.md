@@ -36,13 +36,13 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 230 x 70 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. The valves are on the front, every other part on the back, away from the valve heat; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
+`amplikt88.kicad_pcb`, 230 x 60 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side and the tracks on the back; the KT88s are turned with heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note). The layout is symmetric about the centre line except for the connectors: output transformer pads at the top, supply connector J4 down the centre line, ECC83s between the KT88s.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
 
 ![3D view of the back](docs/pcb-3d-bottom.png)
 
-Footprints: the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm).
+Footprints: the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The supply wire pads J4 are at 6 mm pitch so they fit down the centre line.
 
 ![Power routing on B.Cu](docs/pcb-routing.png)
 
