@@ -42,7 +42,7 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ![3D view of the back](docs/pcb-3d-bottom.png)
 
-Footprints: the KT88s are on `Valve_Octal_KT88` (project library), the KiCad octal socket with the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The supply wire pads J4 are at 6 mm pitch so they fit down the centre line.
+Footprints: the KT88s are on `Valve_Octal_KT88` (project library), with the pads on the socket contacts of the JJ 3D model (16 mm circle, 2.5 mm holes, origin at the socket centre) and the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_ECC-83-1`, the noval pin circle; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The supply wire pads J4 are at 6 mm pitch so they fit down the centre line.
 
 ![Power routing on B.Cu](docs/pcb-routing.png)
 
