@@ -31,8 +31,12 @@
   (constraint hole_clearance (min 8mm))
   (condition "(A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && B.Pad_Type == 'NPTH, mechanical'"))
 
-# Bordo scheda: nessun lato tocca squadretta o telaio, quindi vale solo la distanza
-# dal bordo di default; le viti di fissaggio sì, vedi le regole sui fori sopra.
+# Bordo scheda: nessun lato tocca squadretta o telaio, quindi niente fasce HV sul bordo
+# (le viti di fissaggio sì, vedi le regole sui fori sopra). Le piste stanno comunque
+# ad almeno 3 mm dal bordo.
+(rule "Piste a 3 mm dal bordo"
+  (constraint edge_clearance (min 3mm))
+  (condition "A.Type == 'Track'"))
 
 # Correnti grosse: larghezza minima
 (rule "Anodi, B+ e catodi almeno 2.5 mm"
@@ -46,6 +50,11 @@
 (rule "Massa a stella almeno 2.5 mm"
   (constraint track_width (min 2.5mm))
   (condition "A.hasNetclass('GND')"))
+
+# La massa d'ingresso entra in J2 (header 2.54 mm, a 4 mm dal bordo): 2.5 mm non ci stanno.
+(rule "Massa d'ingresso in J2"
+  (constraint track_width (min 1mm))
+  (condition "A.hasNetclass('GND') && A.intersectsCourtyard('J2')"))
 
 # Una faccia per rete: la massa (a stella da J4.7) solo sotto, tutto il resto solo sopra, senza via
 (rule "Massa solo su B.Cu"
@@ -62,6 +71,20 @@
   (constraint disallow via)
   (condition "A.Type == 'Via'"))
 
+# Ordine di sbroglio a due strati: massa a stella sotto, poi le linee di potenza, poi i
+# segnali sopra. Dove un segnale non passa si accetta qualche via, come eccezione nominata.
+# /LTP_A1 (anodo LTP verso C8) è chiuso dal gruppo di V1: due vie e un ponticello su B.Cu.
+(rule "Eccezione LTP_A1: vie"
+  (constraint disallow via)
+  (severity ignore)
+  (condition "A.Type == 'Via' && A.NetName == '/LTP_A1'"))
+
+(rule "Eccezione LTP_A1: ponticello su B.Cu"
+  (layer "B.Cu")
+  (constraint disallow track)
+  (severity ignore)
+  (condition "A.NetName == '/LTP_A1'"))
+
 # I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
 # Le regole più in basso nel file vincono su quelle sopra.
 (rule "Piedini dello zoccolo"
@@ -73,3 +96,11 @@
 (rule "KT88: 4 mm dal vetro"
   (constraint courtyard_clearance (min 4mm))
   (condition "A.Reference == 'V3' || A.Reference == 'V4'"))
+
+# Componenti dentro i 4 mm dal cerchio del vetro (52 mm), verificati sul 3D: fino a 35 mm
+# d'altezza il KT88 è solo la base da 42 mm, e questi stanno sotto il bulbo (C7 e C8,
+# i più alti, arrivano a 26 mm). Fuori dal DRC solo queste coppie.
+(rule "KT88: componenti verificati sul 3D"
+  (constraint courtyard_clearance (min 0mm))
+  (severity ignore)
+  (condition "(A.Reference == 'V3' && (B.Reference == 'R13' || B.Reference == 'R17' || B.Reference == 'R11' || B.Reference == 'C7')) || (A.Reference == 'V4' && (B.Reference == 'R14' || B.Reference == 'R18' || B.Reference == 'R20' || B.Reference == 'C8'))"))
