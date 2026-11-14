@@ -42,7 +42,7 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 212.67 x 90 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side. The KT88s sit at the two ends, 150.7 mm apart on the horizontal centre line: V3 on the left, turned -22.5 degrees, and V4 on the right, turned 67.5 degrees. The transformer wire pads TR2 run along the middle of the top edge (A1, UL1, CT, UL2, A2 at 6 mm pitch). The secondary pads (0, S) and the speaker terminal J3 are below them on the right. The supply wire pads J4 are 23 mm below TR2: B+ (pin 1) on the left, then B_DRV, B_V1, VBIAS_NEG, HEATER_A, HEATER_B, and ground (pin 7) on the right. Both ECC83s are in the lower half of the centre, the LTP (V2) under J4 and the input valve (V1) to its right, with the input header J2 on the bottom edge next to it. Each bias trimmer (Bourns 3296X, side adjust) is in the top corner on its own valve's side, RV1 next to V3 and RV2 next to V4. The 1 ohm cathode resistors are along the bottom edge (R19 left, R20 right). Four M4 mounting holes, one in each corner, 4.5 mm from the edges.
+`amplikt88.kicad_pcb`, 212.67 x 90 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side. The KT88s sit at the two ends, 150.7 mm apart on the horizontal centre line: V3 on the left, turned -22.5 degrees, and V4 on the right, turned 67.5 degrees. The transformer wire pads TR2 run along the middle of the top edge (A1, UL1, CT, UL2, A2 at 6 mm pitch). The secondary pads (0, S) and the speaker terminal J3 are below them on the right. The supply wire pads J4 are 20.75 mm below TR2: B+ (pin 1) on the left, then B_DRV, B_V1, VBIAS_NEG, HEATER_A, HEATER_B, and ground (pin 7) on the right. Both ECC83s are in the lower half of the centre, the LTP (V2) under J4 and the input valve (V1) to its right, with the input header J2 on the bottom edge next to it. Each bias trimmer (Bourns 3296X, side adjust) is in the top corner on its own valve's side, RV1 next to V3 and RV2 next to V4. The 1 ohm cathode resistors are along the bottom edge (R19 left, R20 right). Four M4 mounting holes, one in each corner, 4.5 mm from the edges.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
 
@@ -50,7 +50,7 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 Footprints: the KT88s are on `Valve_Octal_KT88` (project library `amplikt88_board`), with the pads on the solder tabs of the socket in the JJ 3D model (25.3 mm circle, 3.2 mm holes for the 2.9 x 0.5 mm tabs, origin at the socket centre) and the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_Noval_ECC83`, the tabs of a noval PCB socket on a 17.4 mm circle with 2 mm holes, courtyard the 21.5 mm glass; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The transformer pads use `OT_7`, the supply pads `Supply_7` and the heater pads `Heater_2`. J3 is a 5.08 mm screw terminal.
 
-Heaters are wired off the board. Each valve has a pair of wire pads (JH1 to JH4, HEATER_A and HEATER_B) next to it, and the links between them and J4 pins 5 and 6 are external wires. DRC therefore reports 5 unconnected heater items; that is intended.
+Heaters are wired off the board. Each valve has a pair of wire pads (JH1 to JH4, HEATER_A and HEATER_B) next to it, and the links between them and J4 pins 5 and 6 are external wires. DRC therefore reports 3 unconnected heater items; that is intended.
 
 ![Routing: F.Cu red, B.Cu blue](docs/pcb-routing.png)
 
@@ -63,7 +63,7 @@ Routing is one layer per net, with no vias:
   - Heaters from each valve to its JH pads: 2 mm.
   - B_DRV, B_V1, ultralinear taps, screens and the ECC83 anodes: 1 mm.
   - Signals and the bias network: 0.5 mm.
-- The one exception is `/LTP_A1` (LTP anode to C8). The parts around V1 close it in, so it takes two vias and a 10 mm jump on B.Cu.
+- The one exception is `/LTP_A1` (LTP anode to C8). The parts around V1 close it in, so it takes two vias and a 13 mm jump on B.Cu.
 - All tracks are at 0, 45 or 90 degrees.
 
 ![3D view of the back](docs/pcb-3d-bottom.png)
@@ -76,7 +76,9 @@ Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dr
 - Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
 - No other part within 4 mm of a KT88's glass. The exceptions are R11, R13, R17 and C7 at V3 and R14, R18, R20 and C8 at V4. These were checked in 3D: they sit under the bulb, where the KT88 is only its 42 mm base up to 35 mm high (C7 and C8, the tallest, reach 26 mm). The heater pads JH1 to JH4 are also excluded from the courtyard checks against their valves; they are flat wire pads, also checked in 3D.
 
-DRC: no errors. There are 5 unconnected heater items (intended, see above) and 8 silkscreen warnings.
+DRC: no errors. There are 3 unconnected heater items (intended, see above) and 3 silkscreen warnings: the KT88 socket outlines clipped at pin 1 of V3 and V4, and the RV1 value text touching the C9 outline.
+
+Schematic parity reports the power supply parts as missing (the supply is built off this board), the four mounting holes H1, H3, H4 and H5 as extra (they have no symbol), and the `Sim.Device` fields as missing from the footprints. All three are expected.
 
 ## Simulation
 
