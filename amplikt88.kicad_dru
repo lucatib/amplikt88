@@ -31,18 +31,8 @@
   (constraint hole_clearance (min 8mm))
   (condition "(A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && B.Pad_Type == 'NPTH, mechanical'"))
 
-# Bordo scheda a contatto con squadretta e telaio: stesse fasce
-(rule "HV - bordo 5 mm"
-  (constraint edge_clearance (min 5mm))
-  (condition "A.hasNetclass('HV') || A.hasNetclass('HV_POWER')"))
-
-(rule "UL e G2 - bordo 6.3 mm"
-  (constraint edge_clearance (min 6.3mm))
-  (condition "A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4'"))
-
-(rule "Anodi KT88 - bordo 8 mm"
-  (constraint edge_clearance (min 8mm))
-  (condition "A.NetName == '/OT_A1' || A.NetName == '/OT_A2'"))
+# Bordo scheda: nessun lato tocca squadretta o telaio, quindi vale solo la distanza
+# dal bordo di default; le viti di fissaggio sì, vedi le regole sui fori sopra.
 
 # Correnti grosse: larghezza minima
 (rule "Anodi, B+ e catodi almeno 2.5 mm"
