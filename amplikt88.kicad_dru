@@ -1,19 +1,48 @@
 (version 1)
 
-# Alta tensione (oltre 200 V) ad almeno 8 mm dalla massa: piste, pad e piano
-(rule "HV - GND 8 mm"
-  (constraint clearance (min 8mm))
+# Alta tensione verso massa (piste, pad e piano), in tre fasce secondo la tensione di lavoro
+# (distanza superficiale, isolamento base, FR4, grado di inquinamento 2):
+#   5 mm    B+, B_DRV, B_V1 e placche delle ECC83: fino a 470 V continui
+#   6.3 mm  prese UL e griglie schermo: B+ piu' il 40% dell'oscillazione, picchi verso 650 V
+#   8 mm    anodi delle KT88: picchi verso 900 V
+# Le regole piu' in basso vincono: la fascia generale sta sopra, le piu' severe sotto.
+(rule "HV - GND 5 mm"
+  (constraint clearance (min 5mm))
   (condition "((A.hasNetclass('HV') || A.hasNetclass('HV_POWER')) && B.NetName == 'GND') || ((B.hasNetclass('HV') || B.hasNetclass('HV_POWER')) && A.NetName == 'GND')"))
 
-# I fori di fissaggio vanno a telaio tramite viti e squadretta: contano come massa
-(rule "HV - fori di fissaggio 8 mm"
-  (constraint hole_clearance (min 8mm))
+(rule "UL e G2 - GND 6.3 mm"
+  (constraint clearance (min 6.3mm))
+  (condition "((A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && B.NetName == 'GND') || ((B.NetName == '/OT_UL1' || B.NetName == '/OT_UL2' || B.NetName == '/G2_V3' || B.NetName == '/G2_V4') && A.NetName == 'GND')"))
+
+(rule "Anodi KT88 - GND 8 mm"
+  (constraint clearance (min 8mm))
+  (condition "((A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && B.NetName == 'GND') || ((B.NetName == '/OT_A1' || B.NetName == '/OT_A2') && A.NetName == 'GND')"))
+
+# I fori di fissaggio vanno a telaio tramite viti e squadretta: contano come massa, stesse fasce
+(rule "HV - fori di fissaggio 5 mm"
+  (constraint hole_clearance (min 5mm))
   (condition "(A.hasNetclass('HV') || A.hasNetclass('HV_POWER')) && B.Pad_Type == 'NPTH, mechanical'"))
 
-# Bordo scheda a contatto con squadretta e telaio
-(rule "HV - bordo 8 mm"
-  (constraint edge_clearance (min 8mm))
+(rule "UL e G2 - fori di fissaggio 6.3 mm"
+  (constraint hole_clearance (min 6.3mm))
+  (condition "(A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && B.Pad_Type == 'NPTH, mechanical'"))
+
+(rule "Anodi KT88 - fori di fissaggio 8 mm"
+  (constraint hole_clearance (min 8mm))
+  (condition "(A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && B.Pad_Type == 'NPTH, mechanical'"))
+
+# Bordo scheda a contatto con squadretta e telaio: stesse fasce
+(rule "HV - bordo 5 mm"
+  (constraint edge_clearance (min 5mm))
   (condition "A.hasNetclass('HV') || A.hasNetclass('HV_POWER')"))
+
+(rule "UL e G2 - bordo 6.3 mm"
+  (constraint edge_clearance (min 6.3mm))
+  (condition "A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4'"))
+
+(rule "Anodi KT88 - bordo 8 mm"
+  (constraint edge_clearance (min 8mm))
+  (condition "A.NetName == '/OT_A1' || A.NetName == '/OT_A2'"))
 
 # Correnti grosse: larghezza minima
 (rule "Anodi, B+ e catodi almeno 2.5 mm"
@@ -28,15 +57,20 @@
   (constraint track_width (min 2.5mm))
   (condition "A.hasNetclass('GND')"))
 
-# Correnti grosse e massa: su una sola faccia (B.Cu), senza via
-(rule "Correnti grosse senza via"
-  (constraint disallow via)
-  (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE') || A.hasNetclass('SPEAKER') || A.hasNetclass('GND')"))
-
-(rule "Correnti grosse e massa solo su B.Cu"
+# Una faccia per rete: la massa (a stella da J4.7) solo sotto, tutto il resto solo sopra, senza via
+(rule "Massa solo su B.Cu"
   (layer "F.Cu")
   (constraint disallow track)
-  (condition "A.hasNetclass('HV_POWER') || A.hasNetclass('CATHODE') || A.hasNetclass('SPEAKER') || A.hasNetclass('GND')"))
+  (condition "A.NetName == 'GND'"))
+
+(rule "Tutto tranne la massa solo su F.Cu"
+  (layer "B.Cu")
+  (constraint disallow track)
+  (condition "A.NetName != 'GND'"))
+
+(rule "Nessuna via"
+  (constraint disallow via)
+  (condition "A.Type == 'Via'"))
 
 # I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
 # Le regole più in basso nel file vincono su quelle sopra.

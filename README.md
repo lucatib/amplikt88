@@ -7,6 +7,12 @@ Mono power amplifier, schematic in KiCad 10, two sheets (PDF of both in `amplikt
 
 The nets that cross between the sheets are global labels: `B_PLUS`, `B_DRV`, `B_V1`, `VBIAS_NEG`, `HEATER_A`, `HEATER_B`.
 
+## Schematic
+
+![Amplifier sheet](docs/schematic/amplikt88.svg)
+
+![Power supply sheet](docs/schematic/power.svg)
+
 - **Output stage:** 2x KT88, push-pull, class AB, ultralinear (screens on the output transformer taps), adjustable fixed bias.
 - **Driver:** ECC83 long-tailed pair, tail returned to the negative bias rail. The second grid is grounded through 470k, so the pair works as a phase splitter.
 - **Input stage:** ECC83 section (the second section is grounded). Its cathode is not bypassed and takes the global feedback.
