@@ -3879,13 +3879,13 @@
 			)
 		)
 	)
-	(footprint "amplikt88_board:OT_7"
+	(footprint "amplikt88_board:Heater_2"
 		(layer "F.Cu")
 		(uuid "58e57a21-5dac-4afe-81cb-08ee0531dade")
-		(at 211.5 -50.68 -90)
+		(at 191.5 73 180)
 		(descr "Output transformer wire pads, 6 mm pitch: primary A1 UL1 CT UL2 A2 in one row, secondary S and 0 in a second row 12 mm below (GND 8 mm from HV)")
 		(property "Reference" "JH4"
-			(at 119.18 23 90)
+			(at 3 -3.75 0)
 			(layer "F.SilkS")
 			(uuid "9b597e05-bbd9-4442-b108-554f405dcbef")
 			(effects
@@ -3895,7 +3895,7 @@
 			)
 		)
 		(property "Value" "HEATER V4"
-			(at 119.18 23 90)
+			(at 3 3.75 360)
 			(layer "F.Fab")
 			(uuid "70a4910d-6d14-4ca6-82a6-fe6aa04cc503")
 			(effects
@@ -3905,7 +3905,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 360)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aabbe0f6-9eae-4bb7-b98b-d66083a030eb")
@@ -3916,7 +3916,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 90)
+			(at 0 0 360)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4bf1a2eb-7b59-4913-b5bd-21f6c0f04cf4")
@@ -3928,8 +3928,56 @@
 		)
 		(attr through_hole board_only exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start 8.25 2.25)
+			(end -2.25 -2.25)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5d3ba9aa-e3d6-4e5c-b5e2-6900708f4ae3")
+		)
+		(fp_rect
+			(start 8.5 2.5)
+			(end -2.5 -2.5)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "5532d402-aacb-4edb-afbd-5b0619d174da")
+		)
+		(fp_text user "HB"
+			(at 9.75 0 270)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "90e6acd6-5ea2-4587-b5c2-c734e8a81192")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
+		(fp_text user "HA"
+			(at -3.75 0 270)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "d62ae7d1-0df7-4ad8-b117-17b7e0471516")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
 		(pad "1" thru_hole rect
-			(at 123.68 20 270)
+			(at 0 0 180)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -3938,7 +3986,7 @@
 			(uuid "2b97fbf6-aa29-417d-b9c1-a08653ce91cd")
 		)
 		(pad "2" thru_hole circle
-			(at 123.68 26 270)
+			(at 6 0 180)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -4316,13 +4364,13 @@
 			)
 		)
 	)
-	(footprint "amplikt88_board:OT_7"
+	(footprint "amplikt88_board:Heater_2"
 		(layer "F.Cu")
 		(uuid "6dd9c510-db7b-4e02-9f97-0a14ddc1a443")
-		(at 140 24.82 -90)
+		(at 105 55 -90)
 		(descr "Output transformer wire pads, 6 mm pitch: primary A1 UL1 CT UL2 A2 in one row, secondary S and 0 in a second row 12 mm below (GND 8 mm from HV)")
 		(property "Reference" "JH1"
-			(at 26.98 35 90)
+			(at 3 -3.75 270)
 			(layer "F.SilkS")
 			(uuid "7b1861a2-8f13-4b8f-b2c3-24b5103f5651")
 			(effects
@@ -4332,7 +4380,7 @@
 			)
 		)
 		(property "Value" "HEATER V1"
-			(at 33.18 31.5 90)
+			(at 3 3.75 90)
 			(layer "F.Fab")
 			(uuid "a5d35b98-db1a-45d4-8b1d-f55957288491")
 			(effects
@@ -4365,8 +4413,56 @@
 		)
 		(attr through_hole board_only exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.25 2.25)
+			(end 8.25 -2.25)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "e51d28b2-abde-42e8-a2b4-c159467ea2a7")
+		)
+		(fp_rect
+			(start -2.5 2.5)
+			(end 8.5 -2.5)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "70d4999b-e835-4d8b-9ffe-93bf0e5fd8b8")
+		)
+		(fp_text user "HA"
+			(at -3.75 0 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "2842b13a-e9e8-44d6-8ca6-16334cc41562")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
+		(fp_text user "HB"
+			(at 9.75 0 0)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "bad9eac4-54d3-44ea-8b43-9127783fa41d")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
 		(pad "1" thru_hole rect
-			(at 30.18 35 270)
+			(at 0 0 270)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -4375,7 +4471,7 @@
 			(uuid "0de9595e-cc61-4b47-9e59-8dc8d0a844fe")
 		)
 		(pad "2" thru_hole circle
-			(at 36.18 35 270)
+			(at 6 0 270)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -6270,13 +6366,13 @@
 			)
 		)
 	)
-	(footprint "amplikt88_board:OT_7"
+	(footprint "amplikt88_board:Heater_2"
 		(layer "F.Cu")
 		(uuid "ce8cc841-3130-49a6-95f6-9979e31b8df2")
-		(at 85.32 10.5)
+		(at 79 44.5)
 		(descr "Output transformer wire pads, 6 mm pitch: primary A1 UL1 CT UL2 A2 in one row, secondary S and 0 in a second row 12 mm below (GND 8 mm from HV)")
 		(property "Reference" "JH2"
-			(at -2.82 31.4 0)
+			(at 3 -3.75 0)
 			(layer "F.SilkS")
 			(uuid "c5455561-9dae-4c21-855b-3655f8ced496")
 			(effects
@@ -6286,7 +6382,7 @@
 			)
 		)
 		(property "Value" "HEATER V2"
-			(at -3.32 30.5 0)
+			(at 3 3.75 0)
 			(layer "F.Fab")
 			(uuid "23548c18-2f2e-459e-9c0a-69653b2c672c")
 			(effects
@@ -6319,8 +6415,56 @@
 		)
 		(attr through_hole board_only exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.25 -2.25)
+			(end 8.25 2.25)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ff9be5ee-328d-43d6-a237-2a7fbc21add0")
+		)
+		(fp_rect
+			(start -2.5 -2.5)
+			(end 8.5 2.5)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6a17802b-f013-4b56-92c8-c82ff1086df3")
+		)
+		(fp_text user "HA"
+			(at -3.75 0 90)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "ebeaf177-745b-492f-ad8a-078f7375b8d1")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
+		(fp_text user "HB"
+			(at 9.75 0 90)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "88419215-46f3-42d7-af24-7ff8d81a4789")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
 		(pad "1" thru_hole rect
-			(at -6.32 34)
+			(at 0 0)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -6329,7 +6473,7 @@
 			(uuid "efba9896-1416-46c8-a926-41cf6ae8111a")
 		)
 		(pad "2" thru_hole circle
-			(at -0.32 34)
+			(at 6 0)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -8253,13 +8397,13 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "amplikt88_board:OT_7"
+	(footprint "amplikt88_board:Heater_2"
 		(layer "F.Cu")
 		(uuid "fe6a9732-6b18-42a2-b556-2734907f0abf")
-		(at -50.82 132.5 180)
+		(at 21 70.5 180)
 		(descr "Output transformer wire pads, 6 mm pitch: primary A1 UL1 CT UL2 A2 in one row, secondary S and 0 in a second row 12 mm below (GND 8 mm from HV)")
 		(property "Reference" "JH3"
-			(at -68.82 58.5 0)
+			(at 3 -3.75 0)
 			(layer "F.SilkS")
 			(uuid "55141637-443f-4b11-be80-3287bb737310")
 			(effects
@@ -8269,7 +8413,7 @@
 			)
 		)
 		(property "Value" "HEATER V3"
-			(at -68.82 58.5 0)
+			(at 3 3.75 0)
 			(layer "F.Fab")
 			(uuid "dbb40d0b-3463-4631-8087-3b94890b87d0")
 			(effects
@@ -8302,8 +8446,56 @@
 		)
 		(attr through_hole board_only exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start 8.25 2.25)
+			(end -2.25 -2.25)
+			(stroke
+				(width 0.12)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "08f89a5b-050b-4413-a7da-0de052cb2846")
+		)
+		(fp_rect
+			(start 8.5 2.5)
+			(end -2.5 -2.5)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "15211fea-05aa-4dee-af24-aaaada3f026d")
+		)
+		(fp_text user "HB"
+			(at 9.75 0 270)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "5edfd0a8-68ea-4c96-aec0-9d6dcf0cdbf4")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
+		(fp_text user "HA"
+			(at -3.75 0 270)
+			(unlocked yes)
+			(layer "F.SilkS")
+			(uuid "923d7e41-8568-4614-9d47-2a4c3c6f7b30")
+			(effects
+				(font
+					(size 1 1)
+					(line_spacing 0)
+					(thickness 0.15)
+				)
+			)
+		)
 		(pad "1" thru_hole rect
-			(at -71.82 62 180)
+			(at 0 0 180)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
@@ -8312,7 +8504,7 @@
 			(uuid "47ba9a56-fd4f-4f0b-b706-8c425df7fab6")
 		)
 		(pad "2" thru_hole circle
-			(at -65.82 62 180)
+			(at 6 0 180)
 			(size 3.5 3.5)
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")

@@ -104,3 +104,10 @@
   (constraint courtyard_clearance (min 0mm))
   (severity ignore)
   (condition "(A.Reference == 'V3' && (B.Reference == 'R13' || B.Reference == 'R17' || B.Reference == 'R11' || B.Reference == 'C7')) || (A.Reference == 'V4' && (B.Reference == 'R14' || B.Reference == 'R18' || B.Reference == 'R20' || B.Reference == 'C8'))"))
+
+# Piazzole dei filamenti JH1-JH4: piatte sulla scheda, verificate in 3D dall'utente, nessun
+# problema sotto vetro o base delle valvole. Fuori dal DRC solo le coppie JH - valvola.
+(rule "Piazzole filamenti verificate"
+  (constraint courtyard_clearance (min 0mm))
+  (severity ignore)
+  (condition "A.Reference == 'JH?' && B.Reference == 'V?'"))

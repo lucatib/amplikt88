@@ -635,32 +635,7 @@
       "version": 5
     },
     "net_colors": {},
-    "netclass_assignments": {
-      "HEATER_A_V1": [
-        "HEATER"
-      ],
-      "HEATER_A_V2": [
-        "HEATER"
-      ],
-      "HEATER_A_V3": [
-        "HEATER"
-      ],
-      "HEATER_A_V4": [
-        "HEATER"
-      ],
-      "HEATER_B_V1": [
-        "HEATER"
-      ],
-      "HEATER_B_V2": [
-        "HEATER"
-      ],
-      "HEATER_B_V3": [
-        "HEATER"
-      ],
-      "HEATER_B_V4": [
-        "HEATER"
-      ]
-    },
+    "netclass_assignments": {},
     "netclass_patterns": [
       {
         "netclass": "HV_POWER",

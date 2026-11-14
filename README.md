@@ -42,46 +42,41 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 240 x 70 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side and the tracks on the back. Both ECC83s sit on the centre line, the input valve (V1) under the supply pads with its grounded pins facing left, and the LTP (V2) below it, with one KT88 at each end, 150 mm apart. Both KT88s have heater pins 2 and 7 on a horizontal line (check this against the valve maker's mounting note), and V4 is V3 turned 180 degrees about the board centre. So the anode, screen and cathode of each valve point the same way relative to it, and their tracks are point mirror images of each other, equal and short: the anode runs 20 mm straight to its transformer pad, the screen goes through its 470 ohm to the UL pad next to it, and the cathode goes to its 1 ohm resistor in the corner. The supply pads J4 are centred on the top edge, with the transformer centre tap right below the B+ pad. That leaves a channel under J4 for the driver supply rails to reach both sides, and a second one between the ECC83s for one LTP anode. The speaker terminal J3 is top right between the secondary pads. Input J2, an M4 hole next to it and the two bias trimmers (Bourns 3296X, side adjust, side by side, both screws facing the top edge) are top left. The large film capacitors stand vertical. Five M4 mounting holes: one in each corner and one next to J2.
+`amplikt88.kicad_pcb`, 212.67 x 90 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side. The KT88s sit at the two ends, 150.7 mm apart on the horizontal centre line: V3 on the left, turned -22.5 degrees, and V4 on the right, turned 67.5 degrees. The transformer wire pads TR2 run along the middle of the top edge (A1, UL1, CT, UL2, A2 at 6 mm pitch). The secondary pads (0, S) and the speaker terminal J3 are below them on the right. The supply wire pads J4 are 23 mm below TR2: B+ (pin 1) on the left, then B_DRV, B_V1, VBIAS_NEG, HEATER_A, HEATER_B, and ground (pin 7) on the right. Both ECC83s are in the lower half of the centre, the LTP (V2) under J4 and the input valve (V1) to its right, with the input header J2 on the bottom edge next to it. Each bias trimmer (Bourns 3296X, side adjust) is in the top corner on its own valve's side, RV1 next to V3 and RV2 next to V4. The 1 ohm cathode resistors are along the bottom edge (R19 left, R20 right). Four M4 mounting holes, one in each corner, 4.5 mm from the edges.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
 
-![3D view of the back](docs/pcb-3d-bottom.png)
-
-Footprints: the KT88s are on `Valve_Octal_KT88` (project library), with the pads on the solder tabs of the socket in the JJ 3D model (25.3 mm circle, 3.2 mm holes for the 2.9 x 0.5 mm tabs, origin at the socket centre) and the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_Noval_ECC83` (project library), the tabs of a noval PCB socket on a 17.4 mm circle with 2 mm holes, courtyard the 21.5 mm glass; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The output transformer footprint `Offboard_OT_7` has CT under the B+ pad, A1 and UL1 next to V3, A2 and UL2 next to V4 (point mirror image), and the secondary (S, 0) either side of the speaker terminal. The supply wire pads J4 are at 6 mm pitch, B+ (pin 1) on the left, ground (pin 7) on the right.
-
-![Power routing on B.Cu](docs/pcb-routing.png)
-
-The power paths are routed. The high-current ones are all on B.Cu with no vias:
-
-- KT88 anodes to the output transformer (A1, A2), 20 mm each, and B+ from J4 to the transformer centre tap: 2.5 mm.
-- Cathodes to the 1 ohm sense resistors: 2.5 mm.
-- Secondary to the speaker terminal: 3 mm (3 A rms, 4.2 A peak, at 70 W into 8 ohm). J3 is a 5.08 mm screw terminal instead of the 2.54 mm header.
-- Ground as a star: one 2.5 mm wire from each 1 ohm cathode resistor to J4 pin 7. R20 (top right) runs straight along the top edge; R19 (bottom left) runs along the bottom and right edges and then along the top.
-- B+ from J4 pin 1 straight down to the transformer centre tap.
-- Ultralinear taps through R17 and R18 to the UL pads, the same length on both valves.
-
-The other supply nets from J4 were autorouted, with F.Cu allowed but costed so most of each track stays on the back:
-
-- Driver rails B_DRV (to the LTP anode loads R6, R7) and B_V1 (to R3), 1 mm, kept 8 mm from ground. They cross to the right through the channel under J4.
-- Heaters HEATER_A and HEATER_B to all four valves, 2 mm, with vias where they have to cross.
-- Bias supply VBIAS_NEG to the trimmers and R8.
-
-![Ground plane on F.Cu](docs/pcb-ground-plane.png)
-
-F.Cu is a ground plane that joins the star only at J4 pin 7 (and at the transformer secondary return, which carries no return current). Every other pad is isolated from it.
-
 ![3D view from the top](docs/pcb-3d.png)
+
+Footprints: the KT88s are on `Valve_Octal_KT88` (project library `amplikt88_board`), with the pads on the solder tabs of the socket in the JJ 3D model (25.3 mm circle, 3.2 mm holes for the 2.9 x 0.5 mm tabs, origin at the socket centre) and the courtyard set to the glass, 52 mm across; the ECC83s are on `Valve_Noval_ECC83`, the tabs of a noval PCB socket on a 17.4 mm circle with 2 mm holes, courtyard the 21.5 mm glass; the 2 W screen resistors R17 and R18 on DIN0617 (17 x 6 mm), the 1 W cathode resistors R19 and R20 on DIN0414 (11.9 x 4.5 mm). The transformer pads use `OT_7`, the supply pads `Supply_7` and the heater pads `Heater_2`. J3 is a 5.08 mm screw terminal.
+
+Heaters are wired off the board. Each valve has a pair of wire pads (JH1 to JH4, HEATER_A and HEATER_B) next to it, and the links between them and J4 pins 5 and 6 are external wires. DRC therefore reports 5 unconnected heater items; that is intended.
+
+![Routing: F.Cu red, B.Cu blue](docs/pcb-routing.png)
+
+Routing is one layer per net, with no vias:
+
+- B.Cu carries only ground, as a star from J4 pin 7: 2.5 mm wide (1.2 mm into J2, whose 2.54 mm header has no room for more).
+- Everything else is on F.Cu:
+  - KT88 anodes to TR2 A1/A2, B+ to the centre tap and the cathodes to their 1 ohm resistors: 2.5 mm.
+  - Secondary to the speaker terminal: 3 mm (3 A rms, 4.2 A peak, at 70 W into 8 ohm).
+  - Heaters from each valve to its JH pads: 2 mm.
+  - B_DRV, B_V1, ultralinear taps, screens and the ECC83 anodes: 1 mm.
+  - Signals and the bias network: 0.5 mm.
+- The one exception is `/LTP_A1` (LTP anode to C8). The parts around V1 close it in, so it takes two vias and a 10 mm jump on B.Cu.
+- All tracks are at 0, 45 or 90 degrees.
+
+![3D view of the back](docs/pcb-3d-bottom.png)
 
 Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dru`):
 
-- Nodes above 200 V (classes `HV_POWER` and `HV`) keep 8 mm from ground copper, the plane included, from the mounting holes and from the board edge; 2.5 mm between themselves.
-- High-current and ground nets: minimum widths as above, no vias, no tracks on F.Cu.
-- `V1_A` and `B_V1` are in the HV class as a precaution.
+- Clearance to ground copper and to the mounting holes (the screws go to the chassis) depends on the working voltage: 5 mm for B+, B_DRV, B_V1 and the ECC83 anodes (up to 470 V DC); 6.3 mm for the UL taps and screens (peaks around 650 V); 8 mm for the KT88 anodes (peaks around 900 V). The HV nets keep 2.5 mm between themselves.
+- No edge touches the bracket or the chassis, so there is no HV rule at the board edge, but every track stays at least 3 mm from it.
+- Minimum widths as above for the high-current and ground nets; ground only on B.Cu, every other net only on F.Cu; no vias except the named `/LTP_A1` exception.
 - Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
-- No other part within 4 mm of a KT88's glass, so each KT88 keeps a 60 mm circle to itself; that sets the board length. Pin 1 (shell) of each KT88 goes to the plane, not to the star.
+- No other part within 4 mm of a KT88's glass. The exceptions are R11, R13, R17 and C7 at V3 and R14, R18, R20 and C8 at V4. These were checked in 3D: they sit under the bulb, where the KT88 is only its 42 mm base up to 35 mm high (C7 and C8, the tallest, reach 26 mm). The heater pads JH1 to JH4 are also excluded from the courtyard checks against their valves; they are flat wire pads, also checked in 3D.
 
-The signal nets and the signal ground pads are not routed yet. The zone has to be refilled from the PCB editor or `pcbnew` Python: `kicad-cli pcb drc --refill-zones` does not apply the custom rules to the fill.
+DRC: no errors. There are 5 unconnected heater items (intended, see above) and 8 silkscreen warnings.
 
 ## Simulation
 
