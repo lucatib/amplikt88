@@ -1,6 +1,6 @@
 # Output transformer specification
 
-One transformer per channel (TR2 on `amplikt88.kicad_sch`), two matched ones for stereo. It couples a push-pull pair of KT88 in ultralinear class AB, 450 V B+, fixed bias, to an 8 ohm speaker, inside a feedback loop of about 16 dB.
+One transformer per channel (TR2 on `amplikt88.kicad_sch`), two matched ones for stereo. It couples a push-pull pair of KT88 in ultralinear class AB, 450 V B+, fixed bias, to an 8 ohm speaker, inside a feedback loop of about 21 dB.
 
 The figures marked *model* come from `python3 spice/ot_study.py`, which reruns the simulation of the schematic with other transformers. Nothing here has been measured on hardware.
 
@@ -50,7 +50,7 @@ Pin numbers are those of the symbol `amplikt88:OT_PP_UL`.
 | 6 | `OT_S_HI` | Speaker +, feedback through R9 and C6 | Start of the secondary (dot) |
 | 7 | `GND` | Speaker -, ground | |
 
-Pin 6 must be in phase with pin 1: with the dots as drawn the feedback is negative. If the amplifier gains about 16 dB or oscillates when the feedback is connected, the secondary (or the two anode leads) is reversed.
+Pin 6 must be in phase with pin 1: with the dots as drawn the feedback is negative. If the amplifier gains about 21 dB or oscillates when the feedback is connected, the secondary (or the two anode leads) is reversed.
 
 ## Where the numbers come from
 
@@ -60,49 +60,49 @@ Pin 6 must be in phase with pin 1: with the dots as drawn the feedback is negati
 
 | Primary (ohm) | Turns ratio to 8 ohm | Power at 1 % THD (W) | THD at 37 W (%) | Anode swing (V) | Peak between anodes (V) | Peak cathode current (mA) | Average B+ current (mA) |
 |---|---|---|---|---|---|---|---|
-| 3300 | 20.3 | 91 | 0.35 | 25 to 846 | 822 | 485 | 340 |
-| **4000** | **22.4** | **77** | **0.31** | **24 to 852** | **829** | **407** | **295** |
-| 5000 | 25.0 | 64 | 0.26 | 22 to 858 | 837 | 332 | 253 |
-| 6600 | 28.7 | 50 | 0.21 | 21 to 863 | 844 | 258 | 213 |
+| 3300 | 20.3 | 94 | 0.18 | 18 to 852 | 835 | 497 | 344 |
+| **4000** | **22.4** | **80** | **0.16** | **16 to 859** | **844** | **418** | **298** |
+| 5000 | 25.0 | 66 | 0.12 | 15 to 864 | 850 | 340 | 254 |
+| 6600 | 28.7 | 51 | 0.18 | 14 to 870 | 858 | 264 | 213 |
 
-The valve model is more generous than the data sheet (77 W against 70 W), so the transformer is specified for 70 W. At 3.3 kohm the model gives more power, but the supply would have to deliver 340 mA (the mains transformer is rated 300 mA) and the valves work beyond the data sheet's conditions; above 5 kohm power is lost for little gain in distortion.
+The valve model is more generous than the data sheet (80 W against 70 W), so the transformer is specified for 70 W. At 3.3 kohm the model gives more power, but the supply would have to deliver 340 mA (the mains transformer is rated 300 mA) and the valves work beyond the data sheet's conditions; above 5 kohm power is lost for little gain in distortion.
 
 **Voltages.** At full power each anode swings about 400 V either side of B+, so it reaches 850 V to ground and the two anodes are 820 V apart. If the speaker is disconnected, or is strongly reactive, while the amplifier is overdriven, the load line no longer limits the swing: that is what breaks output transformers, hence the test voltage.
 
-**Leakage inductance and capacitance.** The loop is rolled off inside the amplifier (C15 and R26 across the anodes of the driver pair), so that it crosses unity near 29 kHz, below the transformer's own corner. Leakage and capacitance then decide how much phase margin is left there. *Model*, feedback 120 k / 18 pF:
+**Leakage inductance and capacitance.** The loop is rolled off inside the amplifier (C15 and R26 across the anodes of the driver pair), so that the margin depends little on the transformer; with the 21 dB of loop gain it crosses unity near 100 kHz. Leakage and capacitance then decide how much phase margin is left there. *Model*, feedback 120 k / 18 pF:
 
 | Leakage (mH) | Capacitance | Unity loop gain (kHz) | Phase margin (deg) | Gain margin (dB) |
 |---|---|---|---|---|
-| 5 | 300 pF | 29.2 | 128 | 23 |
-| 10 | 300 pF | 29.2 | 124 | 26 |
-| 24 | 300 pF | 29.2 | 113 | 31 |
-| 40 | 300 pF | 27.1 | 103 | 33 |
-| 60 | 300 pF | 24.1 | 93 | 36 |
-| 10 | 1 nF | 28.1 | 108 | 33 |
-| 24 | 1 nF | 28.1 | 96 | 36 |
-| 24 | 2 nF | 25.1 | 79 | 40 |
-| 40 | 2 nF | 24.1 | 66 | 40 |
+| 5 | 300 pF | 271 | 67 | 15 |
+| 10 | 300 pF | 192 | 69 | 17 |
+| 24 | 300 pF | 104 | 79 | 21 |
+| 40 | 300 pF | 70.6 | 79 | 24 |
+| 60 | 300 pF | 52.0 | 75 | 26 |
+| 10 | 1 nF | 85.6 | 80 | 23 |
+| 24 | 1 nF | 62.9 | 61 | 26 |
+| 24 | 2 nF | 44.6 | 52 | 31 |
+| 40 | 2 nF | 39.7 | 37 | 32 |
 
 10 kHz square wave, overshoot in %:
 
 | Leakage (mH) | Capacitance | 8 ohm | 8 ohm + 0.1 uF | 8 ohm + 1 uF |
 |---|---|---|---|---|
-| 5 | 300 pF | 2.7 | 3.4 | 1.5 |
-| 10 | 1 nF | 2.3 | 2.1 | 4.3 |
-| 24 | 300 pF | 2.3 | 2.2 | 2.0 |
-| 40 | 2 nF | 4.6 | 7.0 | 34 |
+| 5 | 300 pF | 0.8 | 6.7 | 0.4 |
+| 10 | 1 nF | 0.7 | 0.8 | 7.4 |
+| 24 | 300 pF | 0.7 | 0.9 | 5.1 |
+| 40 | 2 nF | 6.8 | 8.3 | 35 |
 
-Inside the limits of the order sheet (15 mH, 1 nF) the phase margin stays above 100 degrees and the square wave is clean with any load. The schematic is simulated with 24 mH and 300 pF, a mediocre transformer; with 40 mH and 2 nF it only misbehaves with 1 uF across the speaker. The transformer also sets the response without feedback at the top, so the resonance above 40 kHz is still worth asking for.
+Inside the limits of the order sheet (15 mH, 1 nF) the phase margin stays above 65 degrees, the gain margin above 15 dB, and the square wave overshoots 7.5 % or less with any load. The schematic is simulated with 24 mH and 300 pF, a mediocre transformer; with 40 mH and 2 nF it only misbehaves with 1 uF across the speaker. The transformer also sets the response without feedback at the top, so the resonance above 40 kHz is still worth asking for.
 
-**Primary inductance.** With 40 H the output stage rolls off at about 8 Hz before feedback (the valves present about 4.5 kohm anode to anode, in parallel with the 4 kohm load). Inside the loop this pole meets the two coupling networks (C5/R5 and C7, C8 / R11, R12), so more inductance is not automatically better. *Model*:
+**Primary inductance.** With 40 H the output stage rolls off at about 8 Hz before feedback (the valves present about 4.5 kohm anode to anode, in parallel with the 4 kohm load). Inside the loop this pole meets the coupling networks C7, C8 / R11, R12 and the high-pass of the pair's second grid (R10, C16), so more inductance is not automatically better. *Model*:
 
 | Primary inductance (H) | Unity loop gain (Hz) | Phase margin (deg) | Gain margin (dB) |
 |---|---|---|---|
-| 20 | 2.8 | 74 | 27 |
-| 40 | 1.6 | 60 | 22 |
-| 80 | 1.0 | 47 | 17 |
-| 150 | 0.7 | 36 | 13 |
-| 300 | 0.5 | 29 | 10 |
+| 20 | 1.5 | 74 | 35 |
+| 40 | 0.8 | 60 | 29 |
+| 80 | 0.5 | 46 | 23 |
+| 150 | 0.3 | 36 | 19 |
+| 300 | 0.2 | 28 | 14 |
 
 Inductance also changes with level, by a factor of three or more between a few volts and full power, which is why the range matters more than the single figure.
 
@@ -117,7 +117,7 @@ Per transformer: primary inductance (50 Hz, 10 V and 230 V rms), leakage inducta
 ## Other transformers
 
 - **5 kohm, 100 W (Hammond 1650R: 5 kohm centre tapped, 40 % taps, 4-8-16 ohm, 318 mA).** Works without changes: about 64 W in the model, less distortion at normal levels, lower peak current. Rated at 100 W it has margin at 30 Hz.
-- **4 kohm toroid (Toroidy TTG-KT88PP: 4 kohm, 43 % tap, 12 Hz to 56 kHz, 300 mA according to distributor listings).** The impedance and the tap are right. A toroid typically has several hundred henries of primary inductance and little tolerance for DC unbalance. With 300 to 430 H the model gives 28 degrees of phase margin and 9 to 10 dB of gain margin at the bottom as drawn; C5 2.2 uF with C7 and C8 0.47 uF brings them to about 45 degrees and 19 dB. Keep the idle currents matched within 2 or 3 mA.
+- **4 kohm toroid (Toroidy TTG-KT88PP: 4 kohm, 43 % tap, 12 Hz to 56 kHz, 300 mA according to distributor listings).** The impedance and the tap are right. A toroid typically has several hundred henries of primary inductance and little tolerance for DC unbalance. With 300 H the model gives 28 degrees of phase margin and 14 dB of gain margin at the bottom as drawn; C16 4.7 uF instead of 2.2 uF brings them to about 33 degrees and 21 dB. Keep the idle currents matched within 2 or 3 mA.
 - **6.6 kohm.** 50 W in the model. Only worth it for a transformer already on the shelf.
 - **A secondary other than 8 ohm for the feedback.** R9 and C6 are sized for the 8 ohm terminal. From a 4 ohm tap R9 becomes about 82 k, from 16 ohm about 170 k, and C6 scales the other way.
 
@@ -125,7 +125,7 @@ Check the tap percentage, leakage and inductance of any ready-made part on its o
 
 ## With the real transformer on the bench
 
-The compensation (C15 470 pF with R26 10k across the driver anodes, R9 120k with C6 18 pF) is trimmed on the simulated transformer, so repeat the test on the real one: 10 kHz square wave at about 1 W into 8 ohm, then with 0.1 uF and 1 uF across the load. If the edge rings, raise C15 (470 pF to 1 nF) and, if that is not enough, R9 (less feedback); a larger C6 makes it worse. If the edge is clean with all three loads and more bandwidth is wanted (the model gives 23 kHz at -3 dB), lower C15 to 330 or 220 pF and repeat. At the bottom, watch the output with no signal at switch-on and after a deep bass transient: slow breathing at 1 to 3 Hz means too little margin there, cured by a larger C5 and smaller C7 and C8.
+The compensation (C15 680 pF with R26 4.7k across the driver anodes, R9 120k with C6 18 pF) is trimmed on the simulated transformer, so repeat the test on the real one: 10 kHz square wave at about 1 W into 8 ohm, then with 0.1 uF and 1 uF across the load. If the edge rings, raise C15 (680 pF to 1 nF) and, if that is not enough, R9 (less feedback); a larger C6 makes it worse. The model gives 42 kHz at -3 dB, so there is no reason to lower C15. At the bottom, watch the output with no signal at switch-on and after a deep bass transient: slow breathing at 1 to 3 Hz means too little margin there, cured by a larger C16 (R10 C16 as long as possible) or larger C7 and C8.
 
 ## Sources
 

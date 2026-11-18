@@ -3173,7 +3173,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "470k"
 			(at 86.36 73.66 90)
 			(effects
 				(font
@@ -3217,7 +3217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=100k"
+		(property "Sim.Params" "r=470k"
 			(at 86.36 73.66 0)
 			(effects
 				(font
@@ -3592,7 +3592,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
+		(lib_id "Device:R")
 		(at 104.14 91.44 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3600,7 +3600,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1407447b-3a8d-4b92-a980-157690649503")
-		(property "Reference" "C5"
+		(property "Reference" "R5"
 			(at 100.33 83.82 90)
 			(effects
 				(font
@@ -3609,7 +3609,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 630V"
+		(property "Value" "1k"
 			(at 100.33 86.36 90)
 			(effects
 				(font
@@ -3618,98 +3618,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4"
-			(at 104.14 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.14 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 104.14 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "C"
-			(at 104.14 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Params" "c=1u"
-			(at 104.14 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "amplikt88"
-				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 114.3 115.57)
-			(xy 114.3 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fdf187af-cb2e-40c7-b312-95a26a09adf2")
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 114.3 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "af98ca2e-2190-4cf3-ba57-72e707d7e428")
-		(property "Reference" "R5"
-			(at 116.332 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1M"
-			(at 114.3 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 114.3 111.76 0)
+			(at 104.14 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3718,7 +3628,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 111.76 0)
+			(at 104.14 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3727,7 +3637,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 111.76 0)
+			(at 104.14 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3736,7 +3646,7 @@
 			)
 		)
 		(property "Sim.Device" "R"
-			(at 114.3 111.76 0)
+			(at 104.14 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3744,8 +3654,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=1meg"
-			(at 114.3 111.76 0)
+		(property "Sim.Params" "r=1k"
+			(at 104.14 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3757,68 +3667,6 @@
 			(project "amplikt88"
 				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
 					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 114.3 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ece4595b-6d4f-4d0a-8bc4-f29c43cc7f15")
-		(property "Reference" "#PWR016"
-			(at 114.3 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 114.3 125.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 114.3 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 114.3 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 114.3 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "amplikt88"
-				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -4243,39 +4091,6 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 147.32 128.27)
-			(xy 147.32 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "743bf816-6919-4461-a0af-a64f6b162499")
-	)
-	(global_label "VBIAS_NEG"
-		(shape passive)
-		(at 147.32 133.35 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8e36d832-487b-4a88-b23f-8ae20a593f62")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.32 133.35 270)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(symbol
 		(lib_id "Device:R")
 		(at 147.32 124.46 0)
@@ -4293,7 +4108,7 @@
 				)
 			)
 		)
-		(property "Value" "22k"
+		(property "Value" "33k 1W"
 			(at 147.32 124.46 90)
 			(effects
 				(font
@@ -4301,7 +4116,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal"
 			(at 147.32 124.46 0)
 			(effects
 				(font
@@ -4337,7 +4152,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=22k"
+		(property "Sim.Params" "r=33k"
 			(at 147.32 124.46 0)
 			(effects
 				(font
@@ -4354,17 +4169,6 @@
 				)
 			)
 		)
-	)
-	(wire
-		(pts
-			(xy 177.8 115.57)
-			(xy 177.8 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b4198e3-1c01-4371-ad44-6764eebe6a33")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4383,7 +4187,7 @@
 				)
 			)
 		)
-		(property "Value" "470k"
+		(property "Value" "2.2M"
 			(at 177.8 111.76 90)
 			(effects
 				(font
@@ -4427,7 +4231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=470k"
+		(property "Sim.Params" "r=2.2meg"
 			(at 177.8 111.76 0)
 			(effects
 				(font
@@ -4446,69 +4250,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 177.8 120.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "91a36c70-3fbc-4cfa-827d-2d28fcd352e2")
-		(property "Reference" "#PWR017"
-			(at 177.8 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 177.8 125.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 177.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 177.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 177.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "amplikt88"
-				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-
-	(symbol
 		(lib_id "Device:C")
 		(at 185.42 111.76 0)
 		(unit 1)
@@ -4526,8 +4267,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 100V"
-			(at 186.055 114.30 0)
+		(property "Value" "2.2u 250V"
+			(at 186.055 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4535,7 +4276,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W2.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3"
 			(at 185.42 111.76 0)
 			(effects
 				(font
@@ -4571,7 +4312,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=1u"
+		(property "Sim.Params" "c=2.2u"
 			(at 185.42 111.76 0)
 			(effects
 				(font
@@ -4589,7 +4330,6 @@
 			)
 		)
 	)
-
 	(symbol
 		(lib_id "power:GND")
 		(at 185.42 120.65 0)
@@ -4652,7 +4392,6 @@
 			)
 		)
 	)
-
 	(wire
 		(pts
 			(xy 177.8 101.6)
@@ -4677,7 +4416,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 115.57000000000001)
+			(xy 185.42 115.57)
 			(xy 185.42 120.65)
 		)
 		(stroke
@@ -4691,7 +4430,8 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e0dd0237-71f8-4291-a1ea-e0e31a3bbde3")
-	)	(symbol
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 142.24 83.82 90)
 		(unit 1)
@@ -4709,7 +4449,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470p 630V"
+		(property "Value" "680p 630V"
 			(at 143.51 78.74 90)
 			(effects
 				(font
@@ -4754,7 +4494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=470p"
+		(property "Sim.Params" "c=680p"
 			(at 142.24 83.82 0)
 			(effects
 				(font
@@ -4789,7 +4529,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "4.7k"
 			(at 153.67 86.36 90)
 			(effects
 				(font
@@ -4833,7 +4573,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=10k"
+		(property "Sim.Params" "r=4.7k"
 			(at 153.67 83.82 0)
 			(effects
 				(font
@@ -4869,7 +4609,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 630V"
+		(property "Value" "2.2u 630V"
 			(at 189.23 76.2 90)
 			(effects
 				(font
@@ -4878,7 +4618,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4"
+		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
 			(at 193.04 81.28 0)
 			(effects
 				(font
@@ -4914,7 +4654,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=1u"
+		(property "Sim.Params" "c=2.2u"
 			(at 193.04 81.28 0)
 			(effects
 				(font
@@ -5533,7 +5273,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u 630V"
+		(property "Value" "2.2u 630V"
 			(at 189.23 139.7 90)
 			(effects
 				(font
@@ -5542,7 +5282,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4"
+		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
 			(at 193.04 144.78 0)
 			(effects
 				(font
@@ -5578,7 +5318,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=1u"
+		(property "Sim.Params" "c=2.2u"
 			(at 193.04 144.78 0)
 			(effects
 				(font
@@ -6820,7 +6560,6 @@
 			)
 		)
 	)
-
 	(symbol
 		(lib_id "Device:R")
 		(at 49.53 198.12 0)
@@ -6900,7 +6639,6 @@
 			)
 		)
 	)
-
 	(wire
 		(pts
 			(xy 49.53 190.5)
@@ -7024,7 +6762,6 @@
 			)
 		)
 	)
-
 	(wire
 		(pts
 			(xy 95.25 190.5)
@@ -7068,7 +6805,8 @@
 				(hide yes)
 			)
 		)
-	)	(symbol
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 40.64 214.63 0)
 		(unit 1)
@@ -9365,12 +9103,6 @@
 		)
 		(uuid "4d708e75-0af2-4ec6-b516-5ad66ba882ff")
 	)
-	(junction
-		(at 114.3 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a02b6770-25b6-41f1-a997-9d1253083d3a")
-	)
 	(wire
 		(pts
 			(xy 107.95 91.44)
@@ -9392,17 +9124,6 @@
 			(type default)
 		)
 		(uuid "95b2f95a-bd1d-4bdc-b29f-76a8e382bce6")
-	)
-	(wire
-		(pts
-			(xy 114.3 101.6)
-			(xy 114.3 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20fd45b7-a9dc-4e36-b24b-5201bf7de68c")
 	)
 	(wire
 		(pts
@@ -10084,7 +9805,7 @@
 		(at 44.45 55.88 0)
 		(mirror y)
 		(unit 1)
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
@@ -10198,6 +9919,101 @@
 			(project "amplikt88"
 				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
 					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 177.8 115.57)
+			(xy 177.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "964f3503-31a2-4c46-bc8a-4bc02dcf7162")
+	)
+	(label "LTP_G1"
+		(at 177.8 120.65 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6590666d-8fbe-4df1-ae19-9eb12284ddc0")
+	)
+	(wire
+		(pts
+			(xy 147.32 128.27)
+			(xy 147.32 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9d12aa4-cde1-4c35-8e80-30dd44a9d17b")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "44286a06-b261-473b-b81b-a1887e8e37ec")
+		(property "Reference" "#PWR016"
+			(at 147.32 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 138.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "amplikt88"
+				(path "/c311ec06-4eb5-4acf-a668-7427555e11f4"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)

@@ -38,9 +38,9 @@ def bench(net, ltp, pos, rf, cf, open_loop=False):
     n = re.sub(r"(XRV[12] .*POS=)[0-9.]+", rf"\g<1>{pos}", n)
     n = re.sub(FEEDBACK % "R9", rf"\g<1>{rf}", n)
     n = re.sub(FEEDBACK % "C6", rf"\g<1>{cf}", n)
-    if ltp == "ecc82":   # lower mu and anode resistance: more current, smaller loads
+    if ltp == "ecc82":   # lower mu: more bias, more current, smaller loads; V1 anode a little higher
         n = re.sub(r"(XV2 .*) ECC83", r"\1 ECC82", n)
-        for ref, value in (("R6", "22k"), ("R7", "22k"), ("R8", "12k"), ("R21", "18k")):
+        for ref, value in (("R3", "330k"), ("R6", "33k"), ("R7", "33k"), ("R8", "22k")):
             n, found = re.subn(rf"^({ref} \S+ \S+ )\S+", rf"\g<1>{value}", n, flags=re.M)
             assert found == 1, ref
     if open_loop:   # feedback network kept as a load, its output end grounded

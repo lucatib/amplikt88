@@ -457,7 +457,7 @@
 		(descr "Resistor, Axial_DIN0414 series, Axial, Horizontal, pin pitch=15.24mm, 2W, length*diameter=11.9*4.5mm^2, http://www.vishay.com/docs/20128/wkxwrx.pdf")
 		(tags "Resistor Axial_DIN0414 series Axial Horizontal pin pitch 15.24mm 2W length 11.9mm diameter 4.5mm")
 		(property "Reference" "R19"
-			(at 7.62 -3.37 0)
+			(at 3.12 -3.37 0)
 			(layer "F.SilkS")
 			(uuid "12d209d6-2ef2-4342-9d0e-44c9c978bb06")
 			(effects
@@ -1794,7 +1794,7 @@
 				)
 			)
 		)
-		(property "Value" "470p 630V"
+		(property "Value" "680p 630V"
 			(at 2.5 2.5 90)
 			(layer "F.Fab")
 			(uuid "5d4be12c-61c2-4aa3-a0a6-d2bed8a18cf7")
@@ -5578,11 +5578,11 @@
 	(footprint "Capacitor_THT:C_Rect_L7.2mm_W2.5mm_P5.00mm"
 		(layer "F.Cu")
 		(uuid "978c454f-3c9b-40b4-a8bd-741ddab99e8f")
-		(at 41.3 143.35)
+		(at 98.75 125.25 90)
 		(descr "C, Rect series, Radial, pin pitch=5.00mm, length*width=7.2*2.5mm^2, Capacitor, R82, https://content.kemet.com/datasheets/KEM_F3101_R82.pdf")
 		(tags "C Rect series Radial pin pitch 5.00mm length 7.2mm width 2.5mm Capacitor R82")
 		(property "Reference" "C16"
-			(at 2.5 -2.5 0)
+			(at 2.5 -2.5 90)
 			(layer "F.SilkS")
 			(uuid "b7591a71-b4a4-4cdf-b211-277244a989ad")
 			(effects
@@ -5593,7 +5593,7 @@
 			)
 		)
 		(property "Value" "1u 100V"
-			(at 2.5 2.5 0)
+			(at 2.5 2.5 90)
 			(layer "F.Fab")
 			(uuid "62d845cd-6503-4a68-a9a7-0df904625b26")
 			(effects
@@ -5604,7 +5604,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "887e9ca1-daca-489c-be02-8ba7f101afce")
@@ -5615,7 +5615,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9dc8b787-1aa1-4d9c-b8ed-588344697397")
@@ -5626,7 +5626,7 @@
 			)
 		)
 		(property "KiLib_Generator" "capacitor/THT/other"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "7e846521-753b-41ec-972b-5ad5a1eec4b1")
@@ -5643,26 +5643,6 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -1.22 -1.37)
-			(end 6.22 -1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f7a9f162-25b8-4936-8124-438f87de2fcd")
-		)
-		(fp_line
-			(start -1.22 1.37)
-			(end -1.22 -1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "91d98b74-adac-47b1-ae5e-e8ad6a72b363")
-		)
-		(fp_line
 			(start 6.22 -1.37)
 			(end 6.22 1.37)
 			(stroke
@@ -5673,6 +5653,16 @@
 			(uuid "158f9da7-8fe3-4edc-8551-aa02fb237fa3")
 		)
 		(fp_line
+			(start -1.22 -1.37)
+			(end 6.22 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f7a9f162-25b8-4936-8124-438f87de2fcd")
+		)
+		(fp_line
 			(start 6.22 1.37)
 			(end -1.22 1.37)
 			(stroke
@@ -5681,6 +5671,16 @@
 			)
 			(layer "F.SilkS")
 			(uuid "00bb7ec3-8540-49c0-9c4d-99a38f8af381")
+		)
+		(fp_line
+			(start -1.22 1.37)
+			(end -1.22 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "91d98b74-adac-47b1-ae5e-e8ad6a72b363")
 		)
 		(fp_rect
 			(start -1.35 -1.5)
@@ -5705,7 +5705,7 @@
 			(uuid "23318e2e-1f4c-4f2d-ae7d-76ce2b72e9e9")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 2.5 0 0)
+			(at 2.5 0 90)
 			(layer "F.Fab")
 			(uuid "98185dcc-78e8-47a3-b085-e4bcbf85d2c3")
 			(effects
@@ -5716,7 +5716,7 @@
 			)
 		)
 		(pad "1" thru_hole circle
-			(at 0 0)
+			(at 0 0 90)
 			(size 1.5 1.5)
 			(drill 0.75)
 			(layers "*.Cu" "*.Mask")
@@ -5726,7 +5726,7 @@
 			(uuid "d0f7fc4b-8cc6-47cc-b281-6e73138b5f98")
 		)
 		(pad "2" thru_hole circle
-			(at 5 0)
+			(at 5 0 90)
 			(size 1.5 1.5)
 			(drill 0.75)
 			(layers "*.Cu" "*.Mask")
@@ -8227,7 +8227,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "4.7k"
 			(at 5.08 2.37 0)
 			(layer "F.Fab")
 			(uuid "40185af6-8917-4bbb-9115-2be6d017eed8")
