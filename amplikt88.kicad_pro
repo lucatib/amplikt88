@@ -712,6 +712,18 @@
       {
         "netclass": "HV",
         "pattern": "/LTP_STEP"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/LTP_G1"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/V2_G2"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "/LTP_K"
       }
     ]
   },
