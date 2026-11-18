@@ -14,7 +14,7 @@ The nets that cross between the sheets are global labels: `B_PLUS`, `B_DRV`, `B_
 ![Power supply sheet](docs/schematic/power.svg)
 
 - **Output stage:** 2x KT88, push-pull, class AB, ultralinear (screens on the output transformer taps), adjustable fixed bias.
-- **Driver:** ECC83 long-tailed pair, tail returned to the negative bias rail. The second grid is grounded through 470k, so the pair works as a phase splitter.
+- **Driver:** ECC83 long-tailed pair, tail returned to the negative bias rail. The second grid is grounded through 470k, bypassed by C16 (1 uF) so it stays at AC ground above a few kHz too, and the pair works as a phase splitter. C16 has not been checked in simulation yet.
 - **Input stage:** ECC83 section (the second section is grounded). Its cathode is not bypassed and takes the global feedback.
 - **Feedback:** 120k with 18 pF in parallel, from the speaker terminal to the input stage cathode (1k to ground). It encloses all three stages, about 16 dB of loop gain.
 - **Supply:** 330 V winding, bridge, C-L-C filter to about 450 V B+, separate decoupled rail for the driver, 6.3 V heaters with an artificial centre tap, about -65 V bias supply.
@@ -24,10 +24,11 @@ The nets that cross between the sheets are global labels: `B_PLUS`, `B_DRV`, `B_
 The values were checked in simulation (below) but nothing has been measured on hardware.
 
 - Output transformer 4 kohm plate-to-plate with 40 % ultralinear taps and an 8 ohm secondary, 70 W. The full specification, with what happens with other transformers, is in [docs/output-transformer.md](docs/output-transformer.md).
-- Power transformer 230 V, 330 V / 300 mA HV, 6.3 V / 4.5 A, 50 V bias winding.
+- Power transformer 230 V, 330 V / 300 mA HV, 6.3 V / 4.5 A, 60 V bias winding.
+- Bias supply: the rail carries about 8 mA (the two trimmer strings, 25k each, and the LTP tail, 3 mA), so the series resistor R23 drops a lot of it. With the earlier 50 V winding and 4.7k the rail sat at about -43 V instead of -65 V, too little to bias the KT88s. With 60 V and R23 1.8k it is about -66 V at nominal mains (-59 V to -73 V for 54 to 66 V on the winding), from a time-domain model of the half-wave supply with its real load; the amplifier simulation still uses an ideal -65 V source.
 - The secondary must be phased so the speaker terminal is in phase with the input. If the gain rises or it oscillates, swap the secondary leads.
 - Sensitivity is high: 0.24 V peak (0.17 V rms) gives 38 W. Put a volume control or an input divider in front of C3.
-- Bias trimmers: the wiper goes from -65 V to about -39 V. Set both fully to the most negative end before first power-up, then raise the bias to about 60 mA per valve, measured across the 1 ohm cathode resistors (60 mV). In simulation 60 mA is at -45 V, about 77 % of the travel. The data sheet gives about -59 V for 50 mA at 460 V, so real valves will sit nearer the negative end, with only a few volts to spare: check that 60 mA can be reached and exceeded on both valves, and lower the bias winding load (R15, R16) if not.
+- Bias trimmers: the wiper goes from -65 V to about -39 V. Set both fully to the most negative end before first power-up, then raise the bias to about 60 mA per valve, measured across the 1 ohm cathode resistors (60 mV). In simulation 60 mA is at -45 V, about 77 % of the travel. The data sheet gives about -59 V for 50 mA at 460 V, so real valves will sit nearer the negative end, with only a few volts to spare: check that 60 mA can be reached and exceeded on both valves. R27 and R28 (220k, from each wiper to VBIAS_NEG) make a trimmer fail safe: if its wiper loses contact, the grid goes to the full negative rail instead of floating. They shift the positive end of the travel by under 1 V.
 - Capacitor voltages: with the valves cold the rectifier is unloaded and B+ rises to about 470 V, over 500 V with high mains. The reservoir capacitors are drawn as 550 V parts (or two 350 V in series with balancing resistors), the driver rail ones as 500 V with a 550 V surge rating, the coupling capacitors as 630 V.
 
 ## Safety
@@ -42,7 +43,7 @@ B+ is about 450 V and the reservoir capacitors hold charge after power-off. The 
 
 ## PCB
 
-`amplikt88.kicad_pcb`, 212.67 x 90 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side. The KT88s sit at the two ends, 150.7 mm apart on the horizontal centre line: V3 on the left, turned -22.5 degrees, and V4 on the right, turned 67.5 degrees. The transformer wire pads TR2 run along the middle of the top edge (A1, UL1, CT, UL2, A2 at 6 mm pitch). The secondary pads (0, S) and the speaker terminal J3 are below them on the right. The supply wire pads J4 are 20.75 mm below TR2: B+ (pin 1) on the left, then B_DRV, B_V1, VBIAS_NEG, HEATER_A, HEATER_B, and ground (pin 7) on the right. Both ECC83s are in the lower half of the centre, the LTP (V2) under J4 and the input valve (V1) to its right, with the input header J2 on the bottom edge next to it. Each bias trimmer (Bourns 3296X, side adjust) is in the top corner on its own valve's side, RV1 next to V3 and RV2 next to V4. The 1 ohm cathode resistors are along the bottom edge (R19 left, R20 right). Four M4 mounting holes, one in each corner, 4.5 mm from the edges.
+`amplikt88.kicad_pcb`, 212.67 x 90 mm, two layers. The board stands vertically on an L bracket, so the valves are horizontal. All parts are on the valve side. The KT88s sit at the two ends, 150.7 mm apart on the horizontal centre line: V3 on the left, turned -22.5 degrees, and V4 on the right, turned 67.5 degrees. The transformer wire pads TR2 run along the middle of the top edge (A1, UL1, CT, UL2, A2 at 6 mm pitch). The secondary pads (0, S) and the speaker terminal J3 are below them on the right. The supply wire pads J4 are 20.75 mm below TR2: B+ (pin 1) on the left, then B_DRV, B_V1, VBIAS_NEG, HEATER_A, HEATER_B, and ground (pin 7) on the right. Both ECC83s are in the lower half of the centre, the LTP (V2) under J4 and the input valve (V1) to its right, with the input header J2 on the bottom edge next to it. Each bias trimmer (Bourns 3296X, side adjust) is in the top corner on its own valve's side, RV1 next to V3 and RV2 next to V4; the wiper safety resistors sit beside them along the top edge, R27 right of RV1 and R28 left of RV2 (placed, not yet routed). C16, the bypass of the LTP's second grid, is still parked below the board outline: its ground end must stay 5 mm from `/LTP_A2`, which surrounds R10's grid end, so it needs a longer-pitch capacitor or a change to that routing. The 1 ohm cathode resistors are along the bottom edge (R19 left, R20 right). Four M4 mounting holes, one in each corner, 4.5 mm from the edges.
 
 ![3D view, 45 degree perspective](docs/pcb-3d-perspective.png)
 
@@ -76,7 +77,7 @@ Rules (net classes in `amplikt88.kicad_pro`, custom rules in `amplikt88.kicad_dr
 - Pins of the same valve socket only need 1.2 mm: their spacing is set by the valve.
 - No other part within 4 mm of a KT88's glass. The exceptions are R11, R13, R17 and C7 at V3 and R14, R18, R20 and C8 at V4. These were checked in 3D: they sit under the bulb, where the KT88 is only its 42 mm base up to 35 mm high (C7 and C8, the tallest, reach 26 mm). The heater pads JH1 to JH4 are also excluded from the courtyard checks against their valves; they are flat wire pads, also checked in 3D.
 
-DRC: no errors. There are 3 unconnected heater items (intended, see above) and 3 silkscreen warnings: the KT88 socket outlines clipped at pin 1 of V3 and V4, and the RV1 value text touching the C9 outline.
+DRC: no errors. There are 7 unconnected items: the 3 heater ones (intended, see above) and the 4 pads of R27 and R28, which are placed but not routed yet. There are 3 silkscreen warnings: the KT88 socket outlines clipped at pin 1 of V3 and V4, and the RV1 value text touching the C9 outline.
 
 Schematic parity reports the power supply parts as missing (the supply is built off this board), the four mounting holes H1, H3, H4 and H5 as extra (they have no symbol), and the `Sim.Device` fields as missing from the footprints. All three are expected.
 

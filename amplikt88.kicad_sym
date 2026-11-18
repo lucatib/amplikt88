@@ -884,7 +884,7 @@
 				)
 			)
 		)
-		(property "Value" "PT 330V/6.3V/50V"
+		(property "Value" "PT 330V/6.3V/60V"
 			(at 0 -16.51 0)
 			(show_name no)
 			(do_not_autoplace no)

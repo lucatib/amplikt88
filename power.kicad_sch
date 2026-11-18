@@ -1515,7 +1515,7 @@
 					)
 				)
 			)
-			(property "Value" "PT 330V/6.3V/50V"
+			(property "Value" "PT 330V/6.3V/60V"
 				(at 0 -16.51 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4305,7 +4305,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k 1W"
+		(property "Value" "1.8k 1W"
 			(at 65.46 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5297,7 +5297,7 @@
 				)
 			)
 		)
-		(property "Value" "PT 230V/330V 300mA/6.3V 4.5A/50V"
+		(property "Value" "PT 230V/330V 300mA/6.3V 4.5A/60V"
 			(at 110.49 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
