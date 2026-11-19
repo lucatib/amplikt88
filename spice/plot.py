@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Plots for the amplikt88 simulation: spice/simulation.png.
 
-Compares the schematic as drawn (ECC83 pair, 120k/18p feedback) with the first
-attempt (47k/47p) and an ECC82 pair. Needs matplotlib on top of simulate.py's
+Compares the schematic as drawn (ECC83 pair, 180k/12p feedback) with the first
+attempt's feedback ratio (47k/47p with the old 1k cathode resistor, 68k/33p with
+the 1.5k one) and an ECC82 pair. Needs matplotlib on top of simulate.py's
 requirements.
 
     python3 spice/plot.py
@@ -19,9 +20,9 @@ import simulate as sim
 # Reference palette, categorical slots 1-3 (validated all-pairs, light mode)
 SURFACE, INK, INK2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e6e5e1"
 VARIANTS = [
-    ("ECC83 pair, 120k / 18p (schematic)", "ecc83", "120k", "18p", "#2a78d6"),
-    ("ECC83 pair, 47k / 47p", "ecc83", "47k", "47p", "#eb6834"),
-    ("ECC82 pair, 47k / 47p", "ecc82", "47k", "47p", "#1baf7a"),
+    ("ECC83 pair, 180k / 12p (schematic)", "ecc83", "180k", "12p", "#2a78d6"),
+    ("ECC83 pair, 68k / 33p", "ecc83", "68k", "33p", "#eb6834"),
+    ("ECC82 pair, 68k / 33p", "ecc82", "68k", "33p", "#1baf7a"),
 ]
 
 

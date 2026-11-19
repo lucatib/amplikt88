@@ -11,8 +11,8 @@ B+ and bias rails, 1 kHz source, 8 ohm load) and runs the analyses.
 
 The power supply sheet is not simulated; B+, the driver rail drop and the
 negative bias rail are modelled as ideal sources. Valve models are Koren fits
-(the KT88 is fitted to one operating point only), the output transformer is a
-coupled-inductor model with assumed leakage. Use it to compare variants, not
+to the data sheet curves (no grid current below 0 V), the output transformer is
+a coupled-inductor model with assumed leakage. Use it to compare variants, not
 to certify the design.
 """
 import argparse, cmath, math, os, re, subprocess, sys, tempfile
@@ -74,7 +74,7 @@ def idle_current(net, ltp, pos, rf, cf):
 
 
 def find_bias(net, ltp, rf, cf, target_ma=60.0):
-    lo, hi = 0.3, 0.95
+    lo, hi = 0.0, 0.95
     for _ in range(9):
         mid = (lo + hi) / 2
         ia, _ = idle_current(net, ltp, mid, rf, cf)
@@ -82,15 +82,23 @@ def find_bias(net, ltp, rf, cf, target_ma=60.0):
     return round((lo + hi) / 2, 3)
 
 
+def value(s):
+    """A SPICE value such as 1.5k, 2.2meg or 18p, as a number."""
+    m = re.fullmatch(r"([0-9.]+)(meg|[pnumkMG]?)", s)
+    return float(m.group(1)) * {"": 1, "p": 1e-12, "n": 1e-9, "u": 1e-6, "m": 1e-3, "k": 1e3,
+                                "meg": 1e6, "M": 1e6, "G": 1e9}[m.group(2)]
+
+
 def loop_response(net, ltp, pos, rf, cf):
     """Loop gain T = A * beta from 0.05 Hz to 5 MHz: frequency, dB, phase unwrapped from 0 at mid-band."""
     rows, _ = ngspice(bench(net, ltp, pos, rf, cf, open_loop=True),
                       "ac dec 60 0.05 5meg\nlet A = v(OT_S_HI)/v(V1_G)\nwrdata @DAT@ real(A) imag(A)", "loop")
-    R = float(re.sub("k", "e3", rf)); C = float(re.sub("p", "e-12", cf))
+    R = value(rf); C = value(cf)
+    rk = value(re.search(r"^R4 V1_K GND (\S+)", net, re.M).group(1))   # the input cathode resistor
     f, mag, ph = [], [], []
     for x in rows:
         zf = 1 / (1 / R + 1j * 2 * math.pi * x[0] * C)          # Rf in parallel with Cf
-        t = complex(x[1], x[3]) * 1000 / (1000 + zf)             # beta = Rk / (Rk + Zf), Rk = 1k
+        t = complex(x[1], x[3]) * rk / (rk + zf)                 # beta = Rk / (Rk + Zf)
         f.append(x[0]); mag.append(20 * math.log10(abs(t))); ph.append(math.degrees(cmath.phase(t)))
     mid = min(range(len(f)), key=lambda i: abs(f[i] - 1000))
     for order in (range(mid + 1, len(ph)), range(mid - 1, -1, -1)):

@@ -3263,7 +3263,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "1.5k"
 			(at 83.82 121.92 90)
 			(effects
 				(font
@@ -3307,7 +3307,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=1k"
+		(property "Sim.Params" "r=1.5k"
 			(at 83.82 121.92 0)
 			(effects
 				(font
@@ -3426,7 +3426,7 @@
 				)
 			)
 		)
-		(property "Value" "120k"
+		(property "Value" "180k"
 			(at 106.68 137.16 90)
 			(effects
 				(font
@@ -3470,7 +3470,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=120k"
+		(property "Sim.Params" "r=180k"
 			(at 106.68 134.62 0)
 			(effects
 				(font
@@ -3528,7 +3528,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18p"
+		(property "Value" "12p"
 			(at 102.87 144.78 90)
 			(effects
 				(font
@@ -3573,7 +3573,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=18p"
+		(property "Sim.Params" "c=12p"
 			(at 106.68 149.86 0)
 			(effects
 				(font
@@ -3917,7 +3917,7 @@
 				)
 			)
 		)
-		(property "Value" "82k"
+		(property "Value" "100k"
 			(at 132.08 73.66 90)
 			(effects
 				(font
@@ -3961,7 +3961,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=82k"
+		(property "Sim.Params" "r=100k"
 			(at 132.08 73.66 0)
 			(effects
 				(font
@@ -4029,7 +4029,7 @@
 				)
 			)
 		)
-		(property "Value" "82k"
+		(property "Value" "100k"
 			(at 162.56 73.66 90)
 			(effects
 				(font
@@ -4073,7 +4073,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=82k"
+		(property "Sim.Params" "r=100k"
 			(at 162.56 73.66 0)
 			(effects
 				(font
@@ -4108,7 +4108,7 @@
 				)
 			)
 		)
-		(property "Value" "33k 1W"
+		(property "Value" "39k 1W"
 			(at 147.32 124.46 90)
 			(effects
 				(font
@@ -4152,7 +4152,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=33k"
+		(property "Sim.Params" "r=39k"
 			(at 147.32 124.46 0)
 			(effects
 				(font
@@ -4187,7 +4187,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2M"
+		(property "Value" "1.8M"
 			(at 177.8 111.76 90)
 			(effects
 				(font
@@ -4231,7 +4231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=2.2meg"
+		(property "Sim.Params" "r=1.8meg"
 			(at 177.8 111.76 0)
 			(effects
 				(font
@@ -4449,7 +4449,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "680p 630V"
+		(property "Value" "330p 630V"
 			(at 143.51 78.74 90)
 			(effects
 				(font
@@ -4494,7 +4494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "c=680p"
+		(property "Sim.Params" "c=330p"
 			(at 142.24 83.82 0)
 			(effects
 				(font
@@ -4529,7 +4529,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "10k"
 			(at 153.67 86.36 90)
 			(effects
 				(font
@@ -4573,7 +4573,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=4.7k"
+		(property "Sim.Params" "r=10k"
 			(at 153.67 83.82 0)
 			(effects
 				(font
@@ -4711,7 +4711,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200k"
 			(at 203.2 91.44 90)
 			(effects
 				(font
@@ -4755,7 +4755,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=100k"
+		(property "Sim.Params" "r=200k"
 			(at 203.2 91.44 0)
 			(effects
 				(font
@@ -5375,7 +5375,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "200k"
 			(at 203.2 154.94 90)
 			(effects
 				(font
@@ -5419,7 +5419,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=100k"
+		(property "Sim.Params" "r=200k"
 			(at 203.2 154.94 0)
 			(effects
 				(font
@@ -6498,7 +6498,7 @@
 				)
 			)
 		)
-		(property "Value" "15k"
+		(property "Value" "27k"
 			(at 40.64 205.74 90)
 			(effects
 				(font
@@ -6542,7 +6542,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=15k"
+		(property "Sim.Params" "r=27k"
 			(at 40.64 205.74 0)
 			(effects
 				(font
@@ -7233,7 +7233,7 @@
 				)
 			)
 		)
-		(property "Value" "15k"
+		(property "Value" "27k"
 			(at 86.36 205.74 90)
 			(effects
 				(font
@@ -7277,7 +7277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Params" "r=15k"
+		(property "Sim.Params" "r=27k"
 			(at 86.36 205.74 0)
 			(effects
 				(font
