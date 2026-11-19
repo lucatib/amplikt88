@@ -98,12 +98,12 @@
   (condition "A.Reference == 'V3' || A.Reference == 'V4'"))
 
 # Componenti dentro i 4 mm dal cerchio del vetro (52 mm), verificati sul 3D: fino a 35 mm
-# d'altezza il KT88 è solo la base da 42 mm, e questi stanno sotto il bulbo (C7 e C8,
-# i più alti, arrivano a 26 mm). Fuori dal DRC solo queste coppie.
+# d'altezza il KT88 è solo la base da 42 mm, e questi stanno sotto il bulbo. C7 e C8
+# sono sul retro, lontani dal calore del vetro. Fuori dal DRC solo queste coppie.
 (rule "KT88: componenti verificati sul 3D"
   (constraint courtyard_clearance (min 0mm))
   (severity ignore)
-  (condition "(A.Reference == 'V3' && (B.Reference == 'R13' || B.Reference == 'R17' || B.Reference == 'R11' || B.Reference == 'C7')) || (A.Reference == 'V4' && (B.Reference == 'R14' || B.Reference == 'R18' || B.Reference == 'R20' || B.Reference == 'C8'))"))
+  (condition "(A.Reference == 'V3' && (B.Reference == 'R13' || B.Reference == 'R17' || B.Reference == 'R11')) || (A.Reference == 'V4' && (B.Reference == 'R14' || B.Reference == 'R18' || B.Reference == 'R20'))"))
 
 # Piazzole dei filamenti JH1-JH4: piatte sulla scheda, verificate in 3D dall'utente, nessun
 # problema sotto vetro o base delle valvole. Fuori dal DRC solo le coppie JH - valvola.
