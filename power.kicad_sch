@@ -5297,7 +5297,7 @@
 				)
 			)
 		)
-		(property "Value" "PT 230V/330V 300mA/6.3V 4.5A/60V"
+		(property "Value" "PT 230V/330V 500mA/6.3V 4.5A/60V"
 			(at 132.08 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5475,7 +5475,7 @@
 				)
 			)
 		)
-		(property "Value" "5H 250mA"
+		(property "Value" "5H 300mA"
 			(at 222.885 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
