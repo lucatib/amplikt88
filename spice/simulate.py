@@ -9,7 +9,8 @@ B+ and bias rails, 1 kHz source, 8 ohm load) and runs the analyses.
     python3 spice/simulate.py --ltp ecc82      # ECC82 in the long-tailed pair
     python3 spice/simulate.py --rf 82k --cf 27p
 
-The power supply sheet is not simulated; B+, the driver rail drop and the
+The power supply sheet is not simulated; B+, the driver rail drop, the V2
+tail-sink rail (B_CCS, -75.7 V) and the
 negative bias rail are modelled as ideal sources. Valve models are Koren fits
 to the data sheet curves (no grid current below 0 V), the output transformer is
 a coupled-inductor model with assumed leakage. Use it to compare variants, not
@@ -42,11 +43,13 @@ def bench(net, ltp, pos, rf, cf, open_loop=False):
         n = re.sub(r"(XV2 .*) ECC83", r"\1 ECC82", n)
         for ref, value in (("R3", "330k"), ("R6", "33k"), ("R7", "33k"), ("R8", "22k")):
             n, found = re.subn(rf"^({ref} \S+ \S+ )\S+", rf"\g<1>{value}", n, flags=re.M)
-            assert found == 1, ref
+            assert found == 1 or ref == "R8", ref   # R8 is gone once the tail sink replaces it
     if open_loop:   # feedback network kept as a load, its output end grounded
         n = re.sub(r"^((?:R9|C6) .*?)OT_S_HI", r"\1GND", n, flags=re.M)
     for i, node in enumerate(sorted(set(re.findall(r"unconnected-\S+", n)))):
         n += f"RFLOAT{i} {node} GND 1e9\n"
+    if re.search(r"\sB_CCS\b", n):   # V2 tail sink rail: R34/C19 off C13 on the power sheet
+        n += "V_CCS B_CCS GND DC -75.7\n"
     return n + ("V_BPLUS B_PLUS GND DC 450\nV_NEG VBIAS_NEG GND DC -65\n"
                 "VIN IN_RAW GND DC 0 AC 1 SIN(0 {VAMP} 1k)\nRL OT_S_HI GND 8\n"
                 ".options reltol=0.003 gmin=1e-12 itl1=500 itl4=200\n.param VAMP=1\n")
@@ -129,10 +132,12 @@ def loop_margins(net, ltp, pos, rf, cf):
 
 
 def power_test(net, ltp, pos, rf, cf, vout_pk=24.4, freq=1000):
-    rows, _ = ngspice(bench(net, ltp, pos, rf, cf), "ac dec 10 1k 1k\nwrdata @DAT@ vdb(OT_S_HI)", "gain")
+    rows, _ = ngspice(bench(net, ltp, pos, rf, cf), f"ac lin 1 {freq} {freq}\nwrdata @DAT@ vdb(OT_S_HI)", "gain")
     gain = 10 ** (rows[0][1] / 20)
     n = bench(net, ltp, pos, rf, cf).replace("{VAMP}", f"{vout_pk / gain:.4f}")
-    rows, _ = ngspice(n, "tran 2u 12m 0 2u\nwrdata @DAT@ v(OT_S_HI) v(V3_G1) v(V4_G1)", "tran")
+    n = re.sub(r"(SIN\(0 \S+ )1k\)", rf"\g<1>{freq})", n)
+    step = min(2e-6, 1 / freq / 100)
+    rows, _ = ngspice(n, f"tran {step:.3g} 12m 0 {step:.3g}\nwrdata @DAT@ v(OT_S_HI) v(V3_G1) v(V4_G1)", "tran")
     T = 1 / freq
     t0 = rows[-1][0] - 6 * T
     w = [x for x in rows if x[0] >= t0]
@@ -167,8 +172,15 @@ def main():
     ap.add_argument("--ltp", choices=("ecc83", "ecc82"), default="ecc83", help="valve in the long-tailed pair")
     ap.add_argument("--rf", help="feedback resistor R9 (default: from the schematic)")
     ap.add_argument("--cf", help="lead capacitor C6 across it (default: from the schematic)")
+    ap.add_argument("--netlist", help="use this exported SPICE netlist instead of running kicad-cli "
+                    "(kicad-cli sch export netlist --format spice -o FILE amplikt88.kicad_sch)")
     a = ap.parse_args()
-    net = export_netlist()
+    if a.netlist:   # exported elsewhere: point .include at the model library beside this script
+        net = re.sub(r"(?<=\s)/", "", open(a.netlist).read())
+        lib = os.path.join(HERE, "amplikt88.lib").replace("\\", "/")
+        net = re.sub(r'(?im)^\.include .*$', f'.include "{lib}"', net)
+    else:
+        net = export_netlist()
     rf = a.rf or re.search(FEEDBACK % "R9", net).group(2)
     cf = a.cf or re.search(FEEDBACK % "C6", net).group(2)
     pos = find_bias(net, a.ltp, rf, cf)
@@ -176,7 +188,9 @@ def main():
     print(f"LTP {a.ltp.upper()}, Rf {rf}, Cf {cf}")
     print(f"bias: trimmer at {pos} of its travel -> {ia:.0f} mA per KT88, grid {vg:.1f} V")
     print("loop:", loop_margins(net, a.ltp, pos, rf, cf))
-    print("35 W, 1 kHz, 8 ohm:", power_test(net, a.ltp, pos, rf, cf))
+    print("37 W, 1 kHz, 8 ohm:", power_test(net, a.ltp, pos, rf, cf))
+    print("10 W, 10 kHz, 8 ohm:", power_test(net, a.ltp, pos, rf, cf, vout_pk=12.65, freq=10000))
+    print("37 W, 10 kHz, 8 ohm:", power_test(net, a.ltp, pos, rf, cf, freq=10000))
     for cl in (None, "0.1u", "1u"):
         print(f"10 kHz square, 8 ohm{' + ' + cl + 'F' if cl else ''}: overshoot {overshoot(net, a.ltp, pos, rf, cf, cl)} %")
 

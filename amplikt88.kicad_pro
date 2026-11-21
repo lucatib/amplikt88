@@ -711,7 +711,7 @@
       },
       {
         "netclass": "HV",
-        "pattern": "/LTP_STEP"
+        "pattern": "/LAG_STEP"
       },
       {
         "netclass": "HV",

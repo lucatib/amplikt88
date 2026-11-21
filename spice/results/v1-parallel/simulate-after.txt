@@ -1,0 +1,9 @@
+LTP ECC83, Rf 180k, Cf 12p
+bias: trimmer at 0.535 of its travel -> 60 mA per KT88, grid -55.8 V
+loop: {'loop_gain_1k_dB': 17.3, 'unity_f_kHz': 44.6, 'phase_margin_deg': 102.1, 'f_180_kHz': 481.2, 'gain_margin_dB': 28.0, 'lf_unity_Hz': 1.21, 'lf_phase_margin_deg': 82.2, 'lf_f_180_Hz': 0.1, 'lf_gain_margin_dB': 32.7}
+37 W, 1 kHz, 8 ohm: {'closed_loop_gain': 105.8, 'vin_peak_V': 0.231, 'P_8ohm_W': 37.3, 'THD_pct': 0.078, 'grid_V3_V': (-99.7, -12.1), 'grid_V4_V': (-99.6, -11.9)}
+10 W, 10 kHz, 8 ohm: {'closed_loop_gain': 100.3, 'vin_peak_V': 0.126, 'P_8ohm_W': 10.1, 'THD_pct': 0.383, 'grid_V3_V': (-79.3, -32.2), 'grid_V4_V': (-79.3, -32.2)}
+37 W, 10 kHz, 8 ohm: {'closed_loop_gain': 100.3, 'vin_peak_V': 0.243, 'P_8ohm_W': 37.5, 'THD_pct': 0.513, 'grid_V3_V': (-99.8, -11.6), 'grid_V4_V': (-99.9, -11.6)}
+10 kHz square, 8 ohm: overshoot 0.6 %
+10 kHz square, 8 ohm + 0.1uF: overshoot 0.5 %
+10 kHz square, 8 ohm + 1uF: overshoot 19.4 %

@@ -43,7 +43,8 @@ LAG = {'baseline_lag': ('15k', '150p'), 'baseline_lag_damped': ('15k', '180p'),
        # Parallel V1 has half the output resistance: start from half R, double C.
        'parallel_scaled_lag': ('5.6k', '360p'), 'parallel_scaled_lag_damped': ('5.6k', '430p'),
        # CCS tail variants, tuned to the same margins/ringing as baseline_lag_damped.
-       'ccs_low_lag': ('15k', '180p'), 'ccs_raised_lag': ('15k', '120p')}
+       'ccs_low_lag': ('15k', '180p'), 'ccs_raised_lag': ('15k', '120p'),
+       'ccs_neg_lag': ('15k', '180p')}
 
 
 def follower(net):
@@ -91,9 +92,34 @@ def ccs_tail(net, name):
                   f'\nRCCS2 CCS_G GND {cfg["rref"]}\nCCCS CCS_G GND 10u\n')
 
 
+# ccs_neg: the sink's cathode resistor returns below ground, so V1/V2 keep today's
+# DC levels and the valve still gets ~135 V. It is fed from the bias supply's raw
+# reservoir (C13, before R23) through its own RC filter, not from VBIAS_NEG: the
+# KT88 bias rail then moves ~1 V with the extra load, and R23 isolates it from a
+# sink fault. Grid reference: divider from that filtered node, so the tail current
+# tracks the rail ratio. Needs build_net's realistic bias network.
+CCS_NEG = {'rk': '13k', 'rf': '2.2k', 'r_gnd': '600k', 'rref': '393.24k'}  # 2.33 mA nominal
+
+
+def ccs_neg_tail(net):
+    c = CCS_NEG
+    net, count = re.subn(r'(?m)^XV1 (\S+) (\S+) (\S+) \S+ \S+ \S+ ECC83$',
+                         r'XV1 \1 \2 \3 LTP_K CCS_G CCS_K ECC83', net)
+    if count != 1:
+        raise ValueError('V1 dual-triode instance not found')
+    net = remove_part(net, 'R8')
+    return net + (f'\nRCCSK CCS_K B_CCS {c["rk"]}\nRCCSF BIAS_RAW B_CCS {c["rf"]}'
+                  '\nCCCSF B_CCS GND 100u'
+                  f'\nRCCS1 GND CCS_G {c["r_gnd"]}\nRCCS2 CCS_G B_CCS {c["rref"]}'
+                  '\nCCCS CCS_G GND 10u\n')
+
+
 def variant(net, name):
     if name == 'baseline':
         return net
+    if name.startswith('ccs_neg'):
+        net = ccs_neg_tail(net)
+        return lag_at_v1(net, name) if name in LAG else net
     if name.startswith('ccs_'):
         base = name.removesuffix('_lag')
         net = ccs_tail(net, base)
@@ -267,7 +293,18 @@ class Study:
                 'step_V': float(top-bottom)}
 
 
-def build_net(source, name, bias):
+# Realistic bias supply (bias_supply_study.py): half-wave raw node as a Thevenin
+# source, then C13, R23 2.7k, C14 as on the power sheet. MAINS scales it and B+.
+BIAS_RAW_VTH, BIAS_RAW_R = -83.32, 376.7
+MAINS = 1.0
+
+
+def bias_network(r23='2.7k'):
+    return (f'\nVRAW BIAS_SRC GND DC {BIAS_RAW_VTH*MAINS:.4f}\nRRAW BIAS_SRC BIAS_RAW {BIAS_RAW_R}'
+            f'\nCB13 BIAS_RAW GND 100u\nRB23 BIAS_RAW VBIAS_NEG {r23}\nCB14 VBIAS_NEG GND 100u\n')
+
+
+def build_net(source, name, bias, real_bias=None):
     net = re.sub(r'(?<=\s)/', '', source)
     net = re.sub(r'(?im)^\.include .*$', f'.include "{(HERE/"amplikt88.lib").as_posix()}"', net)
     net = re.sub(r'(?im)^\.end\s*$', '', net)
@@ -275,7 +312,10 @@ def build_net(source, name, bias):
     net = re.sub(r'(POS=)[0-9.]+', rf'\g<1>{bias:.9f}', net)
     for i, node in enumerate(sorted(set(re.findall(r'unconnected-\S+', net)))):
         net += f'\nRFLOAT{i} {node} GND 1e9\n'
-    return net + ('\nV_BPLUS B_PLUS GND DC 450\nV_NEG VBIAS_NEG GND DC -65\n'
+    if real_bias is None:
+        real_bias = name.startswith('ccs_neg')
+    neg = bias_network() if real_bias else '\nV_NEG VBIAS_NEG GND DC -65\n'
+    return net + (f'\nV_BPLUS B_PLUS GND DC {450*MAINS:.4f}' + neg +
                   'VIN IN_RAW GND DC 0 AC 1 SIN(0 {VAMP} 1k)\nRL OT_S_HI GND 8\n'
                   '.param VAMP=0\n.options reltol=1e-5 abstol=1e-11 vntol=1e-7 itl1=500 itl4=200\n')
 
@@ -295,7 +335,8 @@ def main():
                                   'follower', 'follower_lag', 'follower_lag_damped',
                                   'baseline_lag', 'baseline_lag_damped',
                                   'parallel_scaled_lag', 'parallel_scaled_lag_damped',
-                                  'ccs_low', 'ccs_raised', 'ccs_low_lag', 'ccs_raised_lag']]:
+                                  'ccs_low', 'ccs_raised', 'ccs_low_lag', 'ccs_raised_lag',
+                                  'ccs_neg', 'ccs_neg_lag']]:
         parser.error('Use a distinct source-export.cir; variant benches are generated outputs')
     source = args.netlist.read_text()
     study = Study(args.out)
