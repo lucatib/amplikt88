@@ -87,7 +87,7 @@ Schematic parity reports the power supply parts as missing (the supply is built 
 
 ## Simulation
 
-The [circuit research and innovation review](docs/amplikt88-innovation-review.md) compares uses for V1's unused triode, driver/feedback alternatives and supply/protection improvements. It also identifies historical documentation conflicts and simulation-method limitations that must be resolved before comparing new variants; the results below have not been independently rerun by that review.
+The [circuit research and innovation review](docs/amplikt88-innovation-review.md) compares uses for V1's unused triode, driver/feedback alternatives and supply/protection improvements. It also identifies historical documentation conflicts and simulation-method limitations that must be resolved before comparing new variants; the results below have not been independently rerun by that review. The [spare-triode comparison](docs/research/amplikt88-innovation/spare-triode-comparison.md) simulates parallel, cascode and cathode-follower uses of V1's spare section. It finds the 10 kHz power limit comes from C15/R26 loading V2, and that a 15 k + 180 pF lag at V1's anode removes it.
 
 `python3 spice/simulate.py` exports the SPICE netlist from the schematic with `kicad-cli` and runs ngspice on it (`--ltp ecc82`, `--rf`, `--cf` to try variants). The symbols carry `Sim.*` fields that point at `spice/amplikt88.lib`, so the same circuit also loads in KiCad's own simulator once B+, bias and a source are added. The power sheet is excluded; B+ (450 V) and the bias rail (-65 V) are ideal sources. `python3 spice/psu_study.py` simulates the HV supply on its own (transformer, bridge, C1, L1, C2) with the amplifier's average current as the load.
 

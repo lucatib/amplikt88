@@ -52,6 +52,14 @@ The README reports approximately B+=450V, B_DRV=440V, B_V1=355V, V1 anode=89V, V
 
 ## 3. Using the unused V1 triode
 
+> **Simulation results (2026-11-21):** [spare-triode-comparison.md](research/amplikt88-innovation/spare-triode-comparison.md) compares parallel, cascode and cathode follower against the baseline.
+> - The parallel option is neutral.
+> - The cascode gives the best THD, but is unstable as built and its DC point drifts badly with the DC-coupled V2.
+> - The follower is safe but buys little.
+> - As a V2 tail current sink it is the one use that measurably helps (LTP balance, low-level THD), but only if V2 is raised to ~155 V.
+>
+> The 10 kHz power limit (~17 W) comes from C15/R26 loading V2's anodes. Moving that lag to V1's anode fixes it without the spare triode.
+
 The pin numbers above identify the spare section unambiguously; do not rely on A/B unit names in imported netlists. The following diagrams are original topology sketches, not copied book figures or complete build circuits.
 
 ### Option A — cathode follower before the existing LTP
@@ -139,9 +147,10 @@ The cathodyne must see balanced loads. Additional coupling networks or direct-co
 | P0 | Qualify simulator measurements and reconcile documentation | Makes A/B conclusions credible | Engineering effort before any new performance claim |
 | P0 | Measure OT and optimize compensation for it | Less unnecessary roll-off while retaining reactive-load margin | Winding resonances and core nonlinearity cannot be inferred from a simple model |
 | P1 | Bias-loss/overcurrent supervision using R19/R20 | Detect supply loss, drift and dangerous imbalance; improve serviceability | Monitor failure must not cause loss of negative bias; shutdown must deal with stored HT energy |
-| P1 | Evaluate V1 follower with an appropriate rail | Lower V1-to-V2 loading | Supply, startup and loop redesign |
+| P0 | Move HF lag from C15/R26 (V2 anodes) to 15k + 180pF at V1 anode ([simulated](research/amplikt88-innovation/spare-triode-comparison.md)) | 10 kHz power at 1 % THD ~6 W → ~46 W; margins ≥ baseline | Bandwidth 38 → 32 kHz; must be re-verified with the real OT |
+| P1 | Evaluate V1 follower with an appropriate rail ([simulated](research/amplikt88-innovation/spare-triode-comparison.md): safe, small gain once the lag is moved) | Lower V1-to-V2 loading | Supply, startup and loop redesign |
 | P1 | Heater elevation and measured grounding improvements | Reduce heater-cathode stress and measured hum | Shared-heater limits, leakage and startup reference behaviour |
-| P2 | Constant-current LTP tail, near present 2.3mA total | Improve balance and rejection of common disturbances | More gain/bandwidth can reduce margins; HV device parasitics and compliance |
+| P2 | Constant-current LTP tail, near present 2.3mA total ([simulated](research/amplikt88-innovation/spare-triode-comparison.md#spare-triode-as-v2-tail-current-sink) with the spare ECC83: works only with V2 raised to ~155 V; LTP imbalance 1.5 % → 0.1 %, low-level THD halved) | Improve balance and rejection of common disturbances | More gain/bandwidth can reduce margins; HV device parasitics and compliance |
 | P2 | Optimize C7/C8 against overload recovery | Shorter bias displacement after clipping | Smaller capacitors can compromise LF gain/phase separation |
 | P2 | Dedicated regulated/filtered small-signal rail | Reduce DC drift and supply-mediated interaction | Pass-device voltage/SOA, dissipation, startup and regulator stability |
 | P2 | Slow automatic idle-current/balance servo | Compensate ageing and maintain transformer DC balance | Must not follow class-AB signal current; faults, wind-up and LF interaction |

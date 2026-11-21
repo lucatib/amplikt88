@@ -1,0 +1,486 @@
+{
+  "cascode": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 41.02199453151705,
+      "gain_1k": 112.48632454524898,
+      "low_3dB_Hz": 3.311311214825885,
+      "high_3dB_Hz": 81283.05161640832
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 40.37712856168493,
+      "gain_1k": 104.4374905845816,
+      "low_3dB_Hz": 3.090295432513567,
+      "high_3dB_Hz": 134896.2882591626
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 27.238209872273117,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 0.45648855554734175,
+          "phase_deg": 123.01383267054187,
+          "phase_margin_deg": 56.98616732945813
+        },
+        {
+          "frequency_Hz": 128026.088853865,
+          "phase_deg": -168.95003935661128,
+          "phase_margin_deg": 11.049960643388715
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 27.237239735591608,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 0.4564883628535812,
+          "phase_deg": 123.01380175975359,
+          "phase_margin_deg": 56.98619824024641
+        },
+        {
+          "frequency_Hz": 67323.59588490595,
+          "phase_deg": -181.82130489957493,
+          "phase_margin_deg": -1.8213048995749261
+        }
+      ]
+    }
+  },
+  "cascode_comp": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 41.0234661497333,
+      "gain_1k": 112.50538430252483,
+      "low_3dB_Hz": 3.311311214825885,
+      "high_3dB_Hz": 32359.36569296224
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 40.37863210767586,
+      "gain_1k": 104.4555705013681,
+      "low_3dB_Hz": 3.090295432513567,
+      "high_3dB_Hz": 33113.11214825851
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 26.692144553833206,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 0.4564900396784513,
+          "phase_deg": 123.007916170336,
+          "phase_margin_deg": 56.992083829664
+        },
+        {
+          "frequency_Hz": 87407.68076186869,
+          "phase_deg": -110.82917083796828,
+          "phase_margin_deg": 69.17082916203172
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 26.69117704796823,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 0.45648984698278916,
+          "phase_deg": 123.00788526192586,
+          "phase_margin_deg": 56.992114738074136
+        },
+        {
+          "frequency_Hz": 39012.513952017085,
+          "phase_deg": -127.41071011906583,
+          "phase_margin_deg": 52.589289880934174
+        }
+      ]
+    }
+  },
+  "follower": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.38426052145486,
+      "gain_1k": 104.52327913253049,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 54954.08738576141
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.74204770937401,
+      "gain_1k": 97.07387931591957,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 51286.13839913552
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 18.14383527036145,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1536126509604738,
+          "phase_deg": 99.06522751178117,
+          "phase_margin_deg": 80.93477248821883
+        },
+        {
+          "frequency_Hz": 124378.45120035224,
+          "phase_deg": -144.62332864191828,
+          "phase_margin_deg": 35.37667135808172
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 18.142858073709412,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1536088569275518,
+          "phase_deg": 99.06516980187295,
+          "phase_margin_deg": 80.93483019812705
+        },
+        {
+          "frequency_Hz": 54353.558146838404,
+          "phase_deg": -139.39105647991752,
+          "phase_margin_deg": 40.60894352008248
+        }
+      ]
+    }
+  },
+  "follower_lag": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.38264405609294,
+      "gain_1k": 104.50382890388683,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 38018.93963205542
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.73727452453225,
+      "gain_1k": 97.02054864993563,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 36307.80547700946
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 18.0784612629421,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.153606429984152,
+          "phase_deg": 99.06216535037531,
+          "phase_margin_deg": 80.93783464962469
+        },
+        {
+          "frequency_Hz": 62841.11080461011,
+          "phase_deg": -96.91942855517574,
+          "phase_margin_deg": 83.08057144482426
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 18.0774789835583,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1536026360141705,
+          "phase_deg": 99.0621076516154,
+          "phase_margin_deg": 80.9378923483846
+        },
+        {
+          "frequency_Hz": 37915.12887720651,
+          "phase_deg": -127.06701344691996,
+          "phase_margin_deg": 52.93298655308004
+        }
+      ]
+    }
+  },
+  "follower_lag_damped": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.37970386762445,
+      "gain_1k": 104.46846016595127,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 30199.51720401961
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.73423765292307,
+      "gain_1k": 96.98663301661946,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 28840.31503126553
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.993149521549114,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1536066845899107,
+          "phase_deg": 99.05951766205595,
+          "phase_margin_deg": 80.94048233794405
+        },
+        {
+          "frequency_Hz": 65032.617915921095,
+          "phase_deg": -87.80865805790393,
+          "phase_margin_deg": 92.19134194209607
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.992167242166644,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1536028906172153,
+          "phase_deg": 99.05945997194898,
+          "phase_margin_deg": 80.94054002805102
+        },
+        {
+          "frequency_Hz": 34300.6675410072,
+          "phase_deg": -113.2107544063515,
+          "phase_margin_deg": 66.7892455936485
+        }
+      ]
+    }
+  },
+  "baseline_lag": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.30908040510361,
+      "gain_1k": 103.62248911367088,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 37153.52290971656
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.66368739283642,
+      "gain_1k": 96.2020595220919,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 35481.33892335689
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.42723408539401,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.2396499237968086,
+          "phase_deg": 97.25175594470979,
+          "phase_margin_deg": 82.74824405529021
+        },
+        {
+          "frequency_Hz": 52589.73406501723,
+          "phase_deg": -93.50668058153873,
+          "phase_margin_deg": 86.49331941846127
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.426252842779704,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.2396451725816249,
+          "phase_deg": 97.25169399545068,
+          "phase_margin_deg": 82.74830600454932
+        },
+        {
+          "frequency_Hz": 34911.79341299425,
+          "phase_deg": -125.69025026304985,
+          "phase_margin_deg": 54.30974973695015
+        }
+      ]
+    }
+  },
+  "baseline_lag_damped": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.30749871353009,
+      "gain_1k": 103.60362128289132,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 31622.77660168322
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.66203553066983,
+      "gain_1k": 96.1837657791083,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 30199.51720401961
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.374382190554602,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.239650209424129,
+          "phase_deg": 97.24979426983846,
+          "phase_margin_deg": 82.75020573016154
+        },
+        {
+          "frequency_Hz": 45487.23841653117,
+          "phase_deg": -85.57771161994415,
+          "phase_margin_deg": 94.42228838005585
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.373401140630975,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.2396454582054561,
+          "phase_deg": 97.2497323281197,
+          "phase_margin_deg": 82.7502676718803
+        },
+        {
+          "frequency_Hz": 31573.83361816251,
+          "phase_deg": -118.25772800645855,
+          "phase_margin_deg": 61.74227199354145
+        }
+      ]
+    }
+  },
+  "parallel_scaled_lag": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.34642099730539,
+      "gain_1k": 104.06892054504928,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 35481.33892335689
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.70044478129571,
+      "gain_1k": 96.61003491513269,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 30902.95432513534
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.735412739490634,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.193846549037883,
+          "phase_deg": 98.13484755269249,
+          "phase_margin_deg": 81.86515244730751
+        },
+        {
+          "frequency_Hz": 48959.37868703737,
+          "phase_deg": -91.51506137855088,
+          "phase_margin_deg": 88.48493862144912
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.734430399797954,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1938423273863141,
+          "phase_deg": 98.13478790630255,
+          "phase_margin_deg": 81.86521209369745
+        },
+        {
+          "frequency_Hz": 33806.57266308513,
+          "phase_deg": -124.6786550467995,
+          "phase_margin_deg": 55.321344953200494
+        }
+      ]
+    }
+  },
+  "parallel_scaled_lag_damped": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.34461134140734,
+      "gain_1k": 104.04724063355563,
+      "low_3dB_Hz": 3.467368504525289,
+      "high_3dB_Hz": 30199.51720401961
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.69846947947472,
+      "gain_1k": 96.58806683952585,
+      "low_3dB_Hz": 3.235936569296257,
+      "high_3dB_Hz": 26915.34803926867
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.668031809575137,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1938468441796974,
+          "phase_deg": 98.1325508601585,
+          "phase_margin_deg": 81.8674491398415
+        },
+        {
+          "frequency_Hz": 40811.7790726779,
+          "phase_deg": -83.7182836986926,
+          "phase_margin_deg": 96.2817163013074
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.66704958906111,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.1938426225247227,
+          "phase_deg": 98.13249122182188,
+          "phase_margin_deg": 81.86750877817812
+        },
+        {
+          "frequency_Hz": 29944.996227086154,
+          "phase_deg": -116.84032479121767,
+          "phase_margin_deg": 63.15967520878233
+        }
+      ]
+    }
+  },
+  "ccs_low_lag": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.27355300986892,
+      "gain_1k": 103.19951362718507,
+      "low_3dB_Hz": 3.548133892335727,
+      "high_3dB_Hz": 31622.77660168322
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.62808511384546,
+      "gain_1k": 95.80854740582465,
+      "low_3dB_Hz": 3.311311214825885,
+      "high_3dB_Hz": 30199.51720401961
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 17.090357956329054,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.2758976043851542,
+          "phase_deg": 95.98377636776188,
+          "phase_margin_deg": 84.01622363223812
+        },
+        {
+          "frequency_Hz": 42459.93478714577,
+          "phase_deg": -85.80499565531596,
+          "phase_margin_deg": 94.19500434468404
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 17.089325507038854,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.2758923951046783,
+          "phase_deg": 95.98371112228774,
+          "phase_margin_deg": 84.01628887771226
+        },
+        {
+          "frequency_Hz": 30650.958214520197,
+          "phase_deg": -118.14639167700747,
+          "phase_margin_deg": 61.85360832299253
+        }
+      ]
+    }
+  },
+  "ccs_raised_lag": {
+    "source_10000_ohm": {
+      "gain_1k_dB": 40.01733355280237,
+      "gain_1k": 100.19975915474934,
+      "low_3dB_Hz": 3.630780547700985,
+      "high_3dB_Hz": 33113.11214825851
+    },
+    "source_47000_ohm": {
+      "gain_1k_dB": 39.37188604656241,
+      "gain_1k": 93.02384840051803,
+      "low_3dB_Hz": 3.388441561391999,
+      "high_3dB_Hz": 31622.77660168322
+    },
+    "loop_load_1e-07_F": {
+      "loop_1k_dB": 15.230293682152219,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.5920164680545306,
+          "phase_deg": 91.67724924425535,
+          "phase_margin_deg": 88.32275075574465
+        },
+        {
+          "frequency_Hz": 35797.288215883134,
+          "phase_deg": -87.04809491415048,
+          "phase_margin_deg": 92.95190508584952
+        }
+      ]
+    },
+    "loop_load_1e-06_F": {
+      "loop_1k_dB": 15.2293149442587,
+      "unity_crossings": [
+        {
+          "frequency_Hz": 1.5920062049466621,
+          "phase_deg": 91.67717168077253,
+          "phase_margin_deg": 88.32282831922747
+        },
+        {
+          "frequency_Hz": 28107.22547901789,
+          "phase_deg": -118.21292301167922,
+          "phase_margin_deg": 61.78707698832078
+        }
+      ]
+    }
+  }
+}
