@@ -78,7 +78,7 @@ Connections to route:
 | /V1_A | V1 pin 1 → R29 pad 1 | HV, 5 mm to GND |
 | /LAG_STEP | R29 pad 2 → C17 pad 1 | HV, 5 mm to GND |
 | /CCS_G | V1 pin 7 → R33.1, R32.1, C18.2 (−) | Default, −46 V |
-| /CCS_K | V1 pin 8 → R31.1 | Default, −45 V |
+| Net-(V1A-K) (was /CCS_K: its label was replaced by a wire) | V1 pin 8 → R31.1 | Default, −45 V; the board still names it /CCS_K until it is updated from the schematic |
 | BIAS_CCS | R31.2, R33.2 → J4 pin 5 | Default, −76 V; J4.5 takes the wire from R34/C19 on the supply |
 | GND | C18.1 (+), R32.2, C17.2 → GND; re-join the GND run cut at V1 pins 7/8 (R2.2 stub, and the 193 / 116 mm track) | GND class 2.5 mm |
 

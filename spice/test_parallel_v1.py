@@ -89,5 +89,26 @@ class Variants(unittest.TestCase):
         self.assertIn('C15 ', raised)
 
 
+class SchematicNetlist(unittest.TestCase):
+    """verify_schematic.py reads the drawn circuit without relying on label names."""
+    NET = ('XV1 V1_A V1_G V1_K LTP_K CCS_G Net-_V1A-K_ ECC83\n'
+           'R31 Net-_V1A-K_ BIAS_CCS 13k\nC18 GND CCS_G 10u\n')
+
+    def test_sink_nodes_follow_v1_pins_6_7_8(self):
+        from verify_schematic import sink_nodes
+        self.assertEqual(sink_nodes(self.NET), {'anode': 'LTP_K', 'grid': 'CCS_G', 'cathode': 'Net-_V1A-K_'})
+
+    def test_r31_value_read_from_netlist(self):
+        from verify_schematic import part_value
+        self.assertEqual(part_value(self.NET, 'R31'), 13e3)
+
+    def test_c18_polarity(self):
+        from verify_schematic import polarised_cap_warnings
+        dc = {'CCS_G': -45.9}
+        self.assertEqual(polarised_cap_warnings(self.NET, {}, dc), [])
+        flipped = self.NET.replace('C18 GND CCS_G', 'C18 CCS_G GND')
+        self.assertEqual(len(polarised_cap_warnings(flipped, {}, dc)), 1)
+
+
 if __name__ == '__main__':
     unittest.main()
