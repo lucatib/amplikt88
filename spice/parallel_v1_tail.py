@@ -38,13 +38,13 @@ def main():
         net = build_net(source, name, summary['variants'][name]['bias_position'])
         item = {'balance': balance(study, net), 'spread': {}}
         nodes = ['V1_A', 'LTP_K', 'LTP_A1'] + (['CCS_K', 'CCS_G'] if name.startswith('ccs') else [])
-        nodes += ['B_CCS', 'VBIAS_NEG'] if name.startswith('ccs_neg') else []
+        nodes += ['BIAS_CCS', 'VBIAS_NEG'] if name.startswith('ccs_neg') else []
         for k, label in [(0.8, 'strong'), (1.0, 'nominal'), (1.25, 'weak')]:
             # V1 (input + spare/CCS) emission scaled; V2 nominal.
             row = study.run(with_emission(net, k), 'op\nwrdata @DATA@ '+' '.join(f'v({x})' for x in nodes))[0]
             d = dict(zip(nodes, map(float, row[1:])))
-            if 'B_CCS' in d:
-                d['tail_mA'] = (d['CCS_K']-d['B_CCS'])/13
+            if 'BIAS_CCS' in d:
+                d['tail_mA'] = (d['CCS_K']-d['BIAS_CCS'])/13
                 d['ccs_Vgk'] = d['CCS_G']-d['CCS_K']
             elif 'CCS_K' in d:
                 d['tail_mA'] = d['CCS_K']/4.7

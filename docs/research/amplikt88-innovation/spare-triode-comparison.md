@@ -13,15 +13,15 @@ Both recommended changes are now drawn in `amplikt88.kicad_sch` and `power.kicad
    - Added: R29 15k in series with C17 180p 500 V C0G, from V1_A to ground.
 2. **V2 tail current sink.**
    - Removed: R8 39k.
-   - V1's spare section (pins 6/7/8) becomes the sink: anode on LTP_K; R31 13k from its cathode to B_CCS; grid on R32 604k (to ground) / R33 392k (to B_CCS) with C18 10 µF.
-   - On the power sheet, R34 2.2k 1 W and C19 100 µF 100 V feed B_CCS from BIAS_RAW (C13, before R23).
-   - B_CCS reaches the board through J5, a one-wire pad, so J4 is unchanged.
+   - V1's spare section (pins 6/7/8) becomes the sink: anode on LTP_K; R31 13k from its cathode to BIAS_CCS; grid on R32 604k (to ground) / R33 392k (to BIAS_CCS) with C18 10 µF.
+   - On the power sheet, R34 2.2k 1 W and C19 100 µF 100 V feed BIAS_CCS from BIAS_RAW (C13, before R23).
+   - BIAS_CCS reaches the board on J4 pin 5. J4 pins 5/6 used to carry the heaters; the heaters are wired off the board straight to the JH pads, and pin 6 is now unused.
 
 | Driver, before | Driver, after |
 |---|---|
 | ![before](../../schematic/before-driver.png) | ![after](../../schematic/after-driver.png) |
 
-| Tail sink (V1 spare section), after | B_CCS feed on the power sheet |
+| Tail sink (V1 spare section), after | BIAS_CCS feed on the power sheet |
 |---|---|
 | ![tail](../../schematic/after-tail.png) | ![bias feed](../../schematic/after-bias-feed.png) |
 
@@ -65,10 +65,10 @@ This matches `ccs_neg_lag`. ERC shows 0 errors; the one warning, the isolated CH
 - **Removed:** R8, C15 and R26 with their tracks. Also removed: the GND tracks that ran through V1 pins 7/8 (those pins now carry CCS_G and CCS_K), and the LTP_STEP tracks.
 - **Board outline:** extended 20 mm downward (y 143 → 163 mm; now 218.67 × 116.5 mm). The bottom mounting holes H1/H2/H3 moved down with the edge and stay 7.75 mm from it, so **the L bracket needs its bottom holes 20 mm lower**.
 - **New parts, placed in the new strip:**
-  - R33 (152, 145), R32 (152, 151), C18 (144, 146), R31 (166, 145), J5 (166, 151): the tail sink, under V1.
+  - R33 (152, 145), R32 (152, 151), C18 (144, 146), R31 (166, 145): the tail sink, under V1.
   - R29 (186, 146) and C17 (200, 146): the lag network.
 - **C17 footprint:** a 7.5 mm-pitch disc (`C_Disc_D7.5mm_W5.0mm_P7.50mm`). LAG_STEP sits at V1_A's 89 V DC, so it is in the HV net class (the old `/LTP_STEP` pattern now reads `/LAG_STEP`) and needs 5 mm to GND. A 5 mm-pitch disc cannot give that between its own pads.
-- **DRC:** 18 unconnected items, of which 5 are the hand-wired heaters (expected). One dangling GND stub remains on B.Cu from R2 pad 2 (163.9, 132 → 125.4); it is the end of the old GND run, to be re-joined.
+- **DRC:** 16 unconnected items, of which 2 are heater links between the valve heater pads (hand-wired, expected). One dangling GND stub remains on B.Cu from R2 pad 2 (163.9, 132 → 125.4); it is the end of the old GND run, to be re-joined.
 
 Connections to route:
 
@@ -79,7 +79,7 @@ Connections to route:
 | /LAG_STEP | R29 pad 2 → C17 pad 1 | HV, 5 mm to GND |
 | /CCS_G | V1 pin 7 → R33.1, R32.1, C18.2 (−) | Default, −46 V |
 | /CCS_K | V1 pin 8 → R31.1 | Default, −45 V |
-| B_CCS | R31.2, R33.2 → J5 | Default, −76 V; J5 takes the wire from R34/C19 on the supply |
+| BIAS_CCS | R31.2, R33.2 → J4 pin 5 | Default, −76 V; J4.5 takes the wire from R34/C19 on the supply |
 | GND | C18.1 (+), R32.2, C17.2 → GND; re-join the GND run cut at V1 pins 7/8 (R2.2 stub, and the 193 / 116 mm track) | GND class 2.5 mm |
 
 The automatic router (dry run) could connect everything except V1 pin 6 → LTP_K, V1_A → R29 and C18's GND pad. Those are blocked by the 5 mm HV-to-GND rule around V1.
@@ -237,7 +237,7 @@ The spare section replaces R8 (39 k, ~2.33 mA from LTP_K ≈ 91 V) as a constant
                       pin 7 ──┬── 600 k ── GND
                               ├── 393 k ──┐            (grid ≈ −45.7 V)
                               └── 10 µF ── GND
-                      pin 8 ── 13 k ──────┴── B_CCS (≈ −75.7 V)
+                      pin 8 ── 13 k ──────┴── BIAS_CCS (≈ −75.7 V)
                                               ├── 100 µF ── GND
  BIAS_RAW (C13, before R23) ── 2.2 k ─────────┘
  BIAS_RAW ── R23 2.7 k ── VBIAS_NEG (KT88 bias, unchanged)

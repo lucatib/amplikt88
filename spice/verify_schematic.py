@@ -7,7 +7,7 @@ Export the netlist first (Windows or Linux):
 
 The netlist is used unchanged (variant 'baseline'). The bench adds the realistic
 bias supply (raw node, C13, R23, C14) and the power-sheet R34 2.2k / C19 100u that
-feed B_CCS, so the tail sink sees the same supply as in ccs_neg_lag.
+feed BIAS_CCS, so the tail sink sees the same supply as in ccs_neg_lag.
 """
 import argparse
 import json
@@ -19,7 +19,7 @@ from parallel_v1_tail import balance
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE/'results/v1-parallel'
-B_CCS_FEED = '\nRB34 BIAS_RAW B_CCS 2.2k\nCB19 B_CCS GND 100u\n'
+B_CCS_FEED = '\nRB34 BIAS_RAW BIAS_CCS 2.2k\nCB19 BIAS_CCS GND 100u\n'
 
 
 def bench(source, pos):
@@ -43,10 +43,10 @@ def main():
         lo, hi = (mid, hi) if d['V3_K'] < .060 else (lo, mid)
     pos = (lo+hi)/2
     net = bench(source, pos)
-    names = ['VBIAS_NEG', 'B_CCS', 'CCS_G', 'CCS_K', 'LTP_K', 'LTP_A1', 'LTP_A2', 'V1_A', 'V3_K', 'V4_K']
+    names = ['VBIAS_NEG', 'BIAS_CCS', 'CCS_G', 'CCS_K', 'LTP_K', 'LTP_A1', 'LTP_A2', 'V1_A', 'V3_K', 'V4_K']
     row = study.run(net, 'op\nwrdata @DATA@ '+' '.join(f'v({x})' for x in names))[0]
     dc = dict(zip(names, map(float, row[1:])))
-    dc.update(tail_mA=(dc['CCS_K']-dc['B_CCS'])/13, ccs_Vak=dc['LTP_K']-dc['CCS_K'],
+    dc.update(tail_mA=(dc['CCS_K']-dc['BIAS_CCS'])/13, ccs_Vak=dc['LTP_K']-dc['CCS_K'],
               ccs_Vgk=dc['CCS_G']-dc['CCS_K'], trim_position=pos)
     res = {'dc': dc, 'ac': study.ac(net, 'schematic'), 'loop': study.loop(net, 'schematic'),
            'loop_100n': study.loop(net+'\nCLOAD OT_S_HI GND 1e-7\n', 'schematic-100n'),

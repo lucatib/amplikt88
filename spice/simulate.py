@@ -10,7 +10,7 @@ B+ and bias rails, 1 kHz source, 8 ohm load) and runs the analyses.
     python3 spice/simulate.py --rf 82k --cf 27p
 
 The power supply sheet is not simulated; B+, the driver rail drop, the V2
-tail-sink rail (B_CCS, -75.7 V) and the
+tail-sink rail (BIAS_CCS, -75.7 V) and the
 negative bias rail are modelled as ideal sources. Valve models are Koren fits
 to the data sheet curves (no grid current below 0 V), the output transformer is
 a coupled-inductor model with assumed leakage. Use it to compare variants, not
@@ -49,7 +49,7 @@ def bench(net, ltp, pos, rf, cf, open_loop=False):
     for i, node in enumerate(sorted(set(re.findall(r"unconnected-\S+", n)))):
         n += f"RFLOAT{i} {node} GND 1e9\n"
     if re.search(r"\sB_CCS\b", n):   # V2 tail sink rail: R34/C19 off C13 on the power sheet
-        n += "V_CCS B_CCS GND DC -75.7\n"
+        n += "V_CCS BIAS_CCS GND DC -75.7\n"
     return n + ("V_BPLUS B_PLUS GND DC 450\nV_NEG VBIAS_NEG GND DC -65\n"
                 "VIN IN_RAW GND DC 0 AC 1 SIN(0 {VAMP} 1k)\nRL OT_S_HI GND 8\n"
                 ".options reltol=0.003 gmin=1e-12 itl1=500 itl4=200\n.param VAMP=1\n")

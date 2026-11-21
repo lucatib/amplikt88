@@ -32,7 +32,7 @@ def op(study, net, extra=()):
 
 def tail_ma(name, d):
     if name.startswith('ccs_neg'):
-        return (d['CCS_K']-d['B_CCS'])/13
+        return (d['CCS_K']-d['BIAS_CCS'])/13
     if name.startswith('ccs'):
         return d['CCS_K']/4.7
     return d['LTP_K']/39
@@ -40,7 +40,7 @@ def tail_ma(name, d):
 
 def extra_nodes(name):
     if name.startswith('ccs_neg'):
-        return ['CCS_K', 'CCS_G', 'B_CCS']
+        return ['CCS_K', 'CCS_G', 'BIAS_CCS']
     return ['CCS_K', 'CCS_G'] if name.startswith('ccs') else []
 
 

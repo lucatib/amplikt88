@@ -7200,7 +7200,7 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "B_CCS")
+			(net "BIAS_CCS")
 			(pintype "passive")
 			(uuid "65cc135a-a3d5-463a-805a-739d648b5c92")
 		)
@@ -7342,7 +7342,7 @@
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "HEATER_A")
+			(net "BIAS_CCS")
 			(pinfunction "Pin_5_5")
 			(pintype "passive")
 			(uuid "3b3e03f0-5a9c-4a38-aeb8-098dcb6b284e")
@@ -7353,7 +7353,6 @@
 			(drill 1.5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "HEATER_B")
 			(pinfunction "Pin_6_6")
 			(pintype "passive")
 			(uuid "f183c34b-dfcc-4f34-bd19-d01400136df7")
@@ -9033,137 +9032,12 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "B_CCS")
+			(net "BIAS_CCS")
 			(pintype "passive")
 			(uuid "4e56fc8f-c9a5-45d2-ac17-4b9c0baf6e35")
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "Connector_Wire:SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm"
-		(layer "F.Cu")
-		(uuid "e51f0d40-2750-4111-881b-19900247e0cc")
-		(at 166 151)
-		(descr "Soldered wire connection, for a single 0.5 mm² wire, basic insulation, conductor diameter 0.9mm, outer diameter 2.1mm, size source Multi-Contact FLEXI-E 0.50 (https://www.staubli.com/content/dam/ecs/catalogs-brochures/TM/CAB-Main-11014119-en.pdf#page=9), bend radius 3 times outer diameter")
-		(tags "connector wire 0.5sqmm")
-		(property "Reference" "J5"
-			(at 0 -2.28 0)
-			(layer "F.SilkS")
-			(uuid "385ea28b-2c4d-4d76-9d39-1f17d28bbefb")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "B_CCS IN"
-			(at 0 2.28 0)
-			(layer "F.Fab")
-			(uuid "7b067e87-b438-4a4f-a1fc-fa8cd6f6db4b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "51b31dd4-c8a9-467f-b388-73fdcd6db57e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "cef10436-f911-4ff7-96eb-d5cf48baeb92")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "connector/wire"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "7a284e0b-0bce-40ef-bdba-05bcf509dace")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(path "/62b76f35-16d4-4933-a592-51ef69f603ef")
-		(sheetname "/")
-		(sheetfile "amplikt88.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_rect
-			(start -1.8 -1.58)
-			(end 1.8 1.58)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "249efd85-6ab7-4032-b6fc-38b56416e86f")
-		)
-		(fp_circle
-			(center 0 0)
-			(end 1.05 0)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "d2fb553d-68e8-417e-9111-02d5326fcd80")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "b018ece2-9402-4213-aadd-98c4ebdedc0e")
-			(effects
-				(font
-					(size 0.52 0.52)
-					(thickness 0.08)
-				)
-			)
-		)
-		(pad "1" thru_hole roundrect
-			(at 0 0)
-			(size 2.15 2.15)
-			(drill 1.15)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(roundrect_rratio 0.116279)
-			(net "B_CCS")
-			(pinfunction "Pin_1_1")
-			(pintype "passive")
-			(uuid "91f89dfa-3273-4acd-a5a4-ba955a721f36")
-		)
-		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_Wire.3dshapes/SolderWire-0.5sqmm_1x01_D0.9mm_OD2.1mm.step"
 			(offset
 				(xyz 0 0 0)
 			)

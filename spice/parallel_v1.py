@@ -108,9 +108,9 @@ def ccs_neg_tail(net):
     if count != 1:
         raise ValueError('V1 dual-triode instance not found')
     net = remove_part(net, 'R8')
-    return net + (f'\nRCCSK CCS_K B_CCS {c["rk"]}\nRCCSF BIAS_RAW B_CCS {c["rf"]}'
-                  '\nCCCSF B_CCS GND 100u'
-                  f'\nRCCS1 GND CCS_G {c["r_gnd"]}\nRCCS2 CCS_G B_CCS {c["rref"]}'
+    return net + (f'\nRCCSK CCS_K BIAS_CCS {c["rk"]}\nRCCSF BIAS_RAW BIAS_CCS {c["rf"]}'
+                  '\nCCCSF BIAS_CCS GND 100u'
+                  f'\nRCCS1 GND CCS_G {c["r_gnd"]}\nRCCS2 CCS_G BIAS_CCS {c["rref"]}'
                   '\nCCCS CCS_G GND 10u\n')
 
 

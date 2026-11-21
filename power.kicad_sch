@@ -6242,7 +6242,7 @@
 		)
 		(uuid "766c361e-9d60-4977-b249-7092bd066bd6")
 	)
-	(global_label "B_CCS"
+	(global_label "BIAS_CCS"
 		(shape passive)
 		(at 90.17 199.39 270)
 		(fields_autoplaced yes)
@@ -6347,7 +6347,7 @@
 		)
 		(uuid "da4546c2-9e20-4714-b01d-2ba597bd003a")
 	)
-	(global_label "B_CCS"
+	(global_label "BIAS_CCS"
 		(shape passive)
 		(at 109.22 199.39 270)
 		(fields_autoplaced yes)

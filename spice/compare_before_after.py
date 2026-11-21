@@ -8,7 +8,7 @@
 'before' defaults to results/v1-parallel/schematic-before.cir, the export of the
 schematic before the lag move and the tail sink (R8 39k, C15 330p + R26 10k).
 Bench as in simulate.py: ideal B+ 450 V, bias -65 V and, when the netlist has the
-tail sink, B_CCS -75.7 V (the bias-supply model's value); KT88s trimmed to 60 mA;
+tail sink, BIAS_CCS -75.7 V (the bias-supply model's value); KT88s trimmed to 60 mA;
 8 ohm load. Checked: THD at every test point, phase margin into 100 nF and 1 uF,
 1 uF square-wave overshoot. Bandwidth is reported, not checked: the lag fix
 narrows it on purpose (38 -> 32 kHz) for better capacitive-load margins.
@@ -33,8 +33,8 @@ TOL_OVERSHOOT = 1.0  # percentage points
 
 def bench(source, pos):
     net = p.build_net(source, 'baseline', pos)
-    if ' B_CCS' in net:
-        net += '\nV_CCS B_CCS GND DC -75.7\n'
+    if ' BIAS_CCS' in net:
+        net += '\nV_CCS BIAS_CCS GND DC -75.7\n'
     return net
 
 
