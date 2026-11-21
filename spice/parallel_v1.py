@@ -293,14 +293,20 @@ class Study:
                 'step_V': float(top-bottom)}
 
 
-# Realistic bias supply (bias_supply_study.py): half-wave raw node as a Thevenin
-# source, then C13, R23 2.7k, C14 as on the power sheet. MAINS scales it and B+.
-BIAS_RAW_VTH, BIAS_RAW_R = -83.32, 376.7
+# Realistic bias supply: the raw node (C13) as a Thevenin source, then C13, R23 2.7k,
+# C14 as on the power sheet. MAINS scales it and B+. The schematic now has a bridge
+# (D6 on a floating 60 V winding, bias_bridge_study.py: C13 at -81.51 V with 5.93 mA
+# drawn, 213 ohm source); the half-wave values (D5, bias_supply_study.py) are kept to
+# reproduce the earlier ccs_neg results: set BIAS_RECTIFIER = 'half'.
+BIAS_SUPPLY = {'bridge': (-82.78, 213.3), 'half': (-83.32, 376.7)}
+BIAS_RECTIFIER = 'bridge'
+BIAS_RAW_VTH, BIAS_RAW_R = BIAS_SUPPLY[BIAS_RECTIFIER]
 MAINS = 1.0
 
 
 def bias_network(r23='2.7k'):
-    return (f'\nVRAW BIAS_SRC GND DC {BIAS_RAW_VTH*MAINS:.4f}\nRRAW BIAS_SRC BIAS_RAW {BIAS_RAW_R}'
+    vth, rth = BIAS_SUPPLY[BIAS_RECTIFIER]
+    return (f'\nVRAW BIAS_SRC GND DC {vth*MAINS:.4f}\nRRAW BIAS_SRC BIAS_RAW {rth}'
             f'\nCB13 BIAS_RAW GND 100u\nRB23 BIAS_RAW VBIAS_NEG {r23}\nCB14 VBIAS_NEG GND 100u\n')
 
 

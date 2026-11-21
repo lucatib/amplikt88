@@ -97,7 +97,7 @@ With 5 H and the second capacitor, that is a large ratio. Separate RC-decoupled 
 
 **Bleeding.** The bleeder discharges the reservoir after power-off, but slowly. Measure the HT before touching anything.
 
-**Bias supply.** A half-wave rectifier with a light, constant load. It does not need to be stiff, but it must come up before or together with the HT. If it does not, the KT88s conduct at zero bias. Here the bias winding is on the same transformer and the KT88 heaters take seconds to warm up, so the bias supply comes up first.
+**Bias supply.** A bridge rectifier on a floating winding (it was a half-wave with one diode) with a light, constant load. The bridge halves the ripple period, puts no DC through the winding, and survives one diode failing open, which with a single diode would lose the KT88 bias. It does not need to be stiff, but it must come up before or together with the HT. If it does not, the KT88s conduct at zero bias. Here the bias winding is on the same transformer and the KT88 heaters take seconds to warm up, so the bias supply comes up first.
 
 ## 6. Heaters
 

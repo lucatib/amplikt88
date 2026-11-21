@@ -15,7 +15,7 @@ Both recommended changes are now drawn in `amplikt88.kicad_sch` and `power.kicad
    - Removed: R8 39k.
    - V1's spare section (pins 6/7/8) becomes the sink: anode on LTP_K; R31 13k from its cathode to BIAS_CCS; grid on R32 604k (to ground) / R33 392k (to BIAS_CCS) with C18 10 µF.
    - On the power sheet, R34 2.2k 1 W and C19 100 µF 100 V feed BIAS_CCS from BIAS_RAW (C13, before R23).
-   - BIAS_CCS reaches the board on J4 pin 5. J4 is now six pads (`Supply_6`): B+, B_DRV, B_V1, VBIAS_NEG, BIAS_CCS, GND. The former heater pad is gone (the heaters are wired off the board to the JH pads), and GND keeps its old position.
+   - BIAS_CCS reaches the board on J4 pin 5. J4 is now six pads (`Supply_6`): B+, B_DRV, B_V1, VBIAS_NEG, BIAS_CCS, GND. The former heater pad is gone (the heaters are wired off the board to the JH pads); the six pads sit at an even 6 mm pitch, so GND moved 6 mm left and its tracks were moved with it.
 
 | Driver, before | Driver, after |
 |---|---|
@@ -25,12 +25,12 @@ Both recommended changes are now drawn in `amplikt88.kicad_sch` and `power.kicad
 |---|---|
 | ![tail](../../schematic/after-tail.png) | ![bias feed](../../schematic/after-bias-feed.png) |
 
-**Check of the netlist as drawn** (`spice/verify_schematic.py`, with the realistic bias supply and R34/C19):
+**Check of the netlist as drawn** (`spice/verify_schematic.py`, with the bridge bias supply and R34/C19):
 
 | | Result |
 |---|---|
-| Tail current; sink grid bias | 2.32 mA; −0.34 V |
-| V1_A / LTP_K / LTP anodes | 89.3 / 91.1 / 324.6 V |
+| Tail current; sink grid bias | 2.33 mA; −0.34 V (BIAS_CCS −76.1 V) |
+| V1_A / LTP_K / LTP anodes | 89.3 / 91.1 / 323.9 V |
 | LTP imbalance | 0.047 % |
 | PM: resistive / 100 nF / 1 µF | 102° / 94° / 62° |
 | 1 µF overshoot; bandwidth | 15.0 %; 32 kHz |
@@ -247,7 +247,7 @@ The spare section replaces R8 (39 k, ~2.33 mA from LTP_K ≈ 91 V) as a constant
 - **Added:** 13 k (cathode); 2.2 k + 100 µF / 100 V (sink supply filter); 600 k / 393 k (390 k + 3.3 k) + 10 µF (grid reference).
 - **Wiring:** the BIAS_RAW node, at C13, has to reach the amplifier board. That means one more pin on J4 or a local feed.
 
-**Why the raw node and not VBIAS_NEG.** The bias supply was modelled on its own (`bias_supply_study.py`): 60 V winding, D5 half-wave, C13, R23, C14. The winding resistance is calibrated to the README's −67 V at 5.3 mA. The rail's output resistance is ~3.1 k, almost all of it R23:
+**Why the raw node and not VBIAS_NEG.** The bias supply was modelled on its own (`bias_supply_study.py`): 60 V winding, D5 half-wave, C13, R23, C14. The winding resistance is calibrated to the README's −67 V at 5.3 mA. The rail's output resistance is ~3.1 k, almost all of it R23. (These figures are for the half-wave D5 the supply had then; it is now a bridge, D6, which makes the raw node stiffer, 213 Ω instead of ~333–377 Ω, and cuts the ripple about 4×, so the numbers below are conservative. See `bias_bridge_study.py`.)
 - **Sink hung on VBIAS_NEG:** the KT88 bias rail would lose ~7.5 V. At low mains it would fall to −56.5 V, which is marginal for the trimmer range. Any fault in the sink would also pull the KT88 bias directly.
 - **Sink on the raw node:** the raw node is only ~380 Ω, so the KT88 rail moves ~2 V in normal use, and R23 isolates it from sink faults.
 
