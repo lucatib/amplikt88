@@ -15,7 +15,7 @@ Both recommended changes are now drawn in `amplikt88.kicad_sch` and `power.kicad
    - Removed: R8 39k.
    - V1's spare section (pins 6/7/8) becomes the sink: anode on LTP_K; R31 13k from its cathode to BIAS_CCS; grid on R32 604k (to ground) / R33 392k (to BIAS_CCS) with C18 10 µF.
    - On the power sheet, R34 2.2k 1 W and C19 100 µF 100 V feed BIAS_CCS from BIAS_RAW (C13, before R23).
-   - BIAS_CCS reaches the board on J4 pin 5. J4 pins 5/6 used to carry the heaters; the heaters are wired off the board straight to the JH pads, and pin 6 is now unused.
+   - BIAS_CCS reaches the board on J4 pin 5. J4 is now six pads (`Supply_6`): B+, B_DRV, B_V1, VBIAS_NEG, BIAS_CCS, GND. The former heater pad is gone (the heaters are wired off the board to the JH pads), and GND keeps its old position.
 
 | Driver, before | Driver, after |
 |---|---|
