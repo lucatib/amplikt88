@@ -87,6 +87,8 @@ Schematic parity reports the power supply parts as missing (the supply is built 
 
 ## Simulation
 
+The [circuit research and innovation review](docs/amplikt88-innovation-review.md) compares uses for V1's unused triode, driver/feedback alternatives and supply/protection improvements. It also identifies historical documentation conflicts and simulation-method limitations that must be resolved before comparing new variants; the results below have not been independently rerun by that review.
+
 `python3 spice/simulate.py` exports the SPICE netlist from the schematic with `kicad-cli` and runs ngspice on it (`--ltp ecc82`, `--rf`, `--cf` to try variants). The symbols carry `Sim.*` fields that point at `spice/amplikt88.lib`, so the same circuit also loads in KiCad's own simulator once B+, bias and a source are added. The power sheet is excluded; B+ (450 V) and the bias rail (-65 V) are ideal sources. `python3 spice/psu_study.py` simulates the HV supply on its own (transformer, bridge, C1, L1, C2) with the amplifier's average current as the load.
 
 ![Simulation plots](spice/simulation.png)
@@ -137,6 +139,6 @@ The driver follows the Mullard 5-20 and 5-10: an EF86 input stage direct coupled
 - F. Langford-Smith (ed.), *Radiotron Designer's Handbook*, 4th edition, 1953: push-pull output stages, phase splitters, negative feedback and its stability, output transformers, rectification and filtering (chapters 5, 7, 12 to 14, 21, 30 and 31).
 - G. E. Valley and H. Wallman (eds.), *Vacuum Tube Amplifiers*, MIT Radiation Laboratory Series vol. 18, 1948: chapters 9 and 10 on the stability of feedback amplifiers at both ends of the band, the theory behind the R10 C16 and C15 R26 margins above.
 - D. T. N. Williamson, *The Williamson Amplifier*, Iliffe 1952: the Wireless World articles of 1947 and 1949, with the output transformer requirements of a high-feedback amplifier.
-- Morgan Jones, *Valve Amplifiers*, 4th edition, Newnes 2012: in print, so there is no local copy. [docs/valve-design-notes.md](docs/valve-design-notes.md) has our own notes on the same topics, worked out for this circuit.
+- Morgan Jones, *Valve Amplifiers*: the [third edition](docs/references/morgan-jones-valve-amplifiers-3rd-edition.pdf) is available locally; the fourth edition is linked in the reference index. [docs/valve-design-notes.md](docs/valve-design-notes.md) contains earlier original design notes; the [innovation review](docs/amplikt88-innovation-review.md) adds verified source locations and proposed experiments.
 - Local copies are in [docs/references](docs/references/README.md): Mullard complete and as an extract of chapters 3, 5 and 6, G.E.C. and Williamson complete, the Radiotron and Valley-Wallman chapters listed above.
 - *Design for a 20-Watt High Quality Amplifier*, Wireless World, May and June 1955: the first publication of the 5-20, reprinted in the book. The 5-10 dates from summer 1954 (the book's preface).

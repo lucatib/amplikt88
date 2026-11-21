@@ -1,5 +1,7 @@
 # References
 
+For circuit-specific findings, source page pointers and proposed uses of V1's spare triode, see the [amplikt88 innovation review](../amplikt88-innovation-review.md). It distinguishes complete books from samples and verified circuit facts from untested proposals.
+
 | File | Contents | Source |
 |---|---|---|
 | `crowhurst-cooper-high-fidelity-circuit-design-1956.pdf` | Norman H. Crowhurst and George Fletcher Cooper, *High Fidelity Circuit Design* (1956), complete, 304 PDF pages. | <https://www.worldradiohistory.com/BOOKSHELF-ARH/Technology/Technology-Radio/High-Fidelity-Circuit-Design-Crowhurs-Cooper-1956-Adobe.pdf> |

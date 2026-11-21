@@ -1,6 +1,6 @@
 # Valve design notes
 
-These notes are written for this amplifier from standard valve theory, and every number is from this design. They are not an extract or a paraphrase of any book. They cover the topics of Morgan Jones, *Valve Amplifiers* (4th edition, Newnes, 2012): gain stages, phase splitters, output stages, feedback, power supplies, heaters, layout and components. Go to the book for the full treatment; it is not in `docs/references` because it is still in print.
+These earlier notes are written for this amplifier from standard valve theory, not extracted from a book. The third edition of Morgan Jones's *Valve Amplifiers* is now in `docs/references`. See the [circuit research and innovation review](amplikt88-innovation-review.md) for verified source locations, current configuration, limitations of earlier calculations and uses for V1's spare triode.
 
 The operating points come from the simulation in the [README](../README.md#simulation). Nothing has been measured on hardware yet.
 
@@ -21,7 +21,7 @@ That is before the global feedback, which also arrives at R4. The pair's grid pr
 Points that matter in practice:
 
 - **The load line is set by R3 and B_V1 (355 V).** The anode sits at about 89 V and the cathode at 0.84 V. That leaves plenty of swing for the few volts the pair needs, but the stage runs well below the middle of its load line, because the anode voltage sets the bias of the pair (see section 2).
-- **Output impedance** is about ra + (mu + 1) * Rk in parallel with Ra, roughly 160k. It drives only the pair's grid and its Miller capacitance, through R5 (1k). The pole this makes is far above the audio band.
+- **Output impedance** is about ra + (mu + 1) * Rk in parallel with Ra, roughly 160k. It drives the pair's grid and Miller capacitance through R5 (1k). A first-order estimate in the innovation review puts this local pole near 23 kHz, so it cannot be assumed far above audio. This is not the complete amplifier's closed-loop bandwidth.
 - **Noise and hum.** The input stage has the most gain after it, so its heater wiring, grid stopper and layout matter most (sections 6 and 7).
 
 ## 2. Long-tailed pair phase splitter (V2)
@@ -55,7 +55,7 @@ With Rt = R8 = 39k, ra about 65k and Ra = 100k, this gives about 0.96, so the im
 
 This agrees with the simulation's 60 W at 1 % and 75 W at 5 %.
 
-**Ultralinear.** The screens go to taps at 40 % of each half-primary. The valve then behaves between a tetrode, which gives more power, and a triode, which has lower output impedance and less distortion. The screens see most of the anode swing, which is why the screen tracks have the 6.3 mm clearance class.
+**Ultralinear.** The screens go to taps at 40 % of each half-primary. The valve then behaves between a tetrode and a triode. Ideally the tap contributes 40 % of the corresponding anode's AC swing relative to the centre tap, on top of the HT voltage; screen-resistor drops and winding parasitics alter the actual screen voltage. The screen tracks have the 6.3 mm clearance class.
 
 **Fixed bias.** The grids are held at a negative voltage from the bias supply through R11 and R12. Fixed bias gives more power and better regulation than cathode bias, but it needs two things:
 
