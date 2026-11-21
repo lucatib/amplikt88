@@ -2,6 +2,12 @@
 
 | File | Contents | Source |
 |---|---|---|
+| `crowhurst-cooper-high-fidelity-circuit-design-1956.pdf` | Norman H. Crowhurst and George Fletcher Cooper, *High Fidelity Circuit Design* (1956), complete, 304 PDF pages. | <https://www.worldradiohistory.com/BOOKSHELF-ARH/Technology/Technology-Radio/High-Fidelity-Circuit-Design-Crowhurs-Cooper-1956-Adobe.pdf> |
+| `linsley-hood-valve-and-transistor-audio-amplifiers.pdf` | John Linsley Hood, *Valve and Transistor Audio Amplifiers*, complete, 263 PDF pages. | <https://milas.spb.ru/~kmg/files/literature/Valve%20%26%20Transistor%20Audio%20Amplifiers.pdf> |
+| `morgan-jones-building-valve-amplifiers-preview.pdf` | Morgan Jones, *Building Valve Amplifiers*, first-edition preview only, 19 pages; not the complete book. | <https://api.pageplace.de/preview/DT0400.9780080470375_A23516296/preview-9780080470375_A23516296.pdf> |
+| `blencowe-power-supplies-sample.pdf` | Merlin Blencowe, *Designing Power Supplies for Valve Amplifiers*, author-provided sample only, 9 pages. The author's site lists the complete book as hardcopy only. | <https://www.valvewizard.co.uk/DPFVA_sample.pdf> |
+| `blencowe-tube-preamps-grounding-chapter.pdf` | Merlin Blencowe, *Designing Tube Preamps for Guitar and Bass*, author-provided grounding chapter only, 16 pages. | <https://www.valvewizard.co.uk/Grounding.pdf> |
+| `blencowe-tube-preamps-gain-stage-chapter.pdf` | Merlin Blencowe, *Designing Tube Preamps for Guitar and Bass*, author-provided first chapter on the common gain stage; not the complete book. | <https://www.valvewizard.co.uk/Common_Gain_Stage.pdf> |
 | `morgan-jones-valve-amplifiers-3rd-edition.pdf` | Morgan Jones, *Valve Amplifiers*, 3rd edition, Newnes/Elsevier. Complete downloaded PDF, 633 pages, 5.8 MB. | <https://milas.spb.ru/~kmg/files/literature/Morgan_Jones_Valve_Amplifiers_Third_Edition.pdf> |
 | Online reference (no local book file) | Morgan Jones, *Valve Amplifiers*, 4th edition, Newnes/Elsevier, ISBN 9780080966403. Full text has not been accessed or read. | [Online edition and preview](https://www.oreilly.com/library/view/valve-amplifiers-4th/9780080966403/); [publisher](https://shop.elsevier.com/books/valve-amplifiers/jones/978-0-08-096640-3) |
 | `mullard-circuits-for-audio-amplifiers.pdf` | Mullard Ltd, *Circuits for Audio Amplifiers* (1963 reprint of the 1960 second edition), complete, 121 pages. Page images re-encoded at 150 dpi (28 MB, from 53 MB). | <https://www.worldradiohistory.com/BOOKSHELF-ARH/Technology/Technology-General/Mullard%20Circuits%20For%20Audio%20Amplifiers.pdf> |
