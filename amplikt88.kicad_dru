@@ -1,5 +1,18 @@
 (version 1)
 
+# Diagnostic surface-distance screens, not product certification limits.
+(rule "Creepage diagnostic - HT to low voltage"
+  (condition "((A.NetName == 'B_PLUS' || A.NetName == 'B_DRV' || A.NetName == 'B_V1' || A.NetName == '/V1_A' || A.NetName == '/LTP_A1' || A.NetName == '/LTP_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == 'B_PLUS' || B.NetName == 'B_DRV' || B.NetName == 'B_V1' || B.NetName == '/V1_A' || B.NetName == '/LTP_A1' || B.NetName == '/LTP_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (constraint creepage (min 5mm)))
+
+(rule "Creepage diagnostic - UL and screens to low voltage"
+  (condition "((A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == '/OT_UL1' || B.NetName == '/OT_UL2' || B.NetName == '/G2_V3' || B.NetName == '/G2_V4') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (constraint creepage (min 6.3mm)))
+
+(rule "Creepage diagnostic - KT88 anodes to low voltage"
+  (condition "((A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == '/OT_A1' || B.NetName == '/OT_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (constraint creepage (min 8mm)))
+
 # Alta tensione verso massa (piste, pad e piano), in tre fasce secondo la tensione di lavoro
 # (distanza superficiale, isolamento base, FR4, grado di inquinamento 2):
 #   5 mm    B+, B_DRV, B_V1 e placche delle ECC83: fino a 470 V continui
