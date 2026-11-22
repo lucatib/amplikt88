@@ -62,28 +62,34 @@
   (constraint disallow track)
   (condition "A.NetName == 'GND'"))
 
+# Ordine di sbroglio a due strati: massa a stella sotto, poi le linee di potenza, poi i
+# segnali sopra. Dove un segnale non passa si accetta un ponticello su B.Cu, come eccezione
+# nominata, scritta nella condizione cosi' che anche l'autorouter la veda:
+#   /LTP_A1 (anodo LTP verso C8) e' chiuso dal gruppo di V1: passa sotto, sopra le R5,
+#   dove prima c'era C18 (spostato accanto a R3).
+#   /LTP_G1 (griglia LTP verso R10) e /V1_A (anodo V1 verso R5/R3) devono passare sotto
+#   la pista di /LTP_K, che entra in V1 dalla chiave dello zoccolo (con la distanza HV di
+#   2.5 mm e' l'unico varco), e sotto le piste dei filamenti.
+#   VBIAS_NEG (bassa tensione, da J4.4 a RV1/R27 e RV2/R28) e' chiuso tra B_PLUS e le
+#   piste HV da TR2 a V4: sopra farebbe 354 mm di giro, con il ponticello sotto 165 mm.
+#   Filamenti (HEATER_A/B) e le reti attorno a V2 (LTP_K, V2_G2, LTP_A2) possono scendere
+#   sotto anche loro. Le vie sono ammesse solo per queste reti, e l'autorouter le usa il meno
+#   possibile (costo alto per via e per B.Cu).
 (rule "Tutto tranne la massa solo su F.Cu"
   (layer "B.Cu")
   (constraint disallow track)
-  (condition "A.NetName != 'GND'"))
+  (condition "A.NetName != 'GND' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2'"))
+
+# Una sola misura di via su tutta la scheda, quella della classe HV: 1.6 mm, foro 0.8 mm.
+# Regge la corrente dei filamenti (piste da 2 mm) e vale anche dove la classe dice 0.6/0.3.
+(rule "Vie 1.6/0.8"
+  (constraint via_diameter (min 1.6mm) (opt 1.6mm))
+  (constraint hole_size (min 0.8mm) (opt 0.8mm))
+  (condition "A.Type == 'Via'"))
 
 (rule "Nessuna via"
   (constraint disallow via)
-  (condition "A.Type == 'Via'"))
-
-# Ordine di sbroglio a due strati: massa a stella sotto, poi le linee di potenza, poi i
-# segnali sopra. Dove un segnale non passa si accetta qualche via, come eccezione nominata.
-# /LTP_A1 (anodo LTP verso C8) è chiuso dal gruppo di V1: due vie e un ponticello su B.Cu.
-(rule "Eccezione LTP_A1: vie"
-  (constraint disallow via)
-  (severity ignore)
-  (condition "A.Type == 'Via' && A.NetName == '/LTP_A1'"))
-
-(rule "Eccezione LTP_A1: ponticello su B.Cu"
-  (layer "B.Cu")
-  (constraint disallow track)
-  (severity ignore)
-  (condition "A.NetName == '/LTP_A1'"))
+  (condition "A.Type == 'Via' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2'"))
 
 # I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
 # Le regole più in basso nel file vincono su quelle sopra.
