@@ -51,6 +51,12 @@
   (constraint edge_clearance (min 3mm))
   (condition "A.Type == 'Track'"))
 
+# Fessura fresata tra J4.3 (B_V1) e J4.4 (VBIAS_NEG): allunga il percorso superficiale tra
+# i due pad, a 6 mm di passo, oltre i 5 mm. Le piste che entrano in J4 possono starle vicine.
+(rule "Fessura J4"
+  (constraint edge_clearance (min 0.5mm))
+  (condition "A.Type == 'Track' && A.intersectsArea('FESSURA_J4')"))
+
 # Correnti grosse: larghezza minima
 (rule "Anodi, B+ e catodi almeno 2.5 mm"
   (constraint track_width (min 2.5mm))
@@ -88,10 +94,12 @@
 #   Filamenti (HEATER_A/B) e le reti attorno a V2 (LTP_K, V2_G2, LTP_A2) possono scendere
 #   sotto anche loro. Le vie sono ammesse solo per queste reti, e l'autorouter le usa il meno
 #   possibile (costo alto per via e per B.Cu).
+#   BIAS_A/B e G3_IN/G4_IN (bassa tensione): R11, R13, R12 e R28 stanno fuori dalle piste
+#   degli anodi KT88 (8 mm di distanza superficiale) e le raggiungono passando sotto.
 (rule "Tutto tranne la massa solo su F.Cu"
   (layer "B.Cu")
   (constraint disallow track)
-  (condition "A.NetName != 'GND' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2'"))
+  (condition "A.NetName != 'GND' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2' && A.NetName != '/BIAS_A' && A.NetName != '/BIAS_B' && A.NetName != '/G3_IN' && A.NetName != '/G4_IN'"))
 
 # Una sola misura di via su tutta la scheda, quella della classe HV: 1.6 mm, foro 0.8 mm.
 # Regge la corrente dei filamenti (piste da 2 mm) e vale anche dove la classe dice 0.6/0.3.
@@ -104,10 +112,15 @@
   (constraint disallow via)
   (condition "A.Type == 'Via' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2'"))
 
+
 # I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
 # Le regole più in basso nel file vincono su quelle sopra.
 (rule "Piedini dello zoccolo"
   (constraint clearance (min 1.2mm))
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('V?') && B.memberOfFootprint('V?')"))
+
+(rule "Piedini dello zoccolo: creepage"
+  (constraint creepage (min 1.2mm))
   (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.memberOfFootprint('V?') && B.memberOfFootprint('V?')"))
 
 # KT88: il courtyard del footprint Valve_Octal_KT88 è il vetro, 52 mm di diametro.
