@@ -1,17 +1,38 @@
 (version 1)
 
 # Diagnostic surface-distance screens, not product certification limits.
+# Lato bassa tensione: tutte le reti che a regime stanno entro circa 100 V da massa, compresi
+# gli ingressi di griglia delle KT88 prima dei grid stopper (G3_IN, G4_IN) e il generatore di
+# corrente della coda (catodo Net-(V1A-K), griglia CCS_G).
 (rule "Creepage diagnostic - HT to low voltage"
-  (condition "((A.NetName == 'B_PLUS' || A.NetName == 'B_DRV' || A.NetName == 'B_V1' || A.NetName == '/V1_A' || A.NetName == '/LTP_A1' || A.NetName == '/LTP_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == 'B_PLUS' || B.NetName == 'B_DRV' || B.NetName == 'B_V1' || B.NetName == '/V1_A' || B.NetName == '/LTP_A1' || B.NetName == '/LTP_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (condition "((A.NetName == 'B_PLUS' || A.NetName == 'B_DRV' || A.NetName == 'B_V1' || A.NetName == '/V1_A' || A.NetName == '/LTP_A1' || A.NetName == '/LTP_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B' || B.NetName == '/G3_IN' || B.NetName == '/G4_IN' || B.NetName == 'Net-(V1A-K)' || B.NetName == '/CCS_G' || B.NetName == '/BA_LO' || B.NetName == '/BB_LO' || B.NetName == '/IN_C')) || ((B.NetName == 'B_PLUS' || B.NetName == 'B_DRV' || B.NetName == 'B_V1' || B.NetName == '/V1_A' || B.NetName == '/LTP_A1' || B.NetName == '/LTP_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B' || A.NetName == '/G3_IN' || A.NetName == '/G4_IN' || A.NetName == 'Net-(V1A-K)' || A.NetName == '/CCS_G' || A.NetName == '/BA_LO' || A.NetName == '/BB_LO' || A.NetName == '/IN_C'))")
   (constraint creepage (min 5mm)))
 
+# Anodi della LTP (circa 325 V continui, +-60 V di segnale): 4 mm verso la bassa tensione,
+# IEC 60664-1 PD2 gruppo IIIa a 400 V efficaci. La fascia da 5 mm qui sopra resta per B+,
+# B_DRV, B_V1 e V1_A; sotto V1 i piedini sono tutti a bassa tensione e 5 mm non passano.
+(rule "Creepage diagnostic - LTP anodes to low voltage"
+  (condition "((A.NetName == '/LTP_A1' || A.NetName == '/LTP_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B' || B.NetName == '/G3_IN' || B.NetName == '/G4_IN' || B.NetName == 'Net-(V1A-K)' || B.NetName == '/CCS_G' || B.NetName == '/BA_LO' || B.NetName == '/BB_LO' || B.NetName == '/IN_C')) || ((B.NetName == '/LTP_A1' || B.NetName == '/LTP_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B' || A.NetName == '/G3_IN' || A.NetName == '/G4_IN' || A.NetName == 'Net-(V1A-K)' || A.NetName == '/CCS_G' || A.NetName == '/BA_LO' || A.NetName == '/BB_LO' || A.NetName == '/IN_C'))")
+  (constraint creepage (min 4mm)))
+
 (rule "Creepage diagnostic - UL and screens to low voltage"
-  (condition "((A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == '/OT_UL1' || B.NetName == '/OT_UL2' || B.NetName == '/G2_V3' || B.NetName == '/G2_V4') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (condition "((A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B' || B.NetName == '/G3_IN' || B.NetName == '/G4_IN' || B.NetName == 'Net-(V1A-K)' || B.NetName == '/CCS_G' || B.NetName == '/BA_LO' || B.NetName == '/BB_LO' || B.NetName == '/IN_C')) || ((B.NetName == '/OT_UL1' || B.NetName == '/OT_UL2' || B.NetName == '/G2_V3' || B.NetName == '/G2_V4') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B' || A.NetName == '/G3_IN' || A.NetName == '/G4_IN' || A.NetName == 'Net-(V1A-K)' || A.NetName == '/CCS_G' || A.NetName == '/BA_LO' || A.NetName == '/BB_LO' || A.NetName == '/IN_C'))")
   (constraint creepage (min 6.3mm)))
 
 (rule "Creepage diagnostic - KT88 anodes to low voltage"
-  (condition "((A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B')) || ((B.NetName == '/OT_A1' || B.NetName == '/OT_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B'))")
+  (condition "((A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && (B.NetName == 'GND' || B.NetName == 'HEATER_A' || B.NetName == 'HEATER_B' || B.NetName == 'VBIAS_NEG' || B.NetName == 'BIAS_CCS' || B.NetName == '/OT_S_HI' || B.NetName == '/V3_K' || B.NetName == '/V4_K' || B.NetName == '/V1_G' || B.NetName == '/V1_K' || B.NetName == '/IN_RAW' || B.NetName == '/V3_G1' || B.NetName == '/V4_G1' || B.NetName == '/BIAS_A' || B.NetName == '/BIAS_B' || B.NetName == '/G3_IN' || B.NetName == '/G4_IN' || B.NetName == 'Net-(V1A-K)' || B.NetName == '/CCS_G' || B.NetName == '/BA_LO' || B.NetName == '/BB_LO' || B.NetName == '/IN_C')) || ((B.NetName == '/OT_A1' || B.NetName == '/OT_A2') && (A.NetName == 'GND' || A.NetName == 'HEATER_A' || A.NetName == 'HEATER_B' || A.NetName == 'VBIAS_NEG' || A.NetName == 'BIAS_CCS' || A.NetName == '/OT_S_HI' || A.NetName == '/V3_K' || A.NetName == '/V4_K' || A.NetName == '/V1_G' || A.NetName == '/V1_K' || A.NetName == '/IN_RAW' || A.NetName == '/V3_G1' || A.NetName == '/V4_G1' || A.NetName == '/BIAS_A' || A.NetName == '/BIAS_B' || A.NetName == '/G3_IN' || A.NetName == '/G4_IN' || A.NetName == 'Net-(V1A-K)' || A.NetName == '/CCS_G' || A.NetName == '/BA_LO' || A.NetName == '/BB_LO' || A.NetName == '/IN_C'))")
   (constraint creepage (min 8mm)))
+
+# Reti del driver a circa 90 V (anodo di V1, griglie e catodi della LTP) verso l'alta tensione:
+# tra loro la classe HV da 2.5 mm non basta, la differenza arriva a circa 360 V continui,
+# e verso gli anodi KT88 a circa 470 V efficaci con il segnale.
+(rule "Creepage diagnostic - B+, B_DRV, UL and screens to driver nets"
+  (condition "((A.NetName == 'B_PLUS' || A.NetName == 'B_DRV' || A.NetName == '/OT_UL1' || A.NetName == '/OT_UL2' || A.NetName == '/G2_V3' || A.NetName == '/G2_V4') && (B.NetName == '/V1_A' || B.NetName == '/LAG_STEP' || B.NetName == '/LTP_G1' || B.NetName == '/V2_G2' || B.NetName == '/LTP_K')) || ((B.NetName == 'B_PLUS' || B.NetName == 'B_DRV' || B.NetName == '/OT_UL1' || B.NetName == '/OT_UL2' || B.NetName == '/G2_V3' || B.NetName == '/G2_V4') && (A.NetName == '/V1_A' || A.NetName == '/LAG_STEP' || A.NetName == '/LTP_G1' || A.NetName == '/V2_G2' || A.NetName == '/LTP_K'))")
+  (constraint creepage (min 3.5mm)))
+
+(rule "Creepage diagnostic - KT88 anodes to driver nets"
+  (condition "((A.NetName == '/OT_A1' || A.NetName == '/OT_A2') && (B.NetName == '/V1_A' || B.NetName == '/LAG_STEP' || B.NetName == '/LTP_G1' || B.NetName == '/V2_G2' || B.NetName == '/LTP_K')) || ((B.NetName == '/OT_A1' || B.NetName == '/OT_A2') && (A.NetName == '/V1_A' || A.NetName == '/LAG_STEP' || A.NetName == '/LTP_G1' || A.NetName == '/V2_G2' || A.NetName == '/LTP_K'))")
+  (constraint creepage (min 5mm)))
 
 # Alta tensione verso massa (piste, pad e piano), in tre fasce secondo la tensione di lavoro
 # (distanza superficiale, isolamento base, FR4, grado di inquinamento 2):
@@ -51,11 +72,15 @@
   (constraint edge_clearance (min 3mm))
   (condition "A.Type == 'Track'"))
 
-# Fessura fresata tra J4.3 (B_V1) e J4.4 (VBIAS_NEG): allunga il percorso superficiale tra
-# i due pad, a 6 mm di passo, oltre i 5 mm. Le piste che entrano in J4 possono starle vicine.
-(rule "Fessura J4"
+# Fessure fresate (0.8 mm) che allungano il percorso superficiale; dentro le aree FESSURA_* le
+# piste possono stare a 0.5 mm dalla fessura invece dei 3 mm del bordo.
+#   J4: tra J4.3 (B_V1) e J4.4 (VBIAS_NEG), a 6 mm di passo, oltre i 5 mm.
+#   V3: a L tra C7.2 (G3_IN) e R17.2 (OT_UL1), e verso la pista di G3_IN che sale su B.Cu.
+#   V4: a L sotto R12.1 (G4_IN), verso la pista dell'anodo di V4.
+#   V1: sotto R31-R33, verso il ponticello di LTP_A1 su B.Cu.
+(rule "Fessure"
   (constraint edge_clearance (min 0.5mm))
-  (condition "A.Type == 'Track' && A.intersectsArea('FESSURA_J4')"))
+  (condition "A.Type == 'Track' && (A.intersectsArea('FESSURA_J4') || A.intersectsArea('FESSURA_V3') || A.intersectsArea('FESSURA_V4') || A.intersectsArea('FESSURA_V1'))"))
 
 # Correnti grosse: larghezza minima
 (rule "Anodi, B+ e catodi almeno 2.5 mm"
@@ -110,7 +135,7 @@
 
 (rule "Nessuna via"
   (constraint disallow via)
-  (condition "A.Type == 'Via' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2'"))
+  (condition "A.Type == 'Via' && A.NetName != '/LTP_A1' && A.NetName != '/LTP_G1' && A.NetName != '/V1_A' && A.NetName != 'VBIAS_NEG' && A.NetName != 'HEATER_A' && A.NetName != 'HEATER_B' && A.NetName != '/LTP_K' && A.NetName != '/V2_G2' && A.NetName != '/LTP_A2' && A.NetName != '/G3_IN'"))
 
 
 # I piedini di uno zoccolo hanno la distanza della valvola, non si possono allargare.
