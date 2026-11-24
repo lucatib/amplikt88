@@ -69,7 +69,7 @@ The KT88 model is fitted to the data sheet curves and gives 60 W at 1 % (75 W at
 
 **Voltages.** At full power each anode swings about 400 V either side of B+, so it reaches 850 V to ground and the two anodes are 820 V apart. If the speaker is disconnected, or is strongly reactive, while the amplifier is overdriven, the load line no longer limits the swing: that is what breaks output transformers, hence the test voltage.
 
-**Leakage inductance and capacitance.** The loop is rolled off inside the amplifier (C15 and R26 across the anodes of the driver pair), so that the margin depends little on the transformer; with the 17.4 dB of loop gain it crosses unity near 65 kHz. Leakage and capacitance then decide how much phase margin is left there. *Model*, feedback 180 k / 12 pF, C15 330 pF, R26 10k:
+**Leakage inductance and capacitance.** The loop is rolled off inside the amplifier (C15 and R26 across the anodes of the driver pair when these tables were made; now the lag R29 15k + C17 180 pF at V1's anode), so that the margin depends little on the transformer; with the 17.4 dB of loop gain it crosses unity near 65 kHz. Leakage and capacitance then decide how much phase margin is left there. *Model*, feedback 180 k / 12 pF, C15 330 pF, R26 10k:
 
 | Leakage (mH) | Capacitance | Unity loop gain (kHz) | Phase margin (deg) | Gain margin (dB) |
 |---|---|---|---|---|
@@ -125,7 +125,7 @@ Check the tap percentage, leakage and inductance of any ready-made part on its o
 
 ## With the real transformer on the bench
 
-The compensation (C15 680 pF with R26 4.7k across the driver anodes, R9 120k with C6 18 pF) is trimmed on the simulated transformer, so repeat the test on the real one: 10 kHz square wave at about 1 W into 8 ohm, then with 0.1 uF and 1 uF across the load. If the edge rings, raise C15 (680 pF to 1 nF) and, if that is not enough, R9 (less feedback); a larger C6 makes it worse. The model gives 42 kHz at -3 dB, so there is no reason to lower C15. At the bottom, watch the output with no signal at switch-on and after a deep bass transient: slow breathing at 1 to 3 Hz means too little margin there, cured by a larger C16 (R10 C16 as long as possible) or larger C7 and C8.
+The compensation (R29 15k with C17 180 pF from V1's anode to ground, R9 180k with C6 12 pF) is trimmed on the simulated transformer, so repeat the test on the real one: 10 kHz square wave at about 1 W into 8 ohm, then with 0.1 uF and 1 uF across the load. If the edge rings, raise C17 (22k + 220 pF rings about 7 %, see the spare-triode comparison) and, if that is not enough, R9 (less feedback); a larger C6 makes it worse. The model gives 33 kHz at -3 dB. At the bottom, watch the output with no signal at switch-on and after a deep bass transient: slow breathing at 1 to 3 Hz means too little margin there, cured by a larger C16 (R10 C16 as long as possible) or larger C7 and C8.
 
 ## Sources
 

@@ -48,7 +48,7 @@ def bench(net, ltp, pos, rf, cf, open_loop=False):
         n = re.sub(r"^((?:R9|C6) .*?)OT_S_HI", r"\1GND", n, flags=re.M)
     for i, node in enumerate(sorted(set(re.findall(r"unconnected-\S+", n)))):
         n += f"RFLOAT{i} {node} GND 1e9\n"
-    if re.search(r"\sB_CCS\b", n):   # V2 tail sink rail: R34/C19 off C13 on the power sheet
+    if re.search(r"\sBIAS_CCS\b", n):   # V2 tail sink rail: R34/C19 off C13 on the power sheet
         n += "V_CCS BIAS_CCS GND DC -75.7\n"
     return n + ("V_BPLUS B_PLUS GND DC 450\nV_NEG VBIAS_NEG GND DC -65\n"
                 "VIN IN_RAW GND DC 0 AC 1 SIN(0 {VAMP} 1k)\nRL OT_S_HI GND 8\n"

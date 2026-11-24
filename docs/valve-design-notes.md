@@ -32,7 +32,7 @@ Both triodes share a cathode resistor, the tail. The signal goes into one grid a
 
     (mu + 1) * Rt / ((mu + 1) * Rt + ra + Ra)
 
-With Rt = R8 = 39k, ra about 65k and Ra = 100k, this gives about 0.96, so the imbalance is a few percent. Designs usually correct it in one of two ways: a slightly larger anode load on the second triode, or a constant-current tail. At high frequencies, stray and Miller capacitance on the second grid unbalance the pair further. That is why C16 was added: see the README's simulation notes.
+With a plain resistor tail (the earlier R8, 39k), ra about 65k and Ra = 100k, this gives about 0.96, so the imbalance is a few percent. Designs usually correct it in one of two ways: a slightly larger anode load on the second triode, or a constant-current tail. This amplifier now uses the second: the spare V1 triode is a 2.33 mA current sink in the tail, and the simulated anode signals match within 0.1 %. At high frequencies, stray and Miller capacitance on the second grid unbalance the pair further. That is why C16 was added: see the README's simulation notes.
 
 **Headroom.** Each anode has to swing the peak drive the KT88 grids need, about 57 V for 70 W. With 100k loads into an AC load of about 67k (R11 and R12, 200k, in parallel with the anode loads), the pair has about 233 V from anode to cathode at 1.15 mA. That headroom is what lets it reach the drive without a separate driver stage.
 
@@ -74,8 +74,8 @@ With open-loop gain A and feedback fraction beta, the loop gain is A * beta. The
 
 The usual rule is that one network should set the roll-off, well before the others do. Here that network is:
 
-- C15 with R26 between the anodes of the pair, at the top of the band;
-- the very long R10 C16 time constant, at the bottom.
+- the lag R29 15k with C17 180 pF from V1's anode to ground, at the top of the band (it replaced C15 and R26 across the anodes of the pair);
+- at the bottom, the coupling networks C7, C8 (0.47 µF) with R11, R12 (200k), 0.094 s, and the second grid of the pair, R10 C16 (1.8M, 1 µF), 1.8 s. With 0.47 µF the low-frequency phase margin is about 56 degrees; larger coupling capacitors raise it (82 degrees with 2.2 µF) but make the bias recover more slowly after the grids are overdriven (about 1.4 s against 0.5 s to settle within 0.2 V).
 
 The feedback capacitor C6 (12 pF across R9) adds phase lead near the top of the loop's band.
 

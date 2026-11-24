@@ -7939,7 +7939,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2u 630V"
+		(property "Value" "0.47u 630V"
 			(at 233.68 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7950,7 +7950,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
+		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4"
 			(at 237.49 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7994,7 +7994,7 @@
 				)
 			)
 		)
-		(property "Sim.Params" "c=2.2u"
+		(property "Sim.Params" "c=0.47u"
 			(at 237.49 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -8847,7 +8847,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2u 250V"
+		(property "Value" "1u 630V"
 			(at 230.505 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8858,7 +8858,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3"
+		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4"
 			(at 229.87 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -8902,7 +8902,7 @@
 				)
 			)
 		)
-		(property "Sim.Params" "c=2.2u"
+		(property "Sim.Params" "c=1u"
 			(at 229.87 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -11780,7 +11780,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2u 630V"
+		(property "Value" "0.47u 630V"
 			(at 233.68 74.93 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11791,7 +11791,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
+		(property "Footprint" "Capacitor_THT:C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4"
 			(at 237.49 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -11835,7 +11835,7 @@
 				)
 			)
 		)
-		(property "Sim.Params" "c=2.2u"
+		(property "Sim.Params" "c=0.47u"
 			(at 237.49 80.01 0)
 			(hide yes)
 			(show_name no)

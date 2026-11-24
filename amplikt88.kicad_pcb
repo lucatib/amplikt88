@@ -1166,6 +1166,17 @@
 			(uuid "50ff7d02-145e-41f7-be10-cef66eea2690")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
@@ -1761,6 +1772,17 @@
 			(uuid "861e3fca-ef8f-4cd2-a63f-791757c016b0")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Potentiometer_THT:Potentiometer_Bourns_3296X_Horizontal"
 		(layer "F.Cu")
@@ -6362,6 +6384,17 @@
 			(uuid "0decff23-0319-4c1f-b1c9-98781513234b")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_4.3mm_M4"
 		(layer "F.Cu")
@@ -6641,6 +6674,17 @@
 			(uuid "c6b48241-9852-4a92-a973-c2f0a000ab11")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_4.3mm_M4"
 		(layer "F.Cu")
@@ -8489,16 +8533,16 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
+	(footprint "Capacitor_THT:C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4"
 		(layer "B.Cu")
-		(uuid "18080a16-5efc-4f4e-8a85-faae0b9fd921")
+		(uuid "1cd55d05-c2ce-422e-ad0d-659f24212611")
 		(at 187.25 108.75 90)
-		(descr "C, Rect series, Radial, pin pitch=27.50mm, length*width=31.5*17mm^2, Capacitor, http://www.wima.com/EN/WIMA_MKS_4.pdf")
-		(tags "C Rect series Radial pin pitch 27.50mm length 31.5mm width 17mm Capacitor")
+		(descr "C, Rect series, Radial, pin pitch=27.50mm, length*width=31.5*9mm^2, Capacitor, http://www.wima.com/EN/WIMA_MKS_4.pdf")
+		(tags "C Rect series Radial pin pitch 27.50mm length 31.5mm width 9mm Capacitor")
 		(property "Reference" "C8"
 			(at 13.75 0 90)
 			(layer "B.SilkS")
-			(uuid "983ea572-0e9c-4610-8239-0b015d11e39b")
+			(uuid "0f4943a6-1801-4034-a1f7-7d5bc1e767ae")
 			(effects
 				(font
 					(size 1 1)
@@ -8507,10 +8551,10 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "2.2u 630V"
-			(at 13.75 -9.75 90)
+		(property "Value" "0.47u 630V"
+			(at 13.75 -5.75 270)
 			(layer "B.Fab")
-			(uuid "bfc42e9b-540b-458e-867e-3f6570fcc7c5")
+			(uuid "dc49ecd1-71c8-4c5c-b5ca-0af156d40388")
 			(effects
 				(font
 					(size 1 1)
@@ -8520,10 +8564,10 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "2605fbf9-05d2-4cdd-9088-6141066894d2")
+			(uuid "8657a4d5-4c26-45c8-8b7e-c8588c826f39")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8532,10 +8576,10 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d68859ae-1af2-472a-964d-3cf92a581086")
+			(uuid "ae4b0d3b-e9bf-4c2e-96f1-1af9f2c162cb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8544,10 +8588,10 @@
 			)
 		)
 		(property "KiLib_Generator" "capacitor/THT/other"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.SilkS")
 			(hide yes)
-			(uuid "6c69aa5a-1a5e-4ee5-8fc5-726e6badde6e")
+			(uuid "e16ab1ac-9ae8-48f5-95d0-5ae87f4eebf9")
 			(effects
 				(font
 					(size 1 1)
@@ -8562,71 +8606,71 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start 29.62 -8.62)
-			(end -2.12 -8.62)
+			(start 29.62 -4.62)
+			(end -2.12 -4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "74d141cd-c12e-40da-a1b6-04e30b66e4ee")
+			(uuid "1c8ed606-05ec-4e2a-bcda-82eef51a7878")
 		)
 		(fp_line
-			(start -2.12 -8.62)
-			(end -2.12 8.62)
+			(start -2.12 -4.62)
+			(end -2.12 4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "48cca6ef-63dc-40c2-a3ec-c6c15f0eae0e")
+			(uuid "b7c2c370-4f86-4340-bab0-677ccde64193")
 		)
 		(fp_line
-			(start 29.62 8.62)
-			(end 29.62 -8.62)
+			(start 29.62 4.62)
+			(end 29.62 -4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "b4ca6c5e-1d0d-4e62-8628-e2105b01db51")
+			(uuid "974130be-2c8e-4d66-b534-f517802bf7a9")
 		)
 		(fp_line
-			(start -2.12 8.62)
-			(end 29.62 8.62)
+			(start -2.12 4.62)
+			(end 29.62 4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "46a8690a-0005-4f95-a82a-309e061485a1")
+			(uuid "2aef0aa4-94dd-48e1-b8fc-6e8c0269af65")
 		)
 		(fp_rect
-			(start -2.25 8.75)
-			(end 29.75 -8.75)
+			(start -2.25 4.75)
+			(end 29.75 -4.75)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "B.CrtYd")
-			(uuid "c1b851f8-0134-4204-8cf6-bf3050a84551")
+			(uuid "7c6925e5-fd74-4995-847c-11496caf39bf")
 		)
 		(fp_rect
-			(start -2 8.5)
-			(end 29.5 -8.5)
+			(start -2 4.5)
+			(end 29.5 -4.5)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "B.Fab")
-			(uuid "aac767ef-6f31-4d0c-a47d-7ed17d7b5543")
+			(uuid "51e17e08-788b-4608-a004-0ea789cb329b")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 13.75 0 90)
+			(at 13.75 0 270)
 			(layer "B.Fab")
-			(uuid "d02e20a7-21f0-4c15-a0a9-63b66db10e6c")
+			(uuid "3c17743f-7576-48e6-afc9-c817ac34923c")
 			(effects
 				(font
 					(size 1 1)
@@ -8642,8 +8686,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/LTP_A1")
-			(pintype "passive")
-			(uuid "f4161953-3ac1-419e-af48-e77867374ace")
+			(uuid "3e9f3747-ab6b-4b12-8705-9f0504129356")
 		)
 		(pad "2" thru_hole circle
 			(at 27.5 0 90)
@@ -8652,11 +8695,10 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/G4_IN")
-			(pintype "passive")
-			(uuid "2b6a2455-da4c-4479-a0e1-33fb1a4ead19")
+			(uuid "f2dc55dd-8197-497b-a09f-155e1e461beb")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4.step"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -8668,195 +8710,16 @@
 			)
 		)
 	)
-	(footprint "Capacitor_THT:C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3"
+	(footprint "Capacitor_THT:C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4"
 		(layer "B.Cu")
-		(uuid "8de00b7a-0d89-43ac-a1b5-09b92ced74e9")
-		(at 110.2 122 180)
-		(descr "C, Rect series, Radial, pin pitch=15.00mm, length*width=18*8mm^2, Capacitor, http://www.wima.com/EN/WIMA_FKS_3.pdf")
-		(tags "C Rect series Radial pin pitch 15.00mm length 18mm width 8mm Capacitor")
-		(property "Reference" "C16"
-			(at 7.5 0 180)
-			(layer "B.SilkS")
-			(uuid "0125603e-f033-4ba4-ae8f-eabc9f86fa2b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Value" "2.2u 250V"
-			(at 7.5 -5.25 180)
-			(layer "B.Fab")
-			(uuid "2b1e7c0a-6bb7-40d7-9719-7e3ea4f87266")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "6477a89c-791c-44f0-beb2-6bebc605afe4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify mirror)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 180)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "c6b89949-f4b7-4c5e-a58c-26ee0991f74e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify mirror)
-			)
-		)
-		(property "KiLib_Generator" "capacitor/THT/other"
-			(at 0 0 180)
-			(layer "B.SilkS")
-			(hide yes)
-			(uuid "e2259189-008e-4c69-8298-9d3adf5534f6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(path "/8e7ff117-ca79-4583-a336-26db8620a046")
-		(sheetname "/")
-		(sheetfile "amplikt88.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start 16.62 4.12)
-			(end 16.62 -4.12)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "B.SilkS")
-			(uuid "9baf9ed6-c495-4212-b7a8-1bd01e271f29")
-		)
-		(fp_line
-			(start 16.62 -4.12)
-			(end -1.62 -4.12)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "B.SilkS")
-			(uuid "35ea43f0-3dba-479d-85af-33ebaa72bb69")
-		)
-		(fp_line
-			(start -1.62 4.12)
-			(end 16.62 4.12)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "B.SilkS")
-			(uuid "872a241b-8d13-44a3-bf36-f35b43fc75e2")
-		)
-		(fp_line
-			(start -1.62 -4.12)
-			(end -1.62 4.12)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "B.SilkS")
-			(uuid "afee5e07-2694-48b9-a242-b09d3ce59978")
-		)
-		(fp_rect
-			(start -1.75 4.25)
-			(end 16.75 -4.25)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "B.CrtYd")
-			(uuid "df0c4841-4b8f-45d7-a957-1060f7262020")
-		)
-		(fp_rect
-			(start -1.5 4)
-			(end 16.5 -4)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "B.Fab")
-			(uuid "8c282493-f1fa-4298-80a4-35ba58a130dd")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 7.5 0 180)
-			(layer "B.Fab")
-			(uuid "f8a21183-217a-48a6-99f6-1fa4466d7222")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
-		(pad "1" thru_hole circle
-			(at 0 0 180)
-			(size 2.4 2.4)
-			(drill 1.2)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/V2_G2")
-			(pintype "passive")
-			(uuid "d07ba63b-a6a3-4aad-b9d5-3af6b23ce4b9")
-		)
-		(pad "2" thru_hole circle
-			(at 15 0 180)
-			(size 2.4 2.4)
-			(drill 1.2)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(pintype "passive")
-			(uuid "f45e4d86-9d81-4ba8-83ee-034d391a1dbd")
-		)
-		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L18.0mm_W8.0mm_P15.00mm_FKS3_FKP3.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "Capacitor_THT:C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4"
-		(layer "B.Cu")
-		(uuid "c3001679-4ba5-4253-9eda-a234db8bd937")
+		(uuid "1cd55d05-c2ce-422e-ad0d-659f24212611")
 		(at 103.5 114 90)
-		(descr "C, Rect series, Radial, pin pitch=27.50mm, length*width=31.5*17mm^2, Capacitor, http://www.wima.com/EN/WIMA_MKS_4.pdf")
-		(tags "C Rect series Radial pin pitch 27.50mm length 31.5mm width 17mm Capacitor")
+		(descr "C, Rect series, Radial, pin pitch=27.50mm, length*width=31.5*9mm^2, Capacitor, http://www.wima.com/EN/WIMA_MKS_4.pdf")
+		(tags "C Rect series Radial pin pitch 27.50mm length 31.5mm width 9mm Capacitor")
 		(property "Reference" "C7"
 			(at 13.75 0 90)
 			(layer "B.SilkS")
-			(uuid "eac59a55-0f85-49c1-87a3-e09333109f77")
+			(uuid "67249763-332d-45f0-8dbf-70cd24a1b29a")
 			(effects
 				(font
 					(size 1 1)
@@ -8865,10 +8728,10 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "2.2u 630V"
-			(at 19.5 -4 90)
+		(property "Value" "0.47u 630V"
+			(at 13.75 -5.75 270)
 			(layer "B.Fab")
-			(uuid "3b436429-f70b-476d-abeb-7078925b62a1")
+			(uuid "f8049e72-58a1-4e48-88d2-23ec2ca76f9c")
 			(effects
 				(font
 					(size 1 1)
@@ -8878,10 +8741,10 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "9c4299d0-f575-4b39-9ded-2ffacf8fec15")
+			(uuid "865a8988-0b27-4a76-b206-a6c4c9afa7c8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8890,10 +8753,10 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "b111f6cf-65fc-4d06-b745-a142e04a0f8d")
+			(uuid "338f4c9a-7903-4ea9-9711-7ac173d29388")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8902,10 +8765,10 @@
 			)
 		)
 		(property "KiLib_Generator" "capacitor/THT/other"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "B.SilkS")
 			(hide yes)
-			(uuid "8fdaa9e2-6268-4250-b6e6-b707a4840462")
+			(uuid "e16ab1ac-9ae8-48f5-95d0-5ae87f4eebf9")
 			(effects
 				(font
 					(size 1 1)
@@ -8920,71 +8783,71 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start 29.62 -8.62)
-			(end -2.12 -8.62)
+			(start 29.62 -4.62)
+			(end -2.12 -4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "4a25e8fb-2d6a-47b7-9d00-408ca687033e")
+			(uuid "1c8ed606-05ec-4e2a-bcda-82eef51a7878")
 		)
 		(fp_line
-			(start -2.12 -8.62)
-			(end -2.12 8.62)
+			(start -2.12 -4.62)
+			(end -2.12 4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "d518009e-928b-4f11-850b-a89c4ad360c0")
+			(uuid "b7c2c370-4f86-4340-bab0-677ccde64193")
 		)
 		(fp_line
-			(start 29.62 8.62)
-			(end 29.62 -8.62)
+			(start 29.62 4.62)
+			(end 29.62 -4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "c6a91d79-dfc7-405b-bd41-443078e40cbe")
+			(uuid "974130be-2c8e-4d66-b534-f517802bf7a9")
 		)
 		(fp_line
-			(start -2.12 8.62)
-			(end 29.62 8.62)
+			(start -2.12 4.62)
+			(end 29.62 4.62)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "f800f0f6-973e-45b9-836d-0d1f8fabbe5f")
+			(uuid "2aef0aa4-94dd-48e1-b8fc-6e8c0269af65")
 		)
 		(fp_rect
-			(start -2.25 8.75)
-			(end 29.75 -8.75)
+			(start -2.25 4.75)
+			(end 29.75 -4.75)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "B.CrtYd")
-			(uuid "51fb0a7c-c04f-4e83-8147-4ffd5b95f2e6")
+			(uuid "7c6925e5-fd74-4995-847c-11496caf39bf")
 		)
 		(fp_rect
-			(start -2 8.5)
-			(end 29.5 -8.5)
+			(start -2 4.5)
+			(end 29.5 -4.5)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(fill no)
 			(layer "B.Fab")
-			(uuid "85c43877-8795-4dff-ba92-4f721739523a")
+			(uuid "51e17e08-788b-4608-a004-0ea789cb329b")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 13.75 0 90)
+			(at 13.75 0 270)
 			(layer "B.Fab")
-			(uuid "6346e4c6-3e6b-4a10-92cc-052816a01e5c")
+			(uuid "3c17743f-7576-48e6-afc9-c817ac34923c")
 			(effects
 				(font
 					(size 1 1)
@@ -9000,8 +8863,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/LTP_A2")
-			(pintype "passive")
-			(uuid "03ab3dd4-2f16-4aa4-bbc3-495b35d45f9c")
+			(uuid "3e9f3747-ab6b-4b12-8705-9f0504129356")
 		)
 		(pad "2" thru_hole circle
 			(at 27.5 0 90)
@@ -9010,11 +8872,10 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/G3_IN")
-			(pintype "passive")
-			(uuid "2f38082b-cfe0-42bd-a7a3-b8b3bc34900e")
+			(uuid "f2dc55dd-8197-497b-a09f-155e1e461beb")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L31.5mm_W17.0mm_P27.50mm_MKS4.step"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L31.5mm_W9.0mm_P27.50mm_MKS4.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10756,6 +10617,183 @@
 			)
 		)
 	)
+	(footprint "Capacitor_THT:C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4"
+		(layer "B.Cu")
+		(uuid "d210713a-ef09-442e-ac9a-105560e123f6")
+		(at 102 138.5 180)
+		(descr "C, Rect series, Radial, pin pitch=27.50mm, length*width=31.5*11mm^2, Capacitor, http://www.wima.com/EN/WIMA_MKS_4.pdf")
+		(tags "C Rect series Radial pin pitch 27.50mm length 31.5mm width 11mm Capacitor")
+		(property "Reference" "C16"
+			(at 13.75 0 180)
+			(layer "B.SilkS")
+			(uuid "0f0e26d5-868d-4cc1-b7be-26f53e11ec3e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "1u 630V"
+			(at 13.75 -6.75 0)
+			(layer "B.Fab")
+			(uuid "2fce9741-ac51-467a-a6b1-c42e68ac1e6b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "31de3eac-25c9-46d8-8843-a2611f942600")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "f73a3178-0cee-4b9a-b638-ae8f0eeeda64")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify mirror)
+			)
+		)
+		(property "KiLib_Generator" "capacitor/THT/other"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "7221fd00-0626-4f32-bb8f-925a827896e2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(path "/8e7ff117-ca79-4583-a336-26db8620a046")
+		(sheetname "/")
+		(sheetfile "amplikt88.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 29.62 5.62)
+			(end 29.62 -5.62)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "895a4184-dbe9-4a18-88a1-47c07ce5d34a")
+		)
+		(fp_line
+			(start 29.62 -5.62)
+			(end -2.12 -5.62)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "0916ed35-407c-412f-8811-85a2a0b26cc1")
+		)
+		(fp_line
+			(start -2.12 5.62)
+			(end 29.62 5.62)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "7f479a5b-9b08-4474-bbb4-1498ee55b8e9")
+		)
+		(fp_line
+			(start -2.12 -5.62)
+			(end -2.12 5.62)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "b4bf9cb0-e117-4837-b2a3-5144bef0f064")
+		)
+		(fp_rect
+			(start -2.25 5.75)
+			(end 29.75 -5.75)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "B.CrtYd")
+			(uuid "ce90f62c-a7c7-4aa9-b529-0e725b4b7bb1")
+		)
+		(fp_rect
+			(start -2 5.5)
+			(end 29.5 -5.5)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "B.Fab")
+			(uuid "0ba5641f-2951-42c9-8b71-50ab37d48b41")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 13.75 0 0)
+			(layer "B.Fab")
+			(uuid "1855dbf3-cb0a-476c-8fbf-bfdd51ac3a2e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0 180)
+			(size 2.4 2.4)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/V2_G2")
+			(uuid "ea75128d-7558-4e29-9ea8-ca124cb06c7d")
+		)
+		(pad "2" thru_hole circle
+			(at 27.5 0 180)
+			(size 2.4 2.4)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "8c579339-7488-40f9-b7b4-b8c78914213d")
+		)
+		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L31.5mm_W11.0mm_P27.50mm_MKS4.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Capacitor_THT:C_Disc_D7.0mm_W2.5mm_P5.00mm"
 		(layer "B.Cu")
 		(uuid "ec03c7b5-b77a-4408-8035-dec287da62ff")
@@ -11671,6 +11709,14 @@
 		(uuid "a9b955b8-61a7-4d9e-9e03-e9107a6294cf")
 	)
 	(segment
+		(start 87.87 138.5)
+		(end 74.5 138.5)
+		(width 2.5)
+		(layer "B.Cu")
+		(net "GND")
+		(uuid "ab6a2d43-a2a3-407b-9bc6-38adfe2cd080")
+	)
+	(segment
 		(start 234 66.42)
 		(end 234 66.5)
 		(width 2.5)
@@ -11741,6 +11787,14 @@
 		(layer "B.Cu")
 		(net "GND")
 		(uuid "c93a6218-e8e3-4bf6-a71e-e33cdceced08")
+	)
+	(segment
+		(start 94.87 131.5)
+		(end 87.87 138.5)
+		(width 2.5)
+		(layer "B.Cu")
+		(net "GND")
+		(uuid "cfa059e9-76bc-4737-b2da-07781ea9ffd9")
 	)
 	(segment
 		(start 163 86.67)
@@ -12959,28 +13013,12 @@
 		(uuid "08351720-ca8e-41c1-82ba-92de7a59c34c")
 	)
 	(segment
-		(start 110.2 122)
-		(end 110.49 121.92)
-		(width 1)
-		(layer "F.Cu")
-		(net "/V2_G2")
-		(uuid "0fb01e59-3e98-4b27-88c7-fa58b6983594")
-	)
-	(segment
 		(start 115.923106 122.977464)
 		(end 115.8875 123.19)
 		(width 1)
 		(layer "F.Cu")
 		(net "/V2_G2")
 		(uuid "30436f5d-a868-4970-bf41-36da740787a3")
-	)
-	(segment
-		(start 115.8875 122.8725)
-		(end 111.4425 122.8725)
-		(width 1)
-		(layer "F.Cu")
-		(net "/V2_G2")
-		(uuid "38920757-8c54-46c7-a216-281d0ab9d8a5")
 	)
 	(segment
 		(start 115.8875 123.19)
@@ -12999,14 +13037,6 @@
 		(uuid "812f3732-c8d4-4210-8c7e-6aa9ce0973dc")
 	)
 	(segment
-		(start 111.4425 122.8725)
-		(end 110.49 121.92)
-		(width 1)
-		(layer "F.Cu")
-		(net "/V2_G2")
-		(uuid "83608a5c-ee8f-440c-aafa-102e20de5baa")
-	)
-	(segment
 		(start 115.923106 122.977464)
 		(end 115.8875 122.8725)
 		(width 1)
@@ -13021,6 +13051,30 @@
 		(layer "F.Cu")
 		(net "/V2_G2")
 		(uuid "f237581b-9777-4fe6-a665-6d65e7fee6a8")
+	)
+	(segment
+		(start 114.33 138.5)
+		(end 102 138.5)
+		(width 1)
+		(layer "B.Cu")
+		(net "/V2_G2")
+		(uuid "2ea10e11-129a-4bea-adf8-2f43ff18068c")
+	)
+	(segment
+		(start 118.83 131)
+		(end 118.83 134)
+		(width 1)
+		(layer "B.Cu")
+		(net "/V2_G2")
+		(uuid "74197b4b-23b7-42a0-bd13-371051eecbf5")
+	)
+	(segment
+		(start 118.83 134)
+		(end 114.33 138.5)
+		(width 1)
+		(layer "B.Cu")
+		(net "/V2_G2")
+		(uuid "9e665932-b0a5-41f2-9fc0-67106de686e1")
 	)
 	(segment
 		(start 55 106.90387)
