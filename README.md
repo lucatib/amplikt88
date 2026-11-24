@@ -1,6 +1,6 @@
 # amplikt88
 
-Mono KT88 push-pull power amplifier, ultralinear, class AB, fixed bias. KiCad 10 project: schematic on two sheets ([PDF](amplikt88.pdf)), two-layer board.
+Mono KT88 push-pull power amplifier, ultralinear, class AB, fixed bias. KiCad 10 project: schematic on two sheets ([PDF](amplikt88.pdf)), two-layer board. A stereo build is dual mono: two boards and two supplies, each with its own power transformer, sharing only the mains inlet.
 
 ![3D view](docs/pcb-3d-perspective.png)
 
@@ -54,7 +54,8 @@ The valve models are fits to the [datasheets](docs/datasheets/README.md) (5–12
 Nothing has been measured on hardware. Check:
 - **Transformers:**
   - Output: 4 kΩ plate-to-plate, 40 % UL taps, 8 Ω, 70 W ([spec](docs/output-transformer.md)).
-  - Power: 330 V / 500 mA, 6.3 V / 4.5 A, 60 V bias winding.
+  - Power, one per channel, toroidal, wound to order (about 200 VA): 230 V 50 Hz primary; HV 330 V rms at full load, 500 mA AC (about 300 mA DC in a winder's capacitor-input rating); heaters 6.3 V / 4.5 A; bias 60 V / 100 mA; electrostatic screen between primary and secondaries; regulation 5 % or better; EN 61558.
+  - Inrush: F1 is a slow-blow T2A (high I²t). If it blows at switch-on, add a soft-start (NTC in series with the primary, shorted by a relay after a second or two) rather than a bigger fuse.
   - Choke: 5 H / 300 mA.
 - **Secondary phase:** wire the secondary in phase with the input. If it oscillates, swap the leads.
 - **Bias:** turn both trimmers to most negative before power-up, then set 60 mA per KT88 (60 mV across the 1 Ω cathode resistors). Stay below 75 mA.
